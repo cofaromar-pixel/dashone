@@ -186,31 +186,22 @@
 }
 
 /* ── SELECTOR DE TEMA (botón flotante) ── */
+/* ── SELECTOR DE TEMA — integrado en header-gear ── */
 #theme-switcher {
-  position: fixed;
-  top: 8px;
-  right: 240px;
-  z-index: 9998;
   display: flex;
   align-items: center;
-  gap: 4px;
-}
-.theme-pill {
-  background: var(--surface);
-  border: 1px solid var(--border2);
-  border-radius: 20px;
-  padding: 3px 8px;
-  display: flex;
-  align-items: center;
-  gap: 4px;
+  gap: 6px;
+  border-right: 1px solid var(--border);
+  padding-right: 10px;
+  margin-right: 2px;
 }
 .theme-toggle-btn {
   background: none;
   border: 1px solid var(--border2);
   color: var(--text2);
   font-family: var(--font-mono);
-  font-size: 11px;
-  padding: 3px 10px;
+  font-size: 10px;
+  padding: 3px 9px;
   cursor: pointer;
   border-radius: 12px;
   letter-spacing: 0.06em;
@@ -219,12 +210,12 @@
 }
 .theme-toggle-btn:hover { border-color: var(--yellow); color: var(--yellow); }
 .theme-toggle-btn.active { background: var(--yellow); color: var(--bg); border-color: var(--yellow); font-weight: 700; }
-.palette-dots { display: flex; gap: 3px; align-items: center; }
+.palette-dots { display: flex; gap: 4px; align-items: center; }
 .palette-dot {
-  width: 14px; height: 14px; border-radius: 50%; cursor: pointer;
+  width: 13px; height: 13px; border-radius: 50%; cursor: pointer;
   border: 2px solid transparent; transition: all 0.12s; flex-shrink: 0;
 }
-.palette-dot:hover, .palette-dot.active { border-color: var(--text); transform: scale(1.2); }
+.palette-dot:hover, .palette-dot.active { border-color: var(--text); transform: scale(1.25); }
 .palette-dot[data-p="azul"]     { background: #1565C0; }
 .palette-dot[data-p="rojo"]     { background: #D32F2F; }
 .palette-dot[data-p="verde"]    { background: #2E7D32; }
@@ -232,12 +223,10 @@
 .palette-dot[data-p="violeta"]  { background: #7B1FA2; }
 #palette-panel {
   display: none;
-  background: var(--surface);
-  border: 1px solid var(--border2);
-  border-radius: 8px;
-  padding: 6px 10px;
-  gap: 6px;
   align-items: center;
+  gap: 5px;
+  border-left: 1px solid var(--border);
+  padding-left: 8px;
 }
 #palette-panel.open { display: flex; }
 
@@ -1408,24 +1397,6 @@ html, body {
 </head>
 <body>
 
-<!-- ══════════════ SELECTOR DE TEMA ══════════════ -->
-<div id="theme-switcher">
-  <div class="theme-pill">
-    <button class="theme-toggle-btn active" id="btn-dark" onclick="setTheme('dark')">🌙 Oscuro</button>
-    <button class="theme-toggle-btn" id="btn-light" onclick="setTheme('light')">☀️ Claro</button>
-  </div>
-  <div id="palette-panel">
-    <span style="font-family:var(--font-mono);font-size:9px;color:var(--dim);letter-spacing:0.1em;">Paleta:</span>
-    <div class="palette-dots">
-      <div class="palette-dot" data-p="azul"     title="Azul Santorini" onclick="setPalette('azul')"></div>
-      <div class="palette-dot" data-p="rojo"     title="Rojo"           onclick="setPalette('rojo')"></div>
-      <div class="palette-dot" data-p="verde"    title="Verde"          onclick="setPalette('verde')"></div>
-      <div class="palette-dot" data-p="amarillo" title="Amarillo"       onclick="setPalette('amarillo')"></div>
-      <div class="palette-dot" data-p="violeta"  title="Violeta"        onclick="setPalette('violeta')"></div>
-    </div>
-  </div>
-</div>
-
 <!-- ══════════════ LOGIN SCREEN ══════════════ -->
 <div id="login-screen">
   <div class="login-box">
@@ -1596,6 +1567,19 @@ html, body {
       <div class="header-weather" id="hdr-weather">—</div>
     </div>
     <div class="header-gear">
+      <div id="theme-switcher">
+        <button class="theme-toggle-btn active" id="btn-dark" onclick="setTheme('dark')">🌙 Oscuro</button>
+        <button class="theme-toggle-btn" id="btn-light" onclick="setTheme('light')">☀️ Claro</button>
+        <div id="palette-panel">
+          <div class="palette-dots">
+            <div class="palette-dot" data-p="azul"     title="Azul Santorini" onclick="setPalette('azul')"></div>
+            <div class="palette-dot" data-p="rojo"     title="Rojo"           onclick="setPalette('rojo')"></div>
+            <div class="palette-dot" data-p="verde"    title="Verde"          onclick="setPalette('verde')"></div>
+            <div class="palette-dot" data-p="amarillo" title="Amarillo"       onclick="setPalette('amarillo')"></div>
+            <div class="palette-dot" data-p="violeta"  title="Violeta"        onclick="setPalette('violeta')"></div>
+          </div>
+        </div>
+      </div>
       <button class="gear-btn" onclick="openModal('modal-io')" title="Importar / Exportar datos">⇅</button>
       <button class="gear-btn" onclick="openModal('modal-links')" title="Gestionar links">🔗</button>
       <button class="gear-btn" onclick="openModal('modal-settings')" title="Configuración">⚙</button>
