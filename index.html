@@ -1401,6 +1401,602 @@ html, body {
   border-radius: 2px; letter-spacing: 0.08em; text-transform: uppercase; transition: all 0.12s; }
 .logout-btn:hover { background: var(--red); color: #fff; }
 
+/* ════════════════════════════════════════
+   THEME SWITCHER BUTTON
+════════════════════════════════════════ */
+.theme-switcher { padding: 0 10px; display: flex; align-items: center; gap: 4px; border-left: 1px solid var(--border); }
+.theme-btn {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 2px;
+  border: 1px solid var(--border2);
+  background: var(--surface2);
+  color: var(--dim);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.theme-btn:hover { border-color: var(--yellow-bd); background: var(--yellow-lt); color: var(--text); }
+.theme-btn.active { background: var(--yellow); border-color: var(--yellow-bd); color: var(--text); font-weight: 700; }
+
+/* ════════════════════════════════════════
+   WINDOWS 95 THEME
+════════════════════════════════════════ */
+body[data-theme="win95"] {
+  font-family: 'MS Sans Serif', 'Segoe UI', Arial, sans-serif;
+}
+
+body[data-theme="win95"] :root,
+[data-theme="win95"] {
+  --bg:        #008080;
+  --surface:   #c0c0c0;
+  --surface2:  #d4d0c8;
+  --surface3:  #e0dcd4;
+  --border:    #808080;
+  --border2:   #404040;
+  --yellow:    #000080;
+  --yellow2:   #0000b0;
+  --yellow-lt: #d4d0c8;
+  --yellow-bd: #000080;
+  --red:       #000080;
+  --red2:      #0000a0;
+  --red-lt:    #d4d0c8;
+  --red-bd:    #808080;
+  --cyan:      #000080;
+  --cyan2:     #0000a0;
+  --cyan-lt:   #d4d0c8;
+  --cyan-bd:   #808080;
+  --green:     #008000;
+  --green-lt:  #d4d0c8;
+  --text:      #000000;
+  --text2:     #222222;
+  --dim:       #444444;
+  --dead:      #808080;
+  --font-display: 'Courier New', monospace;
+  --font-mono:    'Courier New', monospace;
+  --font-sans:    'MS Sans Serif', 'Segoe UI', Arial, sans-serif;
+}
+
+/* Win95 — Reset borders/shadows to 3D bevel look */
+[data-theme="win95"] * { border-radius: 0 !important; }
+
+[data-theme="win95"] html,
+[data-theme="win95"] body { background: #008080; }
+
+/* Win95 title bars */
+[data-theme="win95"] .header {
+  background: #c0c0c0;
+  border-bottom: none;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+}
+[data-theme="win95"] .header-left-band {
+  background: #000080;
+  border-right: none;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #4040c0;
+}
+[data-theme="win95"] .header-greeting { color: #000000; font-family: 'Courier New', monospace; font-size: 14px; letter-spacing: 0; }
+[data-theme="win95"] .header-time { font-family: 'Courier New', monospace; font-size: 32px; color: #ffffff; letter-spacing: 2px; }
+[data-theme="win95"] .header-weather { color: #000080; }
+[data-theme="win95"] .header-date { color: #444444; }
+
+/* Win95 panels */
+[data-theme="win95"] .col-left,
+[data-theme="win95"] .col-right,
+[data-theme="win95"] .col-mid { background: #c0c0c0; border-right: none; }
+
+[data-theme="win95"] .block {
+  background: #c0c0c0;
+  border: none;
+  border-bottom: 2px solid #808080;
+}
+[data-theme="win95"] .block-title {
+  background: #000080;
+  color: #ffffff;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  padding: 3px 6px;
+  margin-bottom: 8px;
+  padding-bottom: 3px;
+  border: none;
+  letter-spacing: 0;
+}
+[data-theme="win95"] .block-title::before { display: none; }
+
+/* Win95 beveled boxes */
+[data-theme="win95"] .card,
+[data-theme="win95"] .vn-card,
+[data-theme="win95"] .ev-item,
+[data-theme="win95"] .note-thumb,
+[data-theme="win95"] .link-item,
+[data-theme="win95"] .task-add,
+[data-theme="win95"] .io-card,
+[data-theme="win95"] .tstat {
+  background: #c0c0c0;
+  box-shadow: inset -1px -1px #ffffff, inset 1px 1px #808080, inset -2px -2px #dfdfdf, inset 2px 2px #404040;
+  border: none !important;
+}
+
+/* Win95 inset input well */
+[data-theme="win95"] input,
+[data-theme="win95"] textarea,
+[data-theme="win95"] select,
+[data-theme="win95"] .rss-feed,
+[data-theme="win95"] .tasks-list {
+  background: #ffffff;
+  color: #000000;
+  border: none !important;
+  box-shadow: inset 1px 1px #808080, inset -1px -1px #ffffff, inset 2px 2px #404040, inset -2px -2px #dfdfdf;
+  font-family: 'Courier New', monospace;
+}
+
+/* Win95 buttons */
+[data-theme="win95"] button,
+[data-theme="win95"] .btn,
+[data-theme="win95"] .eng-btn,
+[data-theme="win95"] .ag-tab,
+[data-theme="win95"] .flt-btn,
+[data-theme="win95"] .rss-preset-btn,
+[data-theme="win95"] .verse-nav button,
+[data-theme="win95"] .gear-btn,
+[data-theme="win95"] .wx-refresh,
+[data-theme="win95"] .wx-loc-btn,
+[data-theme="win95"] .rss-go {
+  background: #c0c0c0 !important;
+  color: #000000 !important;
+  border: none !important;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf !important;
+  font-family: 'Courier New', monospace !important;
+  font-size: 11px !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  font-weight: normal !important;
+  padding: 3px 10px !important;
+  cursor: pointer !important;
+}
+[data-theme="win95"] button:active,
+[data-theme="win95"] .btn:active {
+  box-shadow: inset 1px 1px #0a0a0a, inset -1px -1px #ffffff, inset 2px 2px #808080, inset -2px -2px #dfdfdf !important;
+}
+[data-theme="win95"] .btn:hover,
+[data-theme="win95"] button:hover { background: #c0c0c0 !important; }
+
+/* Win95 active/selected */
+[data-theme="win95"] .eng-btn.active,
+[data-theme="win95"] .ag-tab.active,
+[data-theme="win95"] .flt-btn.active,
+[data-theme="win95"] .rss-preset-btn.active {
+  background: #000080 !important;
+  color: #ffffff !important;
+  box-shadow: inset 1px 1px #0a0a0a, inset -1px -1px #ffffff !important;
+}
+
+/* Win95 links */
+[data-theme="win95"] a,
+[data-theme="win95"] .site-link,
+[data-theme="win95"] .app-link,
+[data-theme="win95"] .vn-link { color: #000080 !important; text-decoration: underline !important; }
+[data-theme="win95"] .site-link:hover,
+[data-theme="win95"] .app-link:hover { background: #000080 !important; color: #ffffff !important; }
+[data-theme="win95"] .site-link::before { color: #000000 !important; }
+
+/* Win95 modal windows */
+[data-theme="win95"] .modal-box {
+  background: #c0c0c0;
+  border: 2px solid #808080;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, 4px 4px 0 rgba(0,0,0,0.4);
+}
+[data-theme="win95"] .modal-header {
+  background: #000080;
+  padding: 4px 6px;
+  border: none;
+}
+[data-theme="win95"] .modal-title { color: #ffffff; font-family: 'Courier New', monospace; font-size: 12px; letter-spacing: 0; }
+[data-theme="win95"] .modal-close {
+  background: #c0c0c0 !important;
+  color: #000000 !important;
+  border: none !important;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf !important;
+  width: 20px; height: 18px; font-size: 10px !important;
+}
+
+/* Win95 login */
+[data-theme="win95"] .login-box {
+  background: #c0c0c0;
+  border: 2px solid #808080;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, 4px 4px 0 rgba(0,0,0,0.5);
+}
+[data-theme="win95"] .login-logo { color: #000080; font-family: 'Courier New', monospace; font-size: 20px; }
+[data-theme="win95"] .login-sub  { color: #444444; }
+[data-theme="win95"] #login-screen { background: #008080; }
+
+/* Win95 weather */
+[data-theme="win95"] .wx-hero {
+  background: #c0c0c0;
+  box-shadow: inset 1px 1px #808080, inset -1px -1px #ffffff;
+}
+[data-theme="win95"] .wx-temp { color: #000080; }
+[data-theme="win95"] .wx-detail-val { color: #000080; }
+[data-theme="win95"] .wx-details { background: #808080; }
+[data-theme="win95"] .wx-detail { background: #c0c0c0; }
+[data-theme="win95"] .wx-day-bar { background: #000080; }
+
+/* Win95 calendar */
+[data-theme="win95"] .cal-day.today { background: #000080; border: 1px solid #ffffff; }
+[data-theme="win95"] .cal-day.today .cal-day-n { color: #ffffff; }
+[data-theme="win95"] .cal-head h3 { color: #000080; font-family: 'Courier New', monospace; }
+[data-theme="win95"] .cal-head button {
+  background: #c0c0c0 !important;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf !important;
+  color: #000000 !important; width: 22px; height: 22px;
+}
+[data-theme="win95"] .cdot { background: #000080; }
+
+/* Win95 verse */
+[data-theme="win95"] .verse-text { background: #c0c0c0; border-left: 3px solid #000080; }
+[data-theme="win95"] .verse-ref { color: #000080; }
+[data-theme="win95"] .sites-group-label { color: #000080; border-bottom-color: #808080; }
+[data-theme="win95"] .task-chk { border-color: #808080; }
+[data-theme="win95"] .task-item.done .task-chk { background: #000080; border-color: #000080; }
+[data-theme="win95"] .tstat-n { color: #000080; }
+
+/* Win95 toast */
+[data-theme="win95"] .toast { background: #000080; box-shadow: 2px 2px 0 rgba(0,0,0,0.5); }
+
+/* Win95 rss / vn */
+[data-theme="win95"] .vn-card { background: #d4d0c8; border-left: 3px solid #000080; }
+[data-theme="win95"] .vn-card.vn-saint { background: #d4d0c8; border-left-color: #008000; }
+[data-theme="win95"] .rss-item:hover { background: #000080; color: #ffffff; }
+[data-theme="win95"] .rss-item:hover .rss-item-title,
+[data-theme="win95"] .rss-item:hover .rss-item-desc,
+[data-theme="win95"] .rss-item:hover .rss-item-date { color: #ffffff; }
+
+/* Win95 scrollbar */
+[data-theme="win95"] ::-webkit-scrollbar { width: 16px; height: 16px; }
+[data-theme="win95"] ::-webkit-scrollbar-track { background: #c0c0c0; }
+[data-theme="win95"] ::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+  border-radius: 0;
+}
+
+/* Win95 theme switcher itself */
+[data-theme="win95"] .theme-btn {
+  background: #c0c0c0 !important;
+  color: #000000 !important;
+  border: none !important;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf !important;
+  font-family: 'Courier New', monospace !important;
+  font-size: 9px !important;
+}
+[data-theme="win95"] .theme-btn.active {
+  background: #000080 !important;
+  color: #ffffff !important;
+  box-shadow: inset 1px 1px #0a0a0a !important;
+}
+[data-theme="win95"] .logout-btn {
+  background: #c0c0c0 !important;
+  color: #000000 !important;
+  border: none !important;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf !important;
+  font-family: 'Courier New', monospace !important;
+  font-size: 9px !important;
+}
+[data-theme="win95"] .settings-section-title { color: #000080; font-family: 'Courier New', monospace; border-bottom-color: #808080; }
+[data-theme="win95"] .io-card-title { color: #000080; border-bottom-color: #808080; }
+[data-theme="win95"] .io-log { background: #ffffff; border-left: 3px solid #000080; }
+[data-theme="win95"] .day-side-title { color: #000080; border-bottom-color: #808080; }
+[data-theme="win95"] .task-add-title { color: #000080; border-bottom-color: #808080; }
+
+/* ════════════════════════════════════════
+   YAHOO! 90s PORTAL THEME
+════════════════════════════════════════ */
+@import url('https://fonts.googleapis.com/css2?family=Times+New+Roman&display=swap');
+
+[data-theme="yahoo"] {
+  --bg:        #ffffff;
+  --surface:   #ffffff;
+  --surface2:  #f0f0f0;
+  --surface3:  #e8e8e8;
+  --border:    #cccccc;
+  --border2:   #999999;
+  --yellow:    #6600cc;
+  --yellow2:   #4400aa;
+  --yellow-lt: #f0e8ff;
+  --yellow-bd: #6600cc;
+  --red:       #cc0000;
+  --red2:      #aa0000;
+  --red-lt:    #fff0f0;
+  --red-bd:    #cc0000;
+  --cyan:      #0000cc;
+  --cyan2:     #0000aa;
+  --cyan-lt:   #e8e8ff;
+  --cyan-bd:   #6666cc;
+  --green:     #006600;
+  --green-lt:  #e8ffe8;
+  --text:      #000000;
+  --text2:     #333333;
+  --dim:       #666666;
+  --dead:      #999999;
+  --font-display: Georgia, 'Times New Roman', Times, serif;
+  --font-mono:    'Courier New', Courier, monospace;
+  --font-sans:    Arial, Helvetica, sans-serif;
+}
+
+[data-theme="yahoo"] html,
+[data-theme="yahoo"] body {
+  background: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+/* Yahoo header — purple banner */
+[data-theme="yahoo"] .header {
+  background: #6600cc;
+  border-bottom: 3px solid #ff8c00;
+  box-shadow: none;
+}
+[data-theme="yahoo"] .header-left-band {
+  background: #400090;
+  border-right: 2px solid #ff8c00;
+}
+[data-theme="yahoo"] .header-time { color: #ffcc00; font-family: Arial, Helvetica, sans-serif; font-size: 28px; letter-spacing: 0; }
+[data-theme="yahoo"] .header-day  { color: #ddbbff; }
+[data-theme="yahoo"] .header-greeting { color: #ffcc00; font-family: Georgia, serif; font-size: 15px; letter-spacing: 0; }
+[data-theme="yahoo"] .header-date { color: #ddbbff; }
+[data-theme="yahoo"] .header-weather { color: #ffcc00; }
+[data-theme="yahoo"] .header-right { border-left-color: #8844cc; }
+
+/* Yahoo columns */
+[data-theme="yahoo"] .col-left,
+[data-theme="yahoo"] .col-right { background: #f0f0f0; border-right: 1px solid #cccccc; }
+[data-theme="yahoo"] .col-mid { background: #ffffff; border-right: 1px solid #cccccc; }
+
+/* Yahoo blocks — table-like */
+[data-theme="yahoo"] .block {
+  border-bottom: 1px solid #cccccc;
+}
+[data-theme="yahoo"] .block-title {
+  background: #6600cc;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-bottom: 1px solid #4400aa;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  border-radius: 0;
+}
+[data-theme="yahoo"] .block-title::before { display: none; }
+
+/* Yahoo hyperlinks — classic blue/purple */
+[data-theme="yahoo"] a,
+[data-theme="yahoo"] .site-link,
+[data-theme="yahoo"] .app-link,
+[data-theme="yahoo"] .vn-link {
+  color: #0000cc !important;
+  text-decoration: underline !important;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+}
+[data-theme="yahoo"] a:visited { color: #551a8b !important; }
+[data-theme="yahoo"] a:hover,
+[data-theme="yahoo"] .site-link:hover,
+[data-theme="yahoo"] .app-link:hover {
+  color: #cc0000 !important;
+  background: none !important;
+  text-decoration: underline !important;
+}
+[data-theme="yahoo"] .site-link::before { content: '» '; color: #6600cc !important; }
+[data-theme="yahoo"] .site-link { padding: 2px 0; border-radius: 0; }
+
+/* Yahoo groups — horizontal rule style */
+[data-theme="yahoo"] .sites-group-label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  color: #6600cc;
+  border-bottom: 1px solid #6600cc;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  padding: 5px 0 2px;
+  margin: 8px 0 3px;
+}
+
+/* Yahoo verse */
+[data-theme="yahoo"] .verse-text {
+  border-left: 4px solid #6600cc;
+  background: #f8f0ff;
+  font-family: Georgia, serif;
+  color: #333333;
+  font-style: italic;
+}
+[data-theme="yahoo"] .verse-ref { color: #6600cc; }
+
+/* Yahoo buttons */
+[data-theme="yahoo"] button,
+[data-theme="yahoo"] .btn,
+[data-theme="yahoo"] .eng-btn,
+[data-theme="yahoo"] .ag-tab,
+[data-theme="yahoo"] .flt-btn,
+[data-theme="yahoo"] .rss-preset-btn,
+[data-theme="yahoo"] .verse-nav button,
+[data-theme="yahoo"] .gear-btn,
+[data-theme="yahoo"] .wx-refresh,
+[data-theme="yahoo"] .wx-loc-btn,
+[data-theme="yahoo"] .rss-go {
+  background: #6600cc !important;
+  color: #ffffff !important;
+  border: 1px solid #4400aa !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 0 !important;
+  border-radius: 2px !important;
+  font-weight: bold !important;
+}
+[data-theme="yahoo"] button:hover,
+[data-theme="yahoo"] .btn:hover { background: #4400aa !important; }
+[data-theme="yahoo"] .btn.btn-ghost,
+[data-theme="yahoo"] .btn-ghost {
+  background: #ffffff !important;
+  color: #6600cc !important;
+  border: 1px solid #6600cc !important;
+}
+[data-theme="yahoo"] .btn.btn-ghost:hover { background: #f0e8ff !important; }
+[data-theme="yahoo"] .btn-danger {
+  background: #ffffff !important;
+  color: #cc0000 !important;
+  border: 1px solid #cc0000 !important;
+}
+[data-theme="yahoo"] .btn-danger:hover { background: #cc0000 !important; color: #ffffff !important; }
+
+/* Yahoo active tabs */
+[data-theme="yahoo"] .eng-btn.active,
+[data-theme="yahoo"] .ag-tab.active,
+[data-theme="yahoo"] .flt-btn.active {
+  background: #ff8c00 !important;
+  border-color: #cc6600 !important;
+  color: #ffffff !important;
+}
+[data-theme="yahoo"] .rss-preset-btn.active {
+  background: #ff8c00 !important;
+  border-color: #cc6600 !important;
+  color: #ffffff !important;
+}
+
+/* Yahoo inputs */
+[data-theme="yahoo"] input,
+[data-theme="yahoo"] textarea,
+[data-theme="yahoo"] select {
+  border: 1px solid #999999 !important;
+  border-bottom: 2px solid #6600cc !important;
+  background: #ffffff !important;
+  color: #000000 !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 11px !important;
+  border-radius: 0 !important;
+}
+[data-theme="yahoo"] input:focus,
+[data-theme="yahoo"] textarea:focus { border-bottom-color: #cc0000 !important; }
+
+/* Yahoo search button */
+[data-theme="yahoo"] #search-btn { background: #ff8c00 !important; border-color: #cc6600 !important; }
+[data-theme="yahoo"] #search-btn:hover { background: #cc6600 !important; }
+
+/* Yahoo app links */
+[data-theme="yahoo"] .app-link {
+  border: 1px solid #cccccc !important;
+  background: #f8f8f8 !important;
+  color: #0000cc !important;
+  text-decoration: none !important;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  border-radius: 0;
+}
+[data-theme="yahoo"] .app-link:hover { background: #f0e8ff !important; border-color: #6600cc !important; }
+
+/* Yahoo weather */
+[data-theme="yahoo"] .wx-hero { background: linear-gradient(180deg, #f0e8ff 0%, #ffffff 100%); }
+[data-theme="yahoo"] .wx-temp { color: #cc0000; font-family: Georgia, serif; }
+[data-theme="yahoo"] .wx-detail-val { color: #6600cc; font-family: Georgia, serif; }
+[data-theme="yahoo"] .wx-forecast-title { color: #6600cc; font-family: Arial, sans-serif; }
+[data-theme="yahoo"] .wx-day-bar { background: linear-gradient(90deg, #6600cc, #cc0000); }
+[data-theme="yahoo"] .wx-day-temps span:first-child { color: #cc0000; }
+[data-theme="yahoo"] .wx-day-temps span:last-child  { color: #6600cc; }
+
+/* Yahoo Vatican / RSS */
+[data-theme="yahoo"] .vn-card { background: #fffef0; border-left: 3px solid #ff8c00; }
+[data-theme="yahoo"] .vn-card.vn-saint { background: #f0fff0; border-left-color: #006600; }
+[data-theme="yahoo"] .vn-card-label { color: #6600cc; }
+[data-theme="yahoo"] .rss-item:hover { background: #f0e8ff; }
+[data-theme="yahoo"] .rss-item-title { color: #0000cc; }
+[data-theme="yahoo"] .rss-item-title:hover { color: #cc0000; }
+
+/* Yahoo calendar */
+[data-theme="yahoo"] .cal-day.today { background: #f0e8ff; border: 1px solid #6600cc; }
+[data-theme="yahoo"] .cal-day.today .cal-day-n { color: #6600cc; font-weight: bold; }
+[data-theme="yahoo"] .cal-head h3 { color: #6600cc; font-family: Georgia, serif; }
+[data-theme="yahoo"] .cdot { background: #cc0000; }
+[data-theme="yahoo"] .ev-item { background: #fff0f0; border-left-color: #cc0000; }
+[data-theme="yahoo"] .ev-time { color: #cc0000; }
+[data-theme="yahoo"] .day-side-title { color: #6600cc; border-bottom-color: #6600cc; font-family: Georgia, serif; }
+
+/* Yahoo tasks */
+[data-theme="yahoo"] .tstat-n { color: #6600cc; font-family: Georgia, serif; }
+[data-theme="yahoo"] .task-chk { border-color: #999999; }
+[data-theme="yahoo"] .task-item.done .task-chk { background: #006600; border-color: #006600; }
+[data-theme="yahoo"] .task-add-title { color: #6600cc; border-bottom-color: #ff8c00; font-family: Georgia, serif; }
+[data-theme="yahoo"] .notes-list-title { color: #6600cc; font-family: Georgia, serif; }
+
+/* Yahoo modals */
+[data-theme="yahoo"] .modal-box {
+  background: #ffffff;
+  border: 2px solid #cccccc;
+  border-top: 4px solid #6600cc;
+  box-shadow: 3px 3px 8px rgba(0,0,0,0.3);
+}
+[data-theme="yahoo"] .modal-header { border-bottom: 2px solid #ff8c00; background: #f8f0ff; }
+[data-theme="yahoo"] .modal-title { color: #6600cc; font-family: Georgia, serif; font-size: 16px; letter-spacing: 0; }
+[data-theme="yahoo"] .modal-close { border-color: #999999 !important; }
+[data-theme="yahoo"] .settings-section-title { color: #6600cc; font-family: Georgia, serif; border-bottom-color: #ff8c00; }
+[data-theme="yahoo"] .io-card-title { color: #6600cc; border-bottom-color: #ff8c00; }
+[data-theme="yahoo"] .io-log { border-left: 3px solid #6600cc; background: #f8f8f8; }
+
+/* Yahoo login */
+[data-theme="yahoo"] #login-screen { background: #400090; }
+[data-theme="yahoo"] .login-box {
+  background: #ffffff;
+  border: 2px solid #cccccc;
+  border-top: 5px solid #6600cc;
+  box-shadow: 3px 3px 8px rgba(0,0,0,0.4);
+}
+[data-theme="yahoo"] .login-logo { color: #6600cc; font-family: Georgia, serif; font-size: 28px; letter-spacing: 0; }
+[data-theme="yahoo"] .login-sub  { color: #666666; }
+[data-theme="yahoo"] .login-btn  { background: #ff8c00 !important; font-family: Arial, sans-serif !important; font-size: 14px !important; }
+[data-theme="yahoo"] .login-btn:hover { background: #cc6600 !important; }
+[data-theme="yahoo"] .login-error { color: #cc0000; }
+
+/* Yahoo toast */
+[data-theme="yahoo"] .toast { background: #6600cc; box-shadow: 2px 2px 6px rgba(0,0,0,0.4); }
+
+/* Yahoo theme switcher */
+[data-theme="yahoo"] .theme-btn {
+  background: #ffffff !important;
+  color: #6600cc !important;
+  border: 1px solid #6600cc !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 9px !important;
+}
+[data-theme="yahoo"] .theme-btn.active {
+  background: #6600cc !important;
+  color: #ffffff !important;
+}
+[data-theme="yahoo"] .logout-btn {
+  background: none !important;
+  color: #ffffff !important;
+  border: 1px solid #ddbbff !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+[data-theme="yahoo"] .logout-btn:hover { background: #ffffff !important; color: #6600cc !important; }
+[data-theme="yahoo"] .gear-btn { color: #ffffff !important; border-color: #8844cc !important; }
+[data-theme="yahoo"] .gear-btn:hover { background: #4400aa !important; }
+[data-theme="yahoo"] .header-gear { border-left-color: #8844cc; }
+[data-theme="yahoo"] .theme-switcher { border-left-color: #8844cc; }
+
+/* Yahoo HR decorations between sections */
+[data-theme="yahoo"] .vn-section,
+[data-theme="yahoo"] .rss-section { border-top: 2px solid #ff8c00; }
+[data-theme="yahoo"] .rss-bar { border-bottom: 1px solid #cccccc; }
+[data-theme="yahoo"] .rss-presets { border-bottom: 1px solid #cccccc; }
+[data-theme="yahoo"] .rss-item { border-bottom: 1px dotted #cccccc; }
+[data-theme="yahoo"] .note-thumb.active { border-color: #6600cc !important; background: #f0e8ff !important; }
+[data-theme="yahoo"] .io-card { border: 1px solid #cccccc; background: #f8f8f8; }
+[data-theme="yahoo"] .link-item:hover { background: #f0e8ff !important; border-color: #6600cc !important; }
+[data-theme="yahoo"] .link-item-group { background: #f0e8ff; border-color: #6600cc; color: #6600cc; }
+
 </style>
 </head>
 <body>
@@ -1562,6 +2158,11 @@ html, body {
     <div class="header-right">
       <div class="header-date" id="hdr-date">—</div>
       <div class="header-weather" id="hdr-weather">—</div>
+    </div>
+    <div class="theme-switcher">
+      <button class="theme-btn active" id="theme-tricolor" onclick="setTheme('tricolor')">🎨 Tricolor</button>
+      <button class="theme-btn" id="theme-win95" onclick="setTheme('win95')">🖥 Win 95</button>
+      <button class="theme-btn" id="theme-yahoo" onclick="setTheme('yahoo')">🌐 Yahoo 90s</button>
     </div>
     <div class="header-gear">
       <button class="gear-btn" onclick="openModal('modal-io')" title="Importar / Exportar datos">⇅</button>
@@ -2832,6 +3433,24 @@ function doImport() {
 }
 
 
+
+/* ── THEME SWITCHER ── */
+function setTheme(name) {
+  document.body.dataset.theme = (name === 'tricolor') ? '' : name;
+  document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
+  const btn = document.getElementById('theme-' + name);
+  if (btn) btn.classList.add('active');
+  localStorage.setItem('dash_theme', name);
+}
+(function() {
+  const t = localStorage.getItem('dash_theme') || 'tricolor';
+  if (t && t !== 'tricolor') document.body.dataset.theme = t;
+  const btn = document.getElementById('theme-' + t);
+  if (btn) {
+    document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+})();
 </script>
 </body>
 </html>
