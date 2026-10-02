@@ -549,83 +549,6 @@ html, body {
 .wx-error strong { color: var(--red); display: block; margin-bottom: 6px; }
 
 /* ════════════════════════════════════════
-   VATICAN NEWS — EVANGELIO / SANTO / RSS
-════════════════════════════════════════ */
-.vn-section {
-  border-bottom: 1px solid var(--border);
-  overflow-y: auto;
-}
-.vn-card {
-  background: var(--yellow-lt);
-  border-left: 3px solid var(--yellow);
-  padding: 9px 11px;
-  margin-bottom: 6px;
-  border-radius: 0 2px 2px 0;
-}
-.vn-card.vn-saint {
-  background: var(--red-lt);
-  border-left-color: var(--red);
-}
-.vn-card-label {
-  font-family: var(--font-mono);
-  font-size: 8px;
-  color: var(--dim);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-}
-.vn-card-title {
-  font-family: var(--font-sans);
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--text);
-  line-height: 1.4;
-  margin-bottom: 3px;
-}
-.vn-card-body {
-  font-family: var(--font-sans);
-  font-size: 10.5px;
-  color: var(--text2);
-  line-height: 1.65;
-  font-style: italic;
-}
-.vn-card-ref {
-  font-family: var(--font-mono);
-  font-size: 9px;
-  color: var(--cyan2);
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  margin-top: 5px;
-}
-.vn-link {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 8px;
-  color: var(--cyan2);
-  text-decoration: none;
-  letter-spacing: 0.08em;
-  margin-top: 5px;
-  border-bottom: 1px solid var(--cyan-bd);
-  transition: all 0.12s;
-}
-.vn-link:hover { color: var(--cyan); border-bottom-color: var(--cyan); }
-.vn-loading {
-  font-family: var(--font-mono);
-  font-size: 9px;
-  color: var(--dead);
-  letter-spacing: 0.1em;
-  text-align: center;
-  padding: 10px 0;
-}
-.vn-error {
-  font-family: var(--font-sans);
-  font-size: 10px;
-  color: var(--dim);
-  padding: 6px 0;
-  font-style: italic;
-}
-
-/* ════════════════════════════════════════
    BOTONES GLOBALES
 ════════════════════════════════════════ */
 .btn {
@@ -999,7 +922,6 @@ body[data-theme="win95"] :root,
 
 /* Win95 beveled boxes */
 [data-theme="win95"] .card,
-[data-theme="win95"] .vn-card,
 [data-theme="win95"] .ev-item,
 [data-theme="win95"] .note-thumb,
 [data-theme="win95"] .link-item,
@@ -1069,7 +991,6 @@ body[data-theme="win95"] :root,
 [data-theme="win95"] a,
 [data-theme="win95"] .site-link,
 [data-theme="win95"] .app-link,
-[data-theme="win95"] .vn-link { color: #000080 !important; text-decoration: underline !important; }
 [data-theme="win95"] .site-link:hover,
 [data-theme="win95"] .app-link:hover { background: #000080 !important; color: #ffffff !important; }
 [data-theme="win95"] .site-link::before { color: #000000 !important; }
@@ -1138,8 +1059,6 @@ body[data-theme="win95"] :root,
 [data-theme="win95"] .toast { background: #000080; box-shadow: 2px 2px 0 rgba(0,0,0,0.5); }
 
 /* Win95 rss / vn */
-[data-theme="win95"] .vn-card { background: #d4d0c8; border-left: 3px solid #000080; }
-[data-theme="win95"] .vn-card.vn-saint { background: #d4d0c8; border-left-color: #008000; }
 [data-theme="win95"] .rss-item:hover { background: #000080; color: #ffffff; }
 [data-theme="win95"] .rss-item:hover .rss-item-title,
 [data-theme="win95"] .rss-item:hover .rss-item-desc,
@@ -1183,9 +1102,9 @@ body[data-theme="win95"] :root,
 [data-theme="win95"] .task-add-title { color: #000080; border-bottom-color: #808080; }
 
 /* ════════════════════════════════════════
-   v2 — LAYOUT Y COMPONENTES NUEVOS
+   v3 — LAYOUT Y COMPONENTES (directorio + cajas laterales)
 ════════════════════════════════════════ */
-.dash{grid-template-columns:260px minmax(0,1fr) 290px;grid-template-rows:auto auto auto auto 1fr auto;}
+.dash{grid-template-columns:minmax(0,1fr) minmax(0,1fr) 270px;grid-template-rows:auto auto auto auto 1fr auto;column-gap:22px;}
 .yh-banner{grid-column:1/-1;grid-row:1;display:none;}
 .yh-promo{grid-column:1/-1;grid-row:2;display:none;}
 .header{grid-row:3;}
@@ -1194,7 +1113,7 @@ body[data-theme="win95"] :root,
 .col-mid{grid-column:2;grid-row:5;min-width:0;}
 .col-right{grid-column:3;grid-row:5;min-width:0;border-right:none;}
 .yh-footer{grid-column:1/-1;grid-row:6;display:none;}
-.bb{}
+.col-left,.col-mid,.col-right{padding:12px 14px;}
 
 /* ── Buscador ── */
 .searchbar{padding:10px 14px;border-bottom:1px solid var(--border);background:var(--surface);}
@@ -1205,59 +1124,60 @@ body[data-theme="win95"] :root,
 .sb-opts a{color:var(--cyan2);text-decoration:none;cursor:pointer;}
 .sb-opts a:hover{text-decoration:underline;}
 
-/* ── Mis sitios: separador "//" ── */
-.sl-sl{opacity:.7;}
+/* ── Directorio (izquierda y centro) ── */
+.col-h{display:flex;align-items:baseline;justify-content:space-between;gap:8px;border-bottom:1px solid var(--border2);padding:0 0 3px;margin:0 0 9px;font-family:var(--font-sans);font-weight:700;font-size:12px;color:var(--text);}
+.col-add{font-weight:400;font-size:10px;color:var(--cyan2);cursor:pointer;text-decoration:underline;white-space:nowrap;}
+.col-add:hover{color:var(--red);}
+.dir-cat{margin:0 0 11px;}
+.dir-title{font-family:var(--font-sans);font-weight:700;font-size:13px;color:var(--cyan2);line-height:1.25;}
+.dir-links{font-size:11px;line-height:1.4;color:var(--text2);}
+.dir-lk{color:var(--cyan2);text-decoration:underline;}
+.dir-lk:hover{color:var(--red);}
+.lk-ic{margin-right:3px;}
+.dir-sep{color:var(--text2);}
 
-/* ── Mis apps: grupos ── */
-.apps-head{display:flex;align-items:center;justify-content:space-between;gap:8px;}
-.apps-groups{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px 16px;}
-.app-group-title{font-family:var(--font-sans);font-weight:700;font-size:11px;color:var(--text);border-bottom:1px solid var(--border);padding-bottom:2px;margin-bottom:3px;}
-.app-it{display:flex;align-items:center;gap:6px;text-decoration:none;color:var(--text2);font-size:11px;padding:2px 2px;border-radius:2px;}
-.app-it:hover{color:var(--red);background:var(--red-lt);}
-.app-it .app-icon{font-size:12px;flex-shrink:0;}
-.add-link-btn{background:var(--surface2);border:1px solid var(--border2);color:var(--dim);font-family:var(--font-mono);font-size:10px;padding:3px 10px;cursor:pointer;border-radius:2px;white-space:nowrap;}
-.add-link-btn:hover{border-color:var(--cyan);color:var(--cyan2);background:var(--cyan-lt);}
+/* ── Cajas de la derecha ── */
+.rbox{border:1px solid var(--border2);background:var(--surface);margin-bottom:12px;}
+.rbox-h{background:var(--surface3,var(--surface2));color:var(--text);font-family:var(--font-sans);font-weight:700;font-size:12px;text-align:center;padding:2px 6px;border-bottom:1px solid var(--border2);}
+.rbox-b{padding:6px 8px;font-size:11px;color:var(--text2);}
+.rlist{list-style:none;margin:5px 0 0;padding:0;}
+.rlist li{position:relative;padding-left:10px;margin:3px 0;line-height:1.35;}
+.rlist li::before{content:'•';position:absolute;left:0;color:var(--text);}
+.rmore{text-align:right;margin-top:4px;font-size:10px;}
+.rmore a,.wx-place a,.wx-foot a{color:var(--cyan2);text-decoration:underline;cursor:pointer;}
+.rmore a:hover,.wx-place a:hover,.wx-foot a:hover{color:var(--red);}
 
-/* ── Verso ── */
-.verse-yo{font-family:var(--font-display);font-size:18px;letter-spacing:.08em;color:var(--red);text-transform:uppercase;margin-bottom:6px;line-height:1.1;}
-.verse-nav button{width:100%;}
+/* Palabra del día */
+.verse-yo{font-family:var(--font-display);font-size:16px;letter-spacing:.04em;color:var(--red);margin-bottom:5px;line-height:1.15;}
+.verse-text{line-height:1.5;}
+.verse-ref{margin-top:4px;}
 
-/* ── Clima: contenedor ── */
-.wx-block{padding:0;}
-.wx-block>.block-title{margin:12px 14px 0;}
+/* Clima (compacto) */
+.wx-now{display:flex;align-items:center;gap:7px;flex-wrap:wrap;}
+.wx-icon{font-size:30px;line-height:1;}
+.wx-bigtemp{font-family:var(--font-sans);font-weight:700;font-size:26px;color:var(--red);line-height:1;}
+.wx-desc{font-size:12px;color:var(--text);}
+.wx-place{margin:3px 0 0;font-size:11px;color:var(--dim);}
+.wx-foot{margin-top:4px;font-size:10px;color:var(--dim);}
+.wx-loading,.wx-error{font-size:11px;color:var(--dim);padding:2px 0;}
 
-/* ── AGENDA ── */
-.ag-badge{font-family:var(--font-mono);font-size:10px;background:var(--red);color:#fff;border-radius:10px;padding:1px 8px;letter-spacing:.04em;margin-left:auto;}
-.ag-badge:empty{display:none;}
-.ag-form{background:var(--surface2);border:1px solid var(--border);padding:10px;border-radius:2px;}
-.ag-row{display:flex;gap:8px;margin-bottom:8px;flex-wrap:wrap;}
-.ag-f{flex:1 1 120px;min-width:0;display:flex;flex-direction:column;gap:3px;}
-.ag-f-wide{flex-basis:100%;}
-.ag-f label{font-family:var(--font-mono);font-size:9px;color:var(--dim);letter-spacing:.1em;text-transform:uppercase;}
-.ag-f input,.ag-f select{width:100%;background:var(--surface);border:1px solid var(--border2);border-bottom:2px solid var(--cyan);color:var(--text);font-family:var(--font-mono);font-size:12px;padding:6px 8px;outline:none;border-radius:2px 2px 0 0;}
-.ag-f input:focus,.ag-f select:focus{border-bottom-color:var(--red);}
-.ag-actions{display:flex;gap:6px;}
-.ag-listhead{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:12px 0 6px;padding-bottom:5px;border-bottom:2px solid var(--yellow);}
-.ag-listtitle{font-family:var(--font-display);font-size:17px;letter-spacing:.06em;color:var(--red);text-transform:uppercase;}
-.ag-listtitle small{font-family:var(--font-mono);font-size:10px;color:var(--dim);letter-spacing:.04em;text-transform:none;}
-.ag-toggle{background:var(--surface2);border:1px solid var(--border2);color:var(--text2);font-family:var(--font-mono);font-size:10px;padding:4px 10px;cursor:pointer;border-radius:2px;white-space:nowrap;}
-.ag-toggle:hover{border-color:var(--cyan);color:var(--cyan2);background:var(--cyan-lt);}
-.ag-filters{background:var(--surface2);border:1px solid var(--border);padding:10px 10px 4px;margin-bottom:8px;border-radius:2px;}
-.ag-filters[hidden]{display:none;}
-.ag-chk-lbl{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text2);flex:1 1 140px;padding-top:14px;}
-.ag-day{font-family:var(--font-mono);font-size:10px;font-weight:700;color:var(--cyan2);background:var(--cyan-lt);padding:3px 8px;margin:8px 0 2px;letter-spacing:.06em;text-transform:uppercase;}
-.ag-item{display:flex;gap:10px;align-items:flex-start;padding:8px 4px;border-bottom:1px solid var(--border);}
-.ag-item.done{opacity:.5;}
-.ag-item.done .ag-ttl{text-decoration:line-through;}
-.ag-item input[type=checkbox]{margin-top:2px;width:14px;height:14px;cursor:pointer;flex-shrink:0;}
-.ag-time{font-family:var(--font-mono);font-size:11px;font-weight:700;color:var(--red);width:96px;flex-shrink:0;line-height:1.4;}
-.ag-main{flex:1;min-width:0;}
-.ag-ttl{font-size:12.5px;font-weight:600;color:var(--text);word-break:break-word;}
-.ag-meta{font-size:11px;color:var(--text2);display:flex;gap:12px;flex-wrap:wrap;margin-top:2px;}
-.ag-meta a{color:var(--cyan2);}
-.ag-acts{display:flex;gap:4px;flex-shrink:0;}
-.ag-ib{background:var(--surface);border:1px solid var(--border2);color:var(--dim);font-size:11px;padding:2px 7px;cursor:pointer;border-radius:2px;}
-.ag-ib:hover{border-color:var(--red);color:var(--red);}
+
+/* ── Tarjetas de sitios ── */
+.cards-bar{text-align:right;margin:-4px 0 8px;font-size:10px;font-family:var(--font-sans);}
+.cards-bar a{color:var(--cyan2);text-decoration:underline;cursor:pointer;}
+.cards-bar a:hover{color:var(--red);}
+.card-form{display:flex;gap:6px;margin:0 0 10px;}
+.card-form[hidden]{display:none;}
+.card-form input{flex:1;min-width:0;border:1px solid var(--border2);background:var(--surface);color:var(--text);font:12px Arial,Helvetica,sans-serif;padding:4px 6px;}
+.rbox-h.card-h{display:flex;align-items:center;justify-content:space-between;gap:6px;text-align:left;}
+.card-t{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.card-x{background:none;border:0;color:inherit;opacity:.55;cursor:pointer;font-size:11px;padding:0 2px;line-height:1;}
+.card-x:hover{opacity:1;color:var(--red);}
+.card-img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;border:1px solid var(--border);background:var(--surface2);}
+.card-noimg{display:flex;align-items:center;justify-content:center;aspect-ratio:16/10;border:1px solid var(--border);background:var(--surface2);font-size:34px;color:var(--dim);}
+.card-d{margin-top:5px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+.card-host{margin-top:3px;font-size:10px;color:var(--dim);display:flex;justify-content:space-between;gap:6px;}
+.card-host a{color:var(--cyan2);text-decoration:underline;}
 
 /* ── ALERTA METEOROLÓGICA (banner) ── */
 .wx-alert{position:sticky;top:0;z-index:5000;display:flex;align-items:center;gap:14px;padding:10px 18px;color:#fff;font-family:var(--font-sans);font-size:13px;box-shadow:0 3px 12px rgba(0,0,0,.35);}
@@ -1275,32 +1195,35 @@ body[data-theme="win95"] :root,
 }
 
 /* ════════════════════════════════════════
-   ESTEKAK — TEMA POR DEFECTO (estilo portal 2004)
+   ESTEKAK — TEMA POR DEFECTO (estilo portal 2000)
 ════════════════════════════════════════ */
 body[data-theme="estekak"]{
-  --bg:#ffffff;--surface:#ffffff;--surface2:#f3f6fb;--surface3:#e6edf8;
-  --border:#b6c9e6;--border2:#8fa8cc;
+  --bg:#ffffff;--surface:#ffffff;--surface2:#f3f6fb;--surface3:#e0d3a8;
+  --border:#b6c9e6;--border2:#8c9db8;
   --yellow:#9b7bd0;--yellow2:#7e5cb8;--yellow-lt:#efe9fa;--yellow-bd:#9b7bd0;
   --red:#cc0000;--red2:#a00000;--red-lt:#fdeeee;--red-bd:#cc0000;
   --cyan:#0033cc;--cyan2:#0000cc;--cyan-lt:#e3edfa;--cyan-bd:#a9c0e3;
   --green:#006600;--green-lt:#e8f5e8;
-  --text:#000000;--text2:#222222;--dim:#555555;--dead:#8a8a8a;
-  --font-display:Georgia,'Times New Roman',Times,serif;
+  --text:#000000;--text2:#111111;--dim:#555555;--dead:#8a8a8a;
+  --font-display:Arial,Helvetica,sans-serif;
   --font-mono:Arial,Helvetica,sans-serif;
   --font-sans:Arial,Helvetica,sans-serif;
-  background:#fff;font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#000;
+  background:#fff;font-family:'Times New Roman',Times,serif;font-size:12px;color:#000;
 }
 body[data-theme="estekak"] *{border-radius:0;}
 body[data-theme="estekak"] ::-webkit-scrollbar{width:12px;height:12px;}
 body[data-theme="estekak"] ::-webkit-scrollbar-thumb{background:#b6c9e6;border-radius:0;}
 body[data-theme="estekak"] ::-webkit-scrollbar-track{background:#eef3fb;}
 
-/* Estructura */
-body[data-theme="estekak"] .dash{max-width:1400px;margin:0 auto;padding:0 10px;column-gap:10px;}
+/* Estructura (orden: logo, búsqueda, barra, línea destacada, columnas) */
+body[data-theme="estekak"] .dash{max-width:1120px;margin:0 auto;padding:0 12px;}
+body[data-theme="estekak"] .searchbar{grid-row:2;}
+body[data-theme="estekak"] .header{grid-row:3;}
+body[data-theme="estekak"] .yh-promo{grid-row:4;}
 body[data-theme="estekak"] .yh-banner{display:flex;justify-content:center;align-items:flex-start;gap:30px;padding:10px 0 4px;flex-wrap:wrap;}
-body[data-theme="estekak"] .yh-promo{display:block;text-align:center;font-size:13px;padding:6px 0 10px;}
-body[data-theme="estekak"] .yh-footer{display:block;text-align:center;font-size:11px;color:#444;padding:18px 0 22px;border-top:1px solid #b6c9e6;margin-top:6px;}
-body[data-theme="estekak"] .yh-footer a{color:#0000cc;cursor:pointer;}
+body[data-theme="estekak"] .yh-promo{display:block;padding:10px 0 12px;font-size:13px;color:#000;}
+body[data-theme="estekak"] .yh-footer{display:block;text-align:center;font-size:11px;color:#444;padding:18px 0 22px;border-top:1px solid #b6c9e6;margin-top:10px;}
+body[data-theme="estekak"] .yh-footer a{color:#0000cc;cursor:pointer;text-decoration:underline;}
 body[data-theme="estekak"] .yh-footer .yh-copy{display:block;margin-top:6px;color:#666;}
 
 /* Logo + iconos */
@@ -1324,21 +1247,24 @@ body[data-theme="estekak"] .yh-orb{border-radius:50%;}
 .yh-logo span:nth-child(5){transform:rotate(-1.5deg) translateY(1px);}
 .yh-logo span:nth-child(6){transform:rotate(1deg) translateY(-2px);}
 .yh-logo span:nth-child(7){transform:rotate(-2deg) translateY(1px);}
-.yh-promo a{color:#0000cc;text-decoration:underline;}
+
+/* Línea destacada + filas de enlaces (como "Shop / Connect / Personal …") */
+.yh-promo a{color:#0000cc;text-decoration:underline;cursor:pointer;}
 .yh-promo a:hover{color:#cc0000;}
-.yh-promo b{color:#000;}
-.yh-gift{display:inline-block;margin-right:4px;}
+.yh-promo-line{font-size:13px;margin-bottom:7px;}
+.yh-promo-line .yh-bar{margin:0 6px;color:#555;}
+.yh-rows{font-size:11px;line-height:1.55;color:#000;}
+.yh-rows b{font-family:Arial,Helvetica,sans-serif;font-size:11px;margin-right:4px;}
 
 /* Barra superior (reloj) */
-body[data-theme="estekak"] .header{background:#eef3fb;border-top:1px solid #b6c9e6;border-bottom:1px solid #b6c9e6;box-shadow:none;padding:3px 8px;align-items:center;flex-wrap:wrap;gap:4px 14px;grid-row:4;margin-bottom:8px;}
-body[data-theme="estekak"] .searchbar{grid-row:3;}
+body[data-theme="estekak"] .header{background:#eef3fb;border-top:1px solid #b6c9e6;border-bottom:1px solid #b6c9e6;box-shadow:none;padding:3px 8px;align-items:center;flex-wrap:wrap;gap:4px 14px;margin-bottom:0;}
 body[data-theme="estekak"] .header-left-band{background:none;border:0;padding:2px 4px;gap:8px;}
-body[data-theme="estekak"] .header-day{color:#333;font-size:11px;letter-spacing:0;text-transform:none;font-weight:bold;}
+body[data-theme="estekak"] .header-day{color:#333;font:bold 11px Arial,Helvetica,sans-serif;letter-spacing:0;text-transform:none;}
 body[data-theme="estekak"] .header-time{font:bold 16px Arial,Helvetica,sans-serif;color:#000;letter-spacing:0;}
 body[data-theme="estekak"] .header-center{padding:2px 4px;}
 body[data-theme="estekak"] .header-greeting{font:bold 12px Arial,Helvetica,sans-serif;color:#000;letter-spacing:0;text-transform:none;}
 body[data-theme="estekak"] .header-right{border:0;flex-direction:row;align-items:center;gap:12px;padding:2px 4px;}
-body[data-theme="estekak"] .header-date{font-size:11px;color:#333;letter-spacing:0;}
+body[data-theme="estekak"] .header-date{font:11px Arial,Helvetica,sans-serif;color:#333;letter-spacing:0;}
 body[data-theme="estekak"] .header-weather{font:bold 11px Arial,Helvetica,sans-serif;color:#0000cc;}
 body[data-theme="estekak"] .theme-switcher{border:0;padding:0 4px;gap:2px;}
 body[data-theme="estekak"] .theme-btn{background:none;border:0;color:#0000cc;text-decoration:underline;font:11px Arial,Helvetica,sans-serif;padding:2px 5px;text-transform:none;letter-spacing:0;}
@@ -1366,29 +1292,42 @@ body[data-theme="estekak"] .sb-opts a{color:#0000cc;text-decoration:underline;}
 body[data-theme="estekak"] .col-left,
 body[data-theme="estekak"] .col-mid,
 body[data-theme="estekak"] .col-right{background:transparent;border:0;padding:0;}
-
-/* Cajas (azul = izquierda/centro, violeta = derecha) */
-body[data-theme="estekak"] .block{padding:0;border:1px solid #b6c9e6;margin-bottom:10px;background:#fff;}
-body[data-theme="estekak"] .bb{padding:7px 9px;}
-body[data-theme="estekak"] .block-title{background:#d5e3f7;color:#000;font:bold 12px Arial,Helvetica,sans-serif;letter-spacing:0;text-transform:none;border:0;border-bottom:1px solid #b6c9e6;padding:3px 9px;margin:0;}
-body[data-theme="estekak"] .block-title::before{display:none;}
-body[data-theme="estekak"] .wx-block>.block-title{margin:0;}
-body[data-theme="estekak"] .col-right .block{border-color:#bfb0e0;}
-body[data-theme="estekak"] .col-right .block-title{background:linear-gradient(#ab8edb,#8f6cc8);color:#fff;border-bottom:1px solid #7a58b4;}
-body[data-theme="estekak"] .ag-block{border-color:#e0a42c;}
-body[data-theme="estekak"] .ag-block>.block-title{background:linear-gradient(#ffdf96,#f7c65a);border-bottom:1px solid #e0a42c;}
-
-/* Enlaces */
 body[data-theme="estekak"] a{color:#0000cc;}
-body[data-theme="estekak"] .site-link{color:#0000cc;text-decoration:underline;font-size:12px;padding:1px 0;}
-body[data-theme="estekak"] .site-link::before{content:'• ';color:#000;font-size:12px;}
-body[data-theme="estekak"] .site-link:hover{color:#cc0000;background:none;padding-left:0;}
-body[data-theme="estekak"] .sites-group-label{font:bold 11px Arial,Helvetica,sans-serif;color:#000;border:0;border-bottom:1px solid #dbe5f4;text-transform:none;letter-spacing:0;margin:9px 0 3px;padding-bottom:1px;}
+
+/* Directorio: título azul en negrita + enlaces chicos con serif, separados por comas */
+body[data-theme="estekak"] .col-h{border-bottom:1px solid #8c9db8;font:bold 12px Arial,Helvetica,sans-serif;color:#000;}
+body[data-theme="estekak"] .col-add{font:10px Arial,Helvetica,sans-serif;}
+body[data-theme="estekak"] .dir-title{font:bold 13px Arial,Helvetica,sans-serif;color:#0000cc;}
+body[data-theme="estekak"] .dir-links{font:11px 'Times New Roman',Times,serif;line-height:1.35;}
+body[data-theme="estekak"] .dir-lk{color:#0000cc;}
+body[data-theme="estekak"] .dir-lk:hover{color:#cc0000;}
+body[data-theme="estekak"] .lk-ic{display:none;}
 body[data-theme="estekak"] .sl-sl{display:none;}
-body[data-theme="estekak"] .app-group-title{font:bold 12px Arial,Helvetica,sans-serif;color:#000;border-bottom:1px solid #dbe5f4;}
-body[data-theme="estekak"] .app-it{color:#0000cc;text-decoration:underline;font-size:12px;padding:1px 0;}
-body[data-theme="estekak"] .app-it:hover{color:#cc0000;background:none;}
-body[data-theme="estekak"] .add-link-btn{background:linear-gradient(#fafafa,#d8d8d8);border:1px solid #707070;color:#000;font:11px Arial,Helvetica,sans-serif;}
+
+/* Cajas de la derecha: encabezado color arena y borde azul grisáceo */
+body[data-theme="estekak"] .rbox{border:1px solid #8c9db8;}
+body[data-theme="estekak"] .rbox-h{background:#e0d3a8;color:#000;font:bold 12px Arial,Helvetica,sans-serif;border-bottom:1px solid #8c9db8;}
+body[data-theme="estekak"] .rbox-b{font:11px 'Times New Roman',Times,serif;color:#000;}
+body[data-theme="estekak"] .rlist li{font-size:11px;}
+body[data-theme="estekak"] .rlist li b{font-family:Arial,Helvetica,sans-serif;font-size:11px;}
+body[data-theme="estekak"] .rmore{font:10px Arial,Helvetica,sans-serif;}
+body[data-theme="estekak"] .rmore a{color:#0000cc;}
+body[data-theme="estekak"] .verse-yo{font:bold 14px Arial,Helvetica,sans-serif;color:#cc0000;text-transform:none;letter-spacing:0;}
+body[data-theme="estekak"] .verse-text{background:none;border:0;padding:0;font:12px 'Times New Roman',Times,serif;color:#000;line-height:1.45;}
+body[data-theme="estekak"] .verse-ref{color:#0000cc;font:bold 10px Arial,Helvetica,sans-serif;letter-spacing:0;}
+body[data-theme="estekak"] .wx-bigtemp{font-family:Arial,Helvetica,sans-serif;color:#cc0000;}
+body[data-theme="estekak"] .wx-desc{font:bold 12px Arial,Helvetica,sans-serif;color:#000;}
+body[data-theme="estekak"] .wx-place,
+body[data-theme="estekak"] .wx-foot{font:10px Arial,Helvetica,sans-serif;color:#555;}
+body[data-theme="estekak"] #derecha-container .sites-group-label{font:bold 11px Arial,Helvetica,sans-serif;color:#000;border:0;text-transform:none;letter-spacing:0;margin:5px 0 2px;padding:0;}
+body[data-theme="estekak"] #derecha-container .site-link{display:block;position:relative;padding:0 0 0 10px;margin:2px 0;color:#0000cc;text-decoration:underline;font:11px 'Times New Roman',Times,serif;background:none;}
+body[data-theme="estekak"] #derecha-container .site-link::before{content:'•';position:absolute;left:0;color:#000;}
+body[data-theme="estekak"] #derecha-container .site-link:hover{color:#cc0000;padding-left:10px;background:none;}
+
+body[data-theme="estekak"] .card-form input{border:1px solid #7f9db9;font:12px Arial,Helvetica,sans-serif;}
+body[data-theme="estekak"] .card-img,body[data-theme="estekak"] .card-noimg{border:1px solid #8c9db8;}
+body[data-theme="estekak"] .card-d{font:11px 'Times New Roman',Times,serif;color:#000;}
+body[data-theme="estekak"] .card-host{font:10px Arial,Helvetica,sans-serif;}
 
 /* Botones */
 body[data-theme="estekak"] .btn{background:linear-gradient(#ffe88a,#f5c800);border:1px solid #b8900a;color:#000;font:bold 11px Arial,Helvetica,sans-serif;letter-spacing:0;text-transform:none;padding:4px 12px;}
@@ -1399,67 +1338,18 @@ body[data-theme="estekak"] .btn-danger{background:#fff;border:1px solid #cc0000;
 body[data-theme="estekak"] .btn-danger:hover{background:#cc0000;color:#fff;}
 body[data-theme="estekak"] .flt-btn{background:#fff;border:1px solid #8fa8cc;color:#0000cc;font:11px Arial,Helvetica,sans-serif;text-transform:none;letter-spacing:0;}
 body[data-theme="estekak"] .flt-btn.active{background:#9b7bd0;border-color:#7e5cb8;color:#fff;font-weight:bold;}
-body[data-theme="estekak"] .verse-nav button{background:linear-gradient(#fafafa,#d8d8d8);border:1px solid #707070;color:#000;font:11px Arial,Helvetica,sans-serif;text-transform:none;letter-spacing:0;padding:4px;}
-body[data-theme="estekak"] .verse-nav button:hover{background:linear-gradient(#fff,#e6e6e6);color:#000;border-color:#707070;}
 
-/* Campos */
+/* Campos de los modales */
 body[data-theme="estekak"] input,
 body[data-theme="estekak"] select,
 body[data-theme="estekak"] textarea{font-family:Arial,Helvetica,sans-serif;}
-body[data-theme="estekak"] .ag-f input,
-body[data-theme="estekak"] .ag-f select,
 body[data-theme="estekak"] .form-col input,
 body[data-theme="estekak"] .form-col select,
 body[data-theme="estekak"] .login-field input,
 body[data-theme="estekak"] #io-import-area{background:#fff;border:1px solid #7f9db9;border-bottom:1px solid #7f9db9;font-size:12px;}
-body[data-theme="estekak"] .ag-f input:focus,
-body[data-theme="estekak"] .ag-f select:focus,
 body[data-theme="estekak"] .form-col input:focus,
 body[data-theme="estekak"] .form-col select:focus,
 body[data-theme="estekak"] .login-field input:focus{border-color:#0033cc;border-bottom-color:#0033cc;}
-
-/* Palabra del día */
-body[data-theme="estekak"] .verse-yo{font:bold 15px Georgia,'Times New Roman',serif;color:#cc0000;text-transform:none;letter-spacing:0;}
-body[data-theme="estekak"] .verse-text{background:#f3f6fb;border-left:4px solid #0033cc;font-family:Georgia,'Times New Roman',serif;font-size:13px;color:#222;line-height:1.55;}
-body[data-theme="estekak"] .verse-ref{color:#0000cc;font:bold 11px Arial,Helvetica,sans-serif;letter-spacing:0;}
-
-/* Agenda (caja ámbar, como en los portales clásicos) */
-body[data-theme="estekak"] .ag-badge{background:#cc0000;color:#fff;font:bold 10px Arial,Helvetica,sans-serif;border-radius:9px;}
-body[data-theme="estekak"] .ag-form{background:#fff6dc;border:1px solid #e0a42c;}
-body[data-theme="estekak"] .ag-f label{font:bold 10px Arial,Helvetica,sans-serif;color:#333;text-transform:none;letter-spacing:0;}
-body[data-theme="estekak"] .ag-listhead{border-bottom:1px solid #e0a42c;}
-body[data-theme="estekak"] .ag-listtitle{font:bold 14px Georgia,'Times New Roman',serif;color:#cc0000;text-transform:none;letter-spacing:0;}
-body[data-theme="estekak"] .ag-listtitle small{font:11px Arial,Helvetica,sans-serif;color:#555;}
-body[data-theme="estekak"] .ag-toggle{background:none;border:0;color:#0000cc;text-decoration:underline;font:12px Arial,Helvetica,sans-serif;padding:2px 4px;}
-body[data-theme="estekak"] .ag-toggle:hover{color:#cc0000;background:none;}
-body[data-theme="estekak"] .ag-filters{background:#f3f6fb;border:1px solid #b6c9e6;}
-body[data-theme="estekak"] .ag-day{background:#d5e3f7;color:#000;font:bold 11px Arial,Helvetica,sans-serif;letter-spacing:0;text-transform:none;}
-body[data-theme="estekak"] .ag-item{border-bottom:1px dotted #b6c9e6;}
-body[data-theme="estekak"] .ag-time{font:bold 11px Arial,Helvetica,sans-serif;color:#cc0000;}
-body[data-theme="estekak"] .ag-ttl{font-size:13px;}
-body[data-theme="estekak"] .ag-meta a{color:#0000cc;}
-body[data-theme="estekak"] .ag-ib{background:linear-gradient(#fafafa,#dcdcdc);border:1px solid #888;color:#000;}
-body[data-theme="estekak"] .ag-ib:hover{border-color:#cc0000;color:#cc0000;}
-
-/* Clima y Vatican News */
-body[data-theme="estekak"] .wx-hero{background:linear-gradient(#e3edfa,#fff);}
-body[data-theme="estekak"] .wx-location{color:#0000cc;letter-spacing:0;font:bold 11px Arial,Helvetica,sans-serif;text-transform:none;}
-body[data-theme="estekak"] .wx-loc-btn{background:linear-gradient(#fafafa,#dcdcdc);border:1px solid #888;color:#000;font:10px Arial,Helvetica,sans-serif;border-radius:0;}
-body[data-theme="estekak"] .wx-temp{color:#cc0000;font-family:Georgia,serif;font-weight:bold;}
-body[data-theme="estekak"] .wx-desc{color:#222;}
-body[data-theme="estekak"] .wx-details{background:#dbe5f4;}
-body[data-theme="estekak"] .wx-detail-label{font:bold 9px Arial,Helvetica,sans-serif;color:#555;letter-spacing:0;}
-body[data-theme="estekak"] .wx-detail-val{color:#0000cc;font:bold 16px Arial,Helvetica,sans-serif;}
-body[data-theme="estekak"] .wx-forecast-title{font:bold 11px Arial,Helvetica,sans-serif;color:#000;letter-spacing:0;background:#eef3fb;text-transform:none;}
-body[data-theme="estekak"] .wx-day-bar{background:linear-gradient(90deg,#0033cc,#cc0000);}
-body[data-theme="estekak"] .wx-day-temps span:first-child{color:#cc0000;}
-body[data-theme="estekak"] .wx-day-temps span:last-child{color:#0033cc;}
-body[data-theme="estekak"] .wx-refresh{background:linear-gradient(#fafafa,#dcdcdc);border:1px solid #888;color:#000;font:10px Arial,Helvetica,sans-serif;letter-spacing:0;}
-body[data-theme="estekak"] .vn-card{background:#f8f5ff;border-left:3px solid #8f6cc8;}
-body[data-theme="estekak"] .vn-card.vn-saint{background:#fff6dc;border-left-color:#e0a42c;}
-body[data-theme="estekak"] .vn-card-label{color:#555;letter-spacing:0;font:bold 10px Arial,Helvetica,sans-serif;text-transform:none;}
-body[data-theme="estekak"] .vn-card-title{color:#0000cc;}
-body[data-theme="estekak"] .vn-link{color:#0000cc;border-bottom:0;text-decoration:underline;font:10px Arial,Helvetica,sans-serif;letter-spacing:0;}
 
 /* Modales / login / toast */
 body[data-theme="estekak"] .modal-box{background:#fff;border:1px solid #8fa8cc;border-top:4px solid #9b7bd0;box-shadow:3px 3px 10px rgba(0,0,0,.3);}
@@ -1484,23 +1374,19 @@ body[data-theme="estekak"] .empty-state{font:11px Arial,Helvetica,sans-serif;col
 
 /* ── RESPONSIVE ── */
 @media (max-width:980px){
-  .yh-logo{font-size:46px;}
   .dash{grid-template-columns:minmax(0,1fr);}
   .header,.searchbar,.yh-banner,.yh-promo,.yh-footer{grid-column:1;}
-  .col-mid{grid-column:1;grid-row:5;}
-  .col-left{grid-column:1;grid-row:6;}
-  .col-right{grid-column:1;grid-row:7;}
+  .col-right{grid-column:1;grid-row:5;}
+  .col-mid{grid-column:1;grid-row:6;}
+  .col-left{grid-column:1;grid-row:7;}
   .yh-footer{grid-row:8;}
   .header{flex-wrap:wrap;}
-  .yh-logo{font-size:44px;}
+  .yh-logo{font-size:46px;}
   .yh-banner{gap:14px !important;}
   .sb-inner{flex-wrap:wrap !important;}
-  .ag-time{width:78px;}
 }
 @media (max-width:560px){
   .yh-icons{gap:10px;}
-  .ag-item{flex-wrap:wrap;}
-  .ag-acts{margin-left:auto;}
 }
 </style>
 </head>
@@ -1564,7 +1450,7 @@ body[data-theme="estekak"] .empty-state{font:11px Arial,Helvetica,sans-serif;col
         <div class="form-row"><div class="form-col"><label>URL</label><input type="url" id="lnk-url" placeholder="https://..." /></div></div>
         <div class="form-row">
           <div class="form-col"><label>Grupo</label><input type="text" id="lnk-group" placeholder="Ej: Teología y fe" list="lnk-groups-list" /><datalist id="lnk-groups-list"></datalist></div>
-          <div class="form-col"><label>Panel</label><select id="lnk-panel"><option value="sitios">Mis sitios (col. izq.)</option><option value="apps">Mis apps (col. centro)</option><option value="derecha">Mis sitios (col. der.)</option></select></div>
+          <div class="form-col"><label>Panel</label><select id="lnk-panel"><option value="sitios">Mis sitios (col. izq.)</option><option value="apps">Mis apps (col. centro)</option><option value="derecha">Más enlaces (col. der.)</option></select></div>
         </div>
         <div style="display:flex;gap:6px;margin-top:6px;">
           <button class="btn" onclick="saveLinkForm()">Guardar link</button>
@@ -1600,7 +1486,7 @@ body[data-theme="estekak"] .empty-state{font:11px Arial,Helvetica,sans-serif;col
       <div class="settings-section">
         <div class="settings-section-title">Exportar</div>
         <p class="io-card-desc" style="margin-bottom:10px;">
-          Descargá todos los datos del dashboard: la agenda y los links guardados.
+          Descargá los links guardados del dashboard.
         </p>
         <div class="io-grid">
           <div class="io-card">
@@ -1622,7 +1508,7 @@ body[data-theme="estekak"] .empty-state{font:11px Arial,Helvetica,sans-serif;col
       <div class="settings-section">
         <div class="settings-section-title">Importar</div>
         <p class="io-card-desc" style="margin-bottom:10px;">
-          Restaurá un backup previo. <strong style="color:var(--red);">Atención:</strong> la importación reemplaza los datos actuales de la agenda y los links. Solo se aceptan archivos <span class="io-badge json">.json</span> generados por este dashboard.
+          Restaurá un backup previo. <strong style="color:var(--red);">Atención:</strong> la importación reemplaza los links actuales. Solo se aceptan archivos <span class="io-badge json">.json</span> generados por este dashboard.
         </p>
         <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px;">
           <label class="io-file-label" for="io-file-input">📂 Elegir archivo .json</label>
@@ -1631,7 +1517,7 @@ body[data-theme="estekak"] .empty-state{font:11px Arial,Helvetica,sans-serif;col
         </div>
         <div style="margin-bottom:8px;">
           <label style="font-family:var(--font-mono);font-size:9px;color:var(--dim);letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:4px;">O pegá el JSON directamente:</label>
-          <textarea id="io-import-area" placeholder='{ "items": [], "links": [] }'></textarea>
+          <textarea id="io-import-area" placeholder='{ "links": [] }'></textarea>
         </div>
         <div style="display:flex;gap:6px;">
           <button class="btn btn-danger" onclick="doImport()">⬆ Importar datos</button>
@@ -1674,10 +1560,6 @@ body[data-theme="estekak"] .empty-state{font:11px Arial,Helvetica,sans-serif;col
       <a class="yh-ic" href="https://claude.ai" target="_blank"><span class="yh-orb o-blue">💬</span><span>Claude</span></a>
       <a class="yh-ic" onclick="openModal('modal-settings')"><span class="yh-orb o-teal">❓</span><span>Ayuda</span></a>
     </div>
-  </div>
-  <div class="yh-promo">
-    <span class="yh-gift">🎁</span><a href="#sec-agenda"><b>Agenda</b></a> - <span id="yh-promo-text">Hoy</span>:
-    <a href="#sec-agenda">Agenda</a>, <a href="#sec-apps">Mis apps</a>, <a href="#sec-sitios">Mis sitios</a>, <a href="#sec-clima">Clima</a>, <a href="#sec-palabra">Palabra del día</a>
   </div>
 
   <!-- ══════════════ HEADER ══════════════ -->
@@ -1725,212 +1607,94 @@ body[data-theme="estekak"] .empty-state{font:11px Arial,Helvetica,sans-serif;col
     </div>
   </div>
 
-  <!-- ══════════════ COL IZQUIERDA ══════════════ -->
-  <div class="col-left">
-
-    <!-- PALABRA DEL DÍA -->
-    <div class="block" id="sec-palabra">
-      <div class="block-title">Palabra del día</div>
-      <div class="bb">
-        <div class="verse-yo" id="verse-yo">—</div>
-        <div class="verse-text" id="verse-text">Cargando...</div>
-        <div class="verse-ref"  id="verse-ref"></div>
-        <div class="verse-nav">
-          <button onclick="randomVerse()">↻ otro versículo</button>
-        </div>
-      </div>
+  <!-- ══════════════ LÍNEA DESTACADA + FILAS DE ENLACES (estilo portal 2000) ══════════════ -->
+  <div class="yh-promo">
+    <div class="yh-promo-line">
+      <a href="#sec-palabra"><b>Palabra del día</b></a> - <span id="yh-promo-verse">—</span>
+      <span class="yh-bar">|</span>
+      <a href="#sec-clima"><b>Clima</b></a>: <span id="yh-promo-wx">—</span>
     </div>
-
-    <!-- MIS SITIOS -->
-    <div class="block" id="sec-sitios">
-      <div class="block-title">Mis sitios</div>
-      <div class="bb"><div id="sitios-container"></div></div>
+    <div class="yh-rows">
+      <div><b>Ver</b> <a href="#sec-sitios">Mis sitios</a> · <a href="#sec-apps">Mis apps</a> · <a href="#sec-palabra">Palabra del día</a> · <a href="#sec-clima">Clima</a> · <a href="#" onclick="return openForecast(event)">Próximos días</a></div>
+      <div><b>Personalizar</b> <a onclick="openAddLink('sitios')">Agregar link</a> · <a onclick="openModal('modal-links')">Gestionar links</a> · <a onclick="openModal('modal-io')">Importar / Exportar</a> · <a onclick="openModal('modal-settings')">Configuración</a></div>
     </div>
-
   </div>
 
-  <!-- ══════════════ COL CENTRO: AGENDA + APPS ══════════════ -->
-  <div class="col-mid">
-
-    <!-- AGENDA -->
-    <div class="block ag-block" id="sec-agenda">
-      <div class="block-title">📅 Agenda personal <span class="ag-badge" id="ag-badge"></span></div>
-      <div class="bb">
-
-        <form class="ag-form" id="ag-form" onsubmit="return saveAgendaItem(event)" autocomplete="off">
-          <div class="ag-row">
-            <div class="ag-f ag-f-wide">
-              <label for="ag-title">Tarea o evento</label>
-              <input type="text" id="ag-title" placeholder="¿Qué querés agendar?" maxlength="300">
-            </div>
-          </div>
-          <div class="ag-row">
-            <div class="ag-f">
-              <label for="ag-date">Fecha</label>
-              <input type="date" id="ag-date">
-            </div>
-            <div class="ag-f">
-              <label for="ag-from">Desde</label>
-              <input type="time" id="ag-from">
-            </div>
-            <div class="ag-f">
-              <label for="ag-to">Hasta</label>
-              <input type="time" id="ag-to">
-            </div>
-          </div>
-          <div class="ag-row">
-            <div class="ag-f">
-              <label for="ag-phone">Teléfono</label>
-              <input type="tel" id="ag-phone" placeholder="351 000 0000" maxlength="40">
-            </div>
-            <div class="ag-f">
-              <label for="ag-mail">E-mail</label>
-              <input type="email" id="ag-mail" placeholder="nombre@correo.com" maxlength="120">
-            </div>
-          </div>
-          <div class="ag-actions">
-            <button class="btn" type="submit" id="ag-save">Guardar</button>
-            <button class="btn btn-ghost" type="button" id="ag-cancel" style="display:none;" onclick="cancelAgEdit()">Cancelar edición</button>
-          </div>
-        </form>
-
-        <div class="ag-listhead">
-          <div class="ag-listtitle" id="ag-listtitle">Hoy</div>
-          <button type="button" class="ag-toggle" id="ag-toggle" onclick="toggleAgFilters()" aria-expanded="false" aria-controls="ag-filters">▸ Filtrar</button>
-        </div>
-
-        <div class="ag-filters" id="ag-filters" hidden>
-          <div class="ag-row">
-            <div class="ag-f">
-              <label for="ag-mode">Ver</label>
-              <select id="ag-mode" onchange="onAgMode()">
-                <option value="hoy" selected>Hoy</option>
-                <option value="manana">Mañana</option>
-                <option value="semana">Esta semana</option>
-                <option value="mes">Por mes</option>
-                <option value="rango">Desde / hasta</option>
-                <option value="todos">Todas</option>
-              </select>
-            </div>
-            <div class="ag-f" id="ag-f-month" style="display:none;">
-              <label for="ag-month">Mes</label>
-              <input type="month" id="ag-month" onchange="renderAgenda()">
-            </div>
-            <div class="ag-f" id="ag-f-from" style="display:none;">
-              <label for="ag-rfrom">Desde</label>
-              <input type="date" id="ag-rfrom" onchange="renderAgenda()">
-            </div>
-            <div class="ag-f" id="ag-f-to" style="display:none;">
-              <label for="ag-rto">Hasta</label>
-              <input type="date" id="ag-rto" onchange="renderAgenda()">
-            </div>
-          </div>
-          <div class="ag-row">
-            <div class="ag-f">
-              <label for="ag-q">Buscar en la agenda</label>
-              <input type="text" id="ag-q" placeholder="texto, teléfono o mail" oninput="renderAgenda()">
-            </div>
-            <label class="ag-chk-lbl"><input type="checkbox" id="ag-hidedone" onchange="renderAgenda()"> Ocultar completadas</label>
-          </div>
-        </div>
-
-        <div class="ag-list" id="ag-list"></div>
-      </div>
-    </div>
-
-    <!-- MIS APPS -->
-    <div class="block" id="sec-apps">
-      <div class="block-title apps-head">
-        <span>Mis apps</span>
-        <button class="add-link-btn" onclick="openAddLink('apps')" title="Agregar un link a esta sección">+ agregar link</button>
-      </div>
-      <div class="bb"><div class="apps-groups" id="apps-container"></div></div>
-    </div>
-
+  <!-- ══════════════ COL IZQUIERDA — Mis sitios (directorio) ══════════════ -->
+  <div class="col-left" id="sec-sitios">
+    <div class="col-h"><span>Mis sitios</span><a class="col-add" onclick="openAddLink('sitios')">+ agregar link</a></div>
+    <div id="sitios-container"></div>
   </div>
 
-  <!-- ══════════════ COL DERECHA ══════════════ -->
+  <!-- ══════════════ COL CENTRO — Mis apps (directorio) ══════════════ -->
+  <div class="col-mid" id="sec-apps">
+    <div class="col-h"><span>Mis apps</span><a class="col-add" onclick="openAddLink('apps')">+ agregar link</a></div>
+    <div id="apps-container"></div>
+  </div>
+
+  <!-- ══════════════ COL DERECHA — cajas con encabezado color arena ══════════════ -->
   <div class="col-right">
 
-    <!-- MIS SITIOS COL. DERECHA -->
-    <div id="derecha-block" class="block" style="display:none;">
-      <div class="block-title">Mis sitios</div>
-      <div class="bb"><div id="derecha-container"></div></div>
+    <!-- PALABRA DEL DÍA -->
+    <div class="rbox" id="sec-palabra">
+      <div class="rbox-h">Palabra del día</div>
+      <div class="rbox-b">
+        <div class="verse-yo" id="verse-yo">—</div>
+        <div class="verse-text" id="verse-text">Cargando...</div>
+        <div class="verse-ref" id="verse-ref"></div>
+        <div class="rmore"><a href="#" onclick="randomVerse();return false;">otro versículo...</a></div>
+      </div>
     </div>
 
-    <!-- CLIMA -->
-    <div class="block wx-block" id="sec-clima">
-      <div class="block-title">Clima</div>
+    <!-- CLIMA (solo hoy) -->
+    <div class="rbox" id="sec-clima">
+      <div class="rbox-h">Clima</div>
+      <div class="rbox-b">
+        <div id="wx-loading" class="wx-loading">detectando ubicación…</div>
+        <div id="wx-error" class="wx-error" style="display:none;"></div>
 
-      <div id="wx-loading" class="wx-loading">detectando ubicación…</div>
-      <div id="wx-error"   class="wx-error"   style="display:none;"></div>
-
-      <div id="wx-content" style="display:none;">
-        <div class="wx-hero">
-          <div class="wx-location">
-            <span id="wx-city">—</span>
-            <button class="wx-loc-btn" onclick="detectLocation()" title="Usar mi ubicación">📍 mi ubicación</button>
+        <div id="wx-content" style="display:none;">
+          <div class="wx-now">
+            <span class="wx-icon" id="wx-icon">—</span>
+            <span class="wx-bigtemp"><span id="wx-temp">—</span>°C</span>
+            <span class="wx-desc" id="wx-desc">—</span>
           </div>
-          <div class="wx-icon" id="wx-icon">—</div>
-          <div class="wx-temp"><span id="wx-temp">—</span>°</div>
-          <div class="wx-desc" id="wx-desc">—</div>
-        </div>
-
-        <div class="wx-details">
-          <div class="wx-detail"><span class="wx-detail-label">Sensación</span><span class="wx-detail-val" id="wx-feels">—°</span></div>
-          <div class="wx-detail"><span class="wx-detail-label">Humedad</span><span class="wx-detail-val" id="wx-hum">—%</span></div>
-          <div class="wx-detail"><span class="wx-detail-label">Viento</span><span class="wx-detail-val" id="wx-wind">—</span></div>
-          <div class="wx-detail"><span class="wx-detail-label">UV</span><span class="wx-detail-val" id="wx-uv">—</span></div>
-        </div>
-
-        <div class="wx-forecast-title">Próximos 7 días</div>
-        <div class="wx-forecast" id="wx-forecast"></div>
-
-        <div class="wx-footer">
-          <span class="wx-updated" id="wx-updated">—</span>
-          <button class="wx-refresh" onclick="loadWeatherPanel()">↺ actualizar</button>
+          <div class="wx-place"><span id="wx-city">—</span> · <a href="#" onclick="detectLocation();return false;">mi ubicación</a></div>
+          <ul class="rlist">
+            <li>Hoy: máx <b id="wx-max">—</b> / mín <b id="wx-min">—</b></li>
+            <li>Sensación <b id="wx-feels">—</b> · Humedad <b id="wx-hum">—</b></li>
+            <li>Viento <b id="wx-wind">—</b> · UV <b id="wx-uv">—</b></li>
+          </ul>
+          <div class="rmore">
+            <a href="#" onclick="return openForecast(event)" title="Se abre en una pestaña nueva">Próximos días (nueva pestaña)...</a>
+          </div>
+          <div class="wx-foot"><span id="wx-updated">—</span> · <a href="#" onclick="loadWeatherPanel();return false;">actualizar</a></div>
         </div>
       </div>
     </div>
 
-    <!-- EVANGELIO / SANTO DEL DÍA -->
-    <div class="vn-section block" style="max-height:340px;">
-      <div class="block-title">✝ Vatican News</div>
-      <div class="bb">
-        <div id="vn-loading" class="vn-loading">cargando evangelio…</div>
-        <div id="vn-content" style="display:none;">
-          <div class="vn-card" id="vn-gospel-card">
-            <div class="vn-card-label">📖 Evangelio del día</div>
-            <div class="vn-card-title" id="vn-gospel-title">—</div>
-            <div class="vn-card-body" id="vn-gospel-body">—</div>
-            <div class="vn-card-ref" id="vn-gospel-ref"></div>
-            <a class="vn-link" href="https://www.vaticannews.va/es/evangelio-de-hoy.html" target="_blank">→ ver en Vatican News</a>
-          </div>
-          <div class="vn-card vn-saint">
-            <div class="vn-card-label">✨ Santo del día</div>
-            <div class="vn-card-title" id="vn-saint-title">—</div>
-            <div class="vn-card-body" id="vn-saint-body">—</div>
-            <a class="vn-link" href="https://www.vaticannews.va/es/santos.html" target="_blank" style="border-bottom-color:var(--red-bd);color:var(--red);">→ ver en Vatican News</a>
-          </div>
-        </div>
-        <div id="vn-error" class="vn-error" style="display:none;">
-          No se pudo cargar Vatican News (restricción CORS del servidor).<br>
-          <a class="vn-link" href="https://www.vaticannews.va/es/evangelio-de-hoy.html" target="_blank">Evangelio →</a>
-          &nbsp;
-          <a class="vn-link" href="https://www.vaticannews.va/es/santos.html" target="_blank" style="color:var(--red);border-bottom-color:var(--red-bd);">Santo →</a>
-        </div>
-      </div>
+    <!-- TARJETAS DE SITIOS (debajo del clima) -->
+    <div class="cards-bar"><a href="#" onclick="toggleCardForm();return false;" id="card-toggle">+ agregar tarjeta</a></div>
+    <form class="card-form" id="card-form" hidden onsubmit="return addCard(event)" autocomplete="off">
+      <input type="text" id="card-url" placeholder="pegá el link, ej: telesurtv.net" maxlength="300">
+      <button class="btn" type="submit" id="card-save">Agregar</button>
+    </form>
+    <div id="cards-container"></div>
+
+    <!-- MÁS ENLACES (panel "col. der.") -->
+    <div class="rbox" id="derecha-block" style="display:none;">
+      <div class="rbox-h">Más enlaces</div>
+      <div class="rbox-b"><div id="derecha-container"></div></div>
     </div>
 
   </div>
 
-  <!-- ══════════════ PIE (Estekak) ══════════════ -->
+  <!-- ══════════════ PIE ══════════════ -->
   <div class="yh-footer">
     <a onclick="openModal('modal-links')">Personalizar links</a> |
     <a onclick="openModal('modal-io')">Importar / Exportar</a> |
-    <a onclick="openModal('modal-settings')">Configuración</a> |
-    <a href="https://calendar.google.com" target="_blank">Google Calendar</a>
-    <span class="yh-copy">Copyright © 2026 Dashboard de Omar Pereyra. Todos los derechos reservados.</span>
+    <a onclick="openModal('modal-settings')">Configuración</a>
+    <span class="yh-copy">Copyright © 2026 Estekak — Dashboard de Omar Pereyra. Todos los derechos reservados.</span>
   </div>
 
 </div><!-- /dash -->
@@ -2006,6 +1770,7 @@ function showVerse() {
   document.getElementById('verse-yo').textContent   = v.yo;
   document.getElementById('verse-text').textContent = '“' + v.text + '”';
   document.getElementById('verse-ref').textContent  = '— ' + v.ref;
+  const pv = document.getElementById('yh-promo-verse'); if (pv) pv.textContent = v.yo;
 }
 function randomVerse() {
   let i;
@@ -2146,6 +1911,58 @@ window.testAlert = function(kind) {
   evaluateWeatherAlerts(base);
 };
 
+/* ---- Pronóstico de los próximos días: se abre en una pestaña nueva ---- */
+let wxLast = null;
+function openForecast(ev) {
+  if (ev && ev.preventDefault) ev.preventDefault();
+  if (!wxLast) { toast('El clima todavía no se cargó'); return false; }
+  const { cur, day, city, at } = wxLast;
+  const rows = day.time.map((ds, i) => {
+    const f = new Date(ds + 'T12:00:00');
+    const nombre = i === 0 ? 'Hoy' : i === 1 ? 'Mañana' : DIAS[f.getDay()];
+    const pp = (day.precipitation_probability_max || [])[i] || 0;
+    const gu = (day.wind_gusts_10m_max || [])[i] || 0;
+    const ev2 = wxClassify(day.weather_code[i], day.temperature_2m_max[i], day.temperature_2m_min[i], pp, gu);
+    const alerta = ev2.length ? '<span class="al">' + ev2[0].ico + ' ' + escH(ev2[0].txt) + '</span>' : '';
+    return '<tr' + (ev2.length ? ' class="warn"' : '') + '>'
+      + '<td class="d"><b>' + nombre + '</b><br><span class="f">' + f.getDate() + ' de ' + MESES[f.getMonth()] + '</span></td>'
+      + '<td class="i">' + (WX_ICONS[day.weather_code[i]] || '🌡️') + '</td>'
+      + '<td>' + escH(WX_DESC[day.weather_code[i]] || '—') + (alerta ? '<br>' + alerta : '') + '</td>'
+      + '<td class="t"><span class="mx">' + Math.round(day.temperature_2m_max[i]) + '°</span> / <span class="mn">' + Math.round(day.temperature_2m_min[i]) + '°</span></td>'
+      + '<td class="n">' + pp + '%</td>'
+      + '<td class="n">' + Math.round(gu) + ' km/h</td></tr>';
+  }).join('');
+  const hm = at.getHours() + ':' + String(at.getMinutes()).padStart(2, '0');
+  const html = '<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+    + '<title>Clima · próximos días — ' + escH(city) + '</title>'
+    + '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap">'
+    + '<style>'
+    + 'body{margin:0;background:#fff;color:#000;font:12px Arial,Helvetica,sans-serif}'
+    + '.w{max-width:760px;margin:0 auto;padding:12px}'
+    + '.logo{font:400 40px "Abril Fatface",Georgia,serif;color:#d6001c;letter-spacing:-1px;text-shadow:2px 2px 0 rgba(90,0,10,.5);text-align:center;margin:4px 0 10px}'
+    + 'a{color:#0000cc;cursor:pointer;text-decoration:underline}a:hover{color:#cc0000}'
+    + '.box{border:1px solid #8c9db8}.h{background:#e0d3a8;font-weight:700;text-align:center;padding:3px;border-bottom:1px solid #8c9db8;font-size:13px}'
+    + '.now{padding:8px 10px;font:12px "Times New Roman",serif;border-bottom:1px solid #dbe5f4}.now b{font-family:Arial,sans-serif}'
+    + 'table{border-collapse:collapse;width:100%}th{background:#d5e3f7;font-size:11px;text-align:left;padding:4px 6px;border-bottom:1px solid #b6c9e6}'
+    + 'td{padding:6px;border-bottom:1px dotted #b6c9e6;vertical-align:middle}.d{width:110px}.f{font:11px "Times New Roman",serif;color:#555}'
+    + '.i{font-size:26px;width:38px;text-align:center}.t{white-space:nowrap}.mx{color:#cc0000;font-weight:700}.mn{color:#0033cc;font-weight:700}.n{white-space:nowrap;font:11px "Times New Roman",serif}'
+    + 'tr.warn{background:#fff6dc}.al{color:#a00000;font-weight:700;font-size:11px}'
+    + '.ft{font:10px Arial,sans-serif;color:#555;text-align:center;margin-top:10px}'
+    + '</style></head><body><div class="w">'
+    + '<div class="logo">ESTEKAK</div>'
+    + '<div class="box"><div class="h">Clima · próximos días — ' + escH(city) + '</div>'
+    + '<div class="now"><b>Ahora:</b> ' + (WX_ICONS[cur.weather_code] || '') + ' <b>' + Math.round(cur.temperature_2m) + '°C</b> ' + escH(WX_DESC[cur.weather_code] || '')
+    + ' · sensación ' + Math.round(cur.apparent_temperature) + '° · humedad ' + cur.relative_humidity_2m + '% · viento ' + Math.round(cur.wind_speed_10m) + ' km/h</div>'
+    + '<table><thead><tr><th>Día</th><th></th><th>Cielo</th><th>Máx / mín</th><th>Lluvia</th><th>Ráfagas</th></tr></thead><tbody>' + rows + '</tbody></table></div>'
+    + '<div class="ft">Datos: Open-Meteo · actualizado a las ' + hm + ' · <a onclick="window.close()">cerrar esta pestaña</a></div>'
+    + '</div></body></html>';
+  const url = URL.createObjectURL(new Blob([html], { type: 'text/html;charset=utf-8' }));
+  const w = window.open(url, '_blank');
+  if (!w) toast('El navegador bloqueó la pestaña nueva: permitila para este sitio');
+  setTimeout(() => URL.revokeObjectURL(url), 120000);
+  return false;
+}
+
 /* ---- Carga del clima ---- */
 async function loadWeatherPanel() {
   const loading  = document.getElementById('wx-loading');
@@ -2182,31 +1999,9 @@ async function loadWeatherPanel() {
     document.getElementById('wx-wind').textContent  = Math.round(cur.wind_speed_10m) + ' km/h';
     document.getElementById('wx-uv').textContent    = cur.uv_index ?? '—';
 
-    // Pronóstico 7 días
-    const fc = document.getElementById('wx-forecast');
-    fc.innerHTML = '';
-    const allMax = day.temperature_2m_max;
-    const allMin = day.temperature_2m_min;
-    const globalMax = Math.max(...allMax);
-    const globalMin = Math.min(...allMin);
-    const range = globalMax - globalMin || 1;
-
-    day.time.forEach((dateStr, i) => {
-      const fecha  = new Date(dateStr + 'T12:00:00');
-      const nombre = i === 0 ? 'Hoy' : i === 1 ? 'Mañ' : DIAS_CORTO[fecha.getDay()];
-      const tMax = Math.round(allMax[i]);
-      const tMin = Math.round(allMin[i]);
-      const barLeft  = ((tMin - globalMin) / range * 100).toFixed(1);
-      const barWidth = ((tMax - tMin)      / range * 100).toFixed(1);
-      const row = document.createElement('div');
-      row.className = 'wx-day';
-      row.innerHTML = `
-        <span class="wx-day-name">${nombre}</span>
-        <span class="wx-day-icon">${WX_ICONS[day.weather_code[i]] || '🌡️'}</span>
-        <div class="wx-day-bar-wrap"><div class="wx-day-bar" style="left:${barLeft}%;width:${barWidth}%"></div></div>
-        <span class="wx-day-temps"><span>${tMax}°</span>&nbsp;<span>${tMin}°</span></span>`;
-      fc.appendChild(row);
-    });
+    document.getElementById('wx-max').textContent = Math.round(day.temperature_2m_max[0]) + '°';
+    document.getElementById('wx-min').textContent = Math.round(day.temperature_2m_min[0]) + '°';
+    wxLast = { cur, day, city: wxCity, at: new Date() };   // para la pestaña "Próximos días"
 
     const now = new Date();
     document.getElementById('wx-updated').textContent =
@@ -2215,6 +2010,8 @@ async function loadWeatherPanel() {
     // Clima corto del encabezado
     document.getElementById('hdr-weather').textContent =
       (WX_ICONS[cur.weather_code] || '🌡️') + ' ' + Math.round(cur.temperature_2m) + '°C · ' + wxCity.split(',')[0];
+    const pw = document.getElementById('yh-promo-wx');
+    if (pw) pw.textContent = (WX_ICONS[cur.weather_code] || '🌡️') + ' ' + Math.round(cur.temperature_2m) + '°C ' + (WX_DESC[cur.weather_code] || '') + ' en ' + wxCity.split(',')[0];
 
     loading.style.display = 'none';
     content.style.display = 'block';
@@ -2273,236 +2070,12 @@ function dkey(y,m,d){ return `${y}-${pad(m+1)}-${pad(d)}`; }
 function uid(){ return Math.random().toString(36).slice(2,9); }
 function todayISO(){ const n=new Date(); return dkey(n.getFullYear(),n.getMonth(),n.getDate()); }
 function fmtD(iso){ if(!iso)return'—'; const[y,m,d]=iso.split('-'); return `${d}/${m}/${y}`; }
-function addDaysISO(iso,n){ const [y,m,d]=iso.split('-').map(Number); const t=new Date(y,m-1,d+n); return dkey(t.getFullYear(),t.getMonth(),t.getDate()); }
-function longDate(iso){ const [y,m,d]=iso.split('-').map(Number); const t=new Date(y,m-1,d); return DIAS[t.getDay()].toLowerCase()+' '+d+' de '+MESES[m-1]; }
 
 function toast(msg){
   document.querySelectorAll('.toast').forEach(t=>t.remove());
   const t=document.createElement('div'); t.className='toast'; t.textContent=msg;
   document.body.appendChild(t); setTimeout(()=>t.remove(),2200);
 }
-
-/* ════════════════════════════════════
-   AGENDA v2 — un formulario + lista filtrable (por defecto, hoy)
-════════════════════════════════════ */
-const S = {
-  get: k => { try{ return JSON.parse(localStorage.getItem('agenda_'+k)||'null'); }catch(e){return null;} },
-  set: (k,v) => { try{ localStorage.setItem('agenda_'+k,JSON.stringify(v)); }catch(e){} }
-};
-
-// Convierte el formato anterior (eventos por día + tareas) al nuevo listado único
-function legacyToItems(events, tasks) {
-  const items = [];
-  Object.keys(events || {}).forEach(date => {
-    (events[date] || []).forEach(e => items.push({
-      id: e.id || uid(), title: e.title || '', date, from: e.time || '', to: '',
-      phone: '', mail: '', done: false, created: new Date().toISOString()
-    }));
-  });
-  (tasks || []).forEach(t => items.push({
-    id: t.id || uid(),
-    title: (t.title || '') + (t.cat ? ' [' + t.cat + ']' : ''),
-    date: t.date || (t.created || '').slice(0,10) || todayISO(),
-    from: '', to: '', phone: '', mail: '', done: !!t.done,
-    created: t.created || new Date().toISOString()
-  }));
-  return items;
-}
-function sanitizeItem(x) {
-  const isDate = s => /^\d{4}-\d{2}-\d{2}$/.test(s || '');
-  const isTime = s => /^\d{2}:\d{2}$/.test(s || '');
-  return {
-    id: String(x.id || uid()),
-    title: String(x.title || '').slice(0,300),
-    date: isDate(x.date) ? x.date : todayISO(),
-    from: isTime(x.from) ? x.from : '',
-    to:   isTime(x.to)   ? x.to   : '',
-    phone: String(x.phone || '').slice(0,40),
-    mail:  String(x.mail  || '').slice(0,120),
-    done: !!x.done,
-    created: x.created || new Date().toISOString()
-  };
-}
-
-let st = { items: null, editId: null };
-(function initItems(){
-  let items = S.get('items');
-  if (!Array.isArray(items)) {
-    items = legacyToItems(S.get('events'), S.get('tasks'));
-    S.set('items', items);
-  }
-  st.items = items.map(sanitizeItem);
-})();
-function agSave(){ S.set('items', st.items); }
-
-function $(id){ return document.getElementById(id); }
-
-function agRange() {
-  const mode  = $('ag-mode').value;
-  const today = todayISO();
-  switch (mode) {
-    case 'manana': { const d = addDaysISO(today,1); return { from:d, to:d, label:'Mañana · '+longDate(d), multi:false }; }
-    case 'semana': {
-      const [y,m,d] = today.split('-').map(Number);
-      const dow = (new Date(y,m-1,d).getDay()+6)%7;        // lunes = 0
-      const from = addDaysISO(today,-dow), to = addDaysISO(from,6);
-      return { from, to, label:'Esta semana · '+fmtD(from)+' al '+fmtD(to), multi:true };
-    }
-    case 'mes': {
-      const mm = $('ag-month').value || today.slice(0,7);
-      const [y,m] = mm.split('-').map(Number);
-      return { from:mm+'-01', to:mm+'-31', label:'Mes de '+MESES[m-1]+' '+y, multi:true };
-    }
-    case 'rango': {
-      const f = $('ag-rfrom').value, t = $('ag-rto').value;
-      const label = f && t ? 'Del '+fmtD(f)+' al '+fmtD(t) : f ? 'Desde el '+fmtD(f) : t ? 'Hasta el '+fmtD(t) : 'Todas las fechas';
-      return { from:f||'0000-00-00', to:t||'9999-99-99', label, multi:true };
-    }
-    case 'todos': return { from:'0000-00-00', to:'9999-99-99', label:'Toda la agenda', multi:true };
-    default:      return { from:today, to:today, label:'Hoy · '+longDate(today), multi:false };
-  }
-}
-function agFiltered() {
-  const r = agRange();
-  const q = ($('ag-q').value || '').trim().toLowerCase();
-  const hideDone = $('ag-hidedone').checked;
-  return st.items.filter(it =>
-    it.date >= r.from && it.date <= r.to &&
-    (!hideDone || !it.done) &&
-    (!q || (it.title+' '+it.phone+' '+it.mail).toLowerCase().includes(q))
-  ).sort((a,b) => a.date.localeCompare(b.date) || (a.from||'').localeCompare(b.from||'') || a.title.localeCompare(b.title));
-}
-
-function timeLabel(it) {
-  if (it.from && it.to) return it.from + ' – ' + it.to;
-  if (it.from) return 'desde ' + it.from;
-  if (it.to)   return 'hasta ' + it.to;
-  return 'todo el día';
-}
-
-function renderAgenda() {
-  const r = agRange();
-  const list = agFiltered();
-  $('ag-listtitle').innerHTML = escH(r.label) + ' <small>· ' + list.length + (list.length === 1 ? ' registro' : ' registros') + '</small>';
-
-  const c = $('ag-list');
-  if (!list.length) {
-    c.innerHTML = '<div class="empty-state">' + (r.multi ? 'nada agendado en este período' : 'nada agendado para este día') + '</div>';
-  } else {
-    let html = '', lastDate = '';
-    list.forEach(it => {
-      if (r.multi && it.date !== lastDate) {
-        html += '<div class="ag-day">' + escH(longDate(it.date)) + ' · ' + fmtD(it.date) + '</div>';
-        lastDate = it.date;
-      }
-      const tel  = it.phone ? '<span>📞 <a href="tel:' + escH(it.phone.replace(/[^\d+]/g,'')) + '">' + escH(it.phone) + '</a></span>' : '';
-      const mail = it.mail  ? '<span>✉ <a href="mailto:' + escH(it.mail) + '">' + escH(it.mail) + '</a></span>' : '';
-      html += `<div class="ag-item ${it.done ? 'done' : ''}">
-        <input type="checkbox" ${it.done ? 'checked' : ''} onchange="toggleAgDone('${it.id}')" title="Marcar como hecho">
-        <div class="ag-time">${escH(timeLabel(it))}</div>
-        <div class="ag-main">
-          <div class="ag-ttl">${escH(it.title)}</div>
-          ${(tel || mail) ? '<div class="ag-meta">' + tel + mail + '</div>' : ''}
-        </div>
-        <div class="ag-acts">
-          <button class="ag-ib" onclick="editAgItem('${it.id}')" title="Editar">✎</button>
-          <button class="ag-ib" onclick="delAgItem('${it.id}')" title="Eliminar">✕</button>
-        </div>
-      </div>`;
-    });
-    c.innerHTML = html;
-  }
-  updateAgBadges();
-}
-
-function updateAgBadges() {
-  const today = todayISO();
-  const pend = st.items.filter(i => i.date === today && !i.done).length;
-  const total = st.items.filter(i => i.date === today).length;
-  $('ag-badge').textContent = pend ? pend + ' pendiente' + (pend === 1 ? '' : 's') + ' hoy' : '';
-  $('yh-promo-text').textContent = total
-    ? (pend ? 'tenés ' + pend + ' pendiente' + (pend === 1 ? '' : 's') + ' para hoy' : 'todo lo de hoy está hecho ✓')
-    : 'sin agenda para hoy';
-}
-
-function toggleAgFilters() {
-  const f = $('ag-filters'), b = $('ag-toggle');
-  const open = f.hidden;              // si estaba oculto, se abre
-  f.hidden = !open;
-  b.setAttribute('aria-expanded', String(open));
-  b.textContent = (open ? '▾ ' : '▸ ') + 'Filtrar';
-}
-function onAgMode() {
-  const m = $('ag-mode').value;
-  $('ag-f-month').style.display = m === 'mes'   ? '' : 'none';
-  $('ag-f-from').style.display  = m === 'rango' ? '' : 'none';
-  $('ag-f-to').style.display    = m === 'rango' ? '' : 'none';
-  renderAgenda();
-}
-
-function saveAgendaItem(e) {
-  if (e) e.preventDefault();
-  const title = $('ag-title').value.trim();
-  if (!title) { toast('Escribí la tarea o el evento'); $('ag-title').focus(); return false; }
-  const date = $('ag-date').value || todayISO();
-  const from = $('ag-from').value, to = $('ag-to').value;
-  if (from && to && to < from) { toast('La hora "hasta" es anterior a "desde"'); return false; }
-
-  const data = { title, date, from, to, phone: $('ag-phone').value.trim(), mail: $('ag-mail').value.trim() };
-  let item;
-  if (st.editId) {
-    item = st.items.find(i => i.id === st.editId);
-    if (item) Object.assign(item, data);
-  }
-  if (!item) { item = sanitizeItem({ ...data, id: uid(), done: false }); st.items.push(item); }
-  const wasEdit = !!st.editId;
-  cancelAgEdit(true);
-  agSave();
-  renderAgenda();
-  const visible = agFiltered().some(i => i.id === item.id);
-  toast(wasEdit ? 'Actualizado ✓' : visible ? 'Agendado ✓' : 'Agendado para el ' + fmtD(item.date) + ' (no está en la vista actual)');
-  return false;
-}
-function editAgItem(id) {
-  const it = st.items.find(i => i.id === id); if (!it) return;
-  st.editId = id;
-  $('ag-title').value = it.title; $('ag-date').value = it.date;
-  $('ag-from').value = it.from;   $('ag-to').value = it.to;
-  $('ag-phone').value = it.phone; $('ag-mail').value = it.mail;
-  $('ag-save').textContent = 'Actualizar';
-  $('ag-cancel').style.display = '';
-  $('ag-form').scrollIntoView({ behavior:'smooth', block:'center' });
-  $('ag-title').focus();
-}
-function cancelAgEdit(keepDate) {
-  st.editId = null;
-  ['ag-title','ag-from','ag-to','ag-phone','ag-mail'].forEach(i => { $(i).value = ''; });
-  if (!keepDate) $('ag-date').value = todayISO();
-  $('ag-save').textContent = 'Guardar';
-  $('ag-cancel').style.display = 'none';
-}
-function toggleAgDone(id) { const it = st.items.find(i => i.id === id); if (it) { it.done = !it.done; agSave(); renderAgenda(); } }
-function delAgItem(id) {
-  const it = st.items.find(i => i.id === id); if (!it) return;
-  if (!confirm('¿Eliminar "' + it.title + '"?')) return;
-  st.items = st.items.filter(i => i.id !== id);
-  if (st.editId === id) cancelAgEdit();
-  agSave(); renderAgenda(); toast('Eliminado');
-}
-
-// Abre el selector desplegable de fecha/hora al hacer clic en el campo
-function initAgenda() {
-  $('ag-date').value  = todayISO();
-  $('ag-month').value = todayISO().slice(0,7);
-  ['ag-date','ag-from','ag-to','ag-month','ag-rfrom','ag-rto'].forEach(id => {
-    $(id).addEventListener('click', () => { try { if ($(id).showPicker) $(id).showPicker(); } catch(e) {} });
-  });
-  renderAgenda();
-  // Al cambiar el día (pasada la medianoche) se refresca "Hoy"
-  let lastDay = todayISO();
-  setInterval(() => { if (todayISO() !== lastDay) { lastDay = todayISO(); if (!st.editId) $('ag-date').value = lastDay; vIdx = verseDayIndex(); showVerse(); renderAgenda(); } }, 60000);
-}
-
 /* ════════════════════════════════════
    LOGIN / AUTH
 ════════════════════════════════════ */
@@ -2637,27 +2210,19 @@ if(!localStorage.getItem(LINKS_KEY)) setLinks(DEFAULT_LINKS);
 
 function escH(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
+function dirHTML(list) {
+  const groups = [...new Set(list.map(l=>l.group))];
+  return groups.map(g=>`<div class="dir-cat"><div class="dir-title">${escH(g)}</div><div class="dir-links">${
+    list.filter(l=>l.group===g).map(l=>`<a class="dir-lk" href="${escH(l.url)}" target="_blank" rel="noopener"><span class="lk-ic">${escH(l.icon)}</span>${escH(l.name)}</a>`).join('<span class="dir-sep">, </span>')
+  }</div></div>`).join('');
+}
 function renderLinksPanel() {
   const links = getLinks();
-  // SITIOS (col. izq.)
-  const sitios = links.filter(l=>l.panel==='sitios');
-  const groups = [...new Set(sitios.map(l=>l.group))];
+  // SITIOS (col. izq.) y APPS (col. centro): directorio
   const el = document.getElementById('sitios-container');
-  if(el) el.innerHTML = groups.map(g=>`
-    <div class="sites-group-label"><span class="sl-sl">// </span>${escH(g)}</div>
-    ${sitios.filter(l=>l.group===g).map(l=>`<a class="site-link" href="${escH(l.url)}" target="_blank">${escH(l.icon)} ${escH(l.name)}</a>`).join('')}
-  `).join('');
-  // APPS (col. centro)
-  const apps = links.filter(l=>l.panel==='apps');
+  if(el) el.innerHTML = dirHTML(links.filter(l=>l.panel==='sitios'));
   const ae = document.getElementById('apps-container');
-  if(ae) {
-    const agroups = [...new Set(apps.map(l=>l.group))];
-    ae.innerHTML = agroups.map(g=>`
-      <div class="app-group">
-        <div class="app-group-title">${escH(g)}</div>
-        ${apps.filter(l=>l.group===g).map(l=>`<a class="app-it" href="${escH(l.url)}" target="_blank" rel="noopener"><span class="app-icon">${escH(l.icon)}</span>${escH(l.name)}</a>`).join('')}
-      </div>`).join('');
-  }
+  if(ae) ae.innerHTML = dirHTML(links.filter(l=>l.panel==='apps'));
   // DERECHA (col. der.)
   const derecha = links.filter(l=>l.panel==='derecha');
   const derechaBlock = document.getElementById('derecha-block');
@@ -2732,99 +2297,7 @@ function clearLinkForm(){['lnk-name','lnk-icon','lnk-url','lnk-group'].forEach(i
 function deleteLink(id){setLinks(getLinks().filter(l=>l.id!==id));renderLinksManager();renderLinksPanel();toast('Link eliminado');}
 
 /* ════════════════════════════════════
-   VATICAN NEWS — Evangelio & Santo
-   Usa RSS via allorigins.win (proxy CORS gratuito)
-════════════════════════════════════ */
-async function loadVaticanNews() {
-  const loadEl  = document.getElementById('vn-loading');
-  const contEl  = document.getElementById('vn-content');
-  const errEl   = document.getElementById('vn-error');
-
-  try {
-    // Fetch el RSS principal de Vatican News (contiene evangelio + santos)
-    const proxy = 'https://api.allorigins.win/get?url=';
-    const rssUrl = encodeURIComponent('https://www.vaticannews.va/es.rss.xml');
-    const res = await fetch(proxy + rssUrl);
-    if (!res.ok) throw new Error('RSS fetch failed');
-    const data = await res.json();
-    const xml = new DOMParser().parseFromString(data.contents, 'text/xml');
-    const items = [...xml.querySelectorAll('item')];
-
-    // ── Evangelio del día ──
-    const gospelItem = items.find(it => {
-      const cats = [...it.querySelectorAll('category')].map(c => c.textContent.toLowerCase());
-      const title = (it.querySelector('title')?.textContent || '').toLowerCase();
-      return cats.some(c => c.includes('evangelio') || c.includes('palabra')) ||
-             title.includes('evangelio') || title.includes('palabra del día');
-    }) || items[0];
-
-    if (gospelItem) {
-      const gTitle = gospelItem.querySelector('title')?.textContent?.trim() || '—';
-      let gDesc = gospelItem.querySelector('description')?.textContent?.trim() || '';
-      // limpiar HTML tags
-      gDesc = gDesc.replace(/<[^>]+>/g, '').replace(/&nbsp;/g,' ').replace(/&amp;/g,'&').trim();
-      if (gDesc.length > 300) gDesc = gDesc.substring(0, 297) + '…';
-      document.getElementById('vn-gospel-title').textContent = gTitle;
-      document.getElementById('vn-gospel-body').textContent  = gDesc || '(ver en Vatican News)';
-    }
-
-    // ── Santo del día (busca en segunda página RSS o en otro item) ──
-    const saintItem = items.find(it => {
-      const cats = [...it.querySelectorAll('category')].map(c => c.textContent.toLowerCase());
-      const title = (it.querySelector('title')?.textContent || '').toLowerCase();
-      return cats.some(c => c.includes('santo') || c.includes('santa') || c.includes('santoral')) ||
-             title.includes('santo') || title.includes('santa') || title.includes('san ') || title.includes('beato');
-    });
-
-    if (saintItem) {
-      const sTitle = saintItem.querySelector('title')?.textContent?.trim() || '—';
-      let sDesc = saintItem.querySelector('description')?.textContent?.trim() || '';
-      sDesc = sDesc.replace(/<[^>]+>/g, '').replace(/&nbsp;/g,' ').replace(/&amp;/g,'&').trim();
-      if (sDesc.length > 200) sDesc = sDesc.substring(0, 197) + '…';
-      document.getElementById('vn-saint-title').textContent = sTitle;
-      document.getElementById('vn-saint-body').textContent  = sDesc || '(ver en Vatican News)';
-    } else {
-      // Si no encuentra un ítem de santos en el RSS principal, intenta el de santos
-      loadSaintFallback();
-    }
-
-    loadEl.style.display  = 'none';
-    contEl.style.display  = 'block';
-  } catch(e) {
-    loadEl.style.display  = 'none';
-    errEl.style.display   = 'block';
-  }
-}
-
-async function loadSaintFallback() {
-  try {
-    const proxy  = 'https://api.allorigins.win/get?url=';
-    const url    = encodeURIComponent('https://www.vaticannews.va/es/santos.html');
-    const res    = await fetch(proxy + url);
-    const data   = await res.json();
-    const parser = new DOMParser();
-    const doc    = parser.parseFromString(data.contents, 'text/html');
-    // Extrae el primer h1/h2 o título visible
-    const heading = doc.querySelector('h1,h2,.article-title,.saint-name');
-    if (heading) {
-      document.getElementById('vn-saint-title').textContent = heading.textContent.trim();
-    }
-    const body = doc.querySelector('.article-content p, .text-content p');
-    if (body) {
-      let txt = body.textContent.trim();
-      if (txt.length > 200) txt = txt.substring(0,197) + '…';
-      document.getElementById('vn-saint-body').textContent = txt;
-    }
-  } catch(e) {
-    document.getElementById('vn-saint-title').textContent = 'Santo/a del día';
-    document.getElementById('vn-saint-body').textContent  = 'Disponible en Vatican News →';
-  }
-}
-
-loadVaticanNews();
-
-/* ════════════════════════════════════
-   IMPORTAR / EXPORTAR DATOS
+   IMPORTAR / EXPORTAR DATOS (links)
 ════════════════════════════════════ */
 function ioLog(msg, type) {
   const el = document.getElementById('io-log');
@@ -2842,10 +2315,10 @@ function ioLog(msg, type) {
 
 function gatherAllData() {
   return {
-    _version: 2,
+    _version: 3,
     _exported: new Date().toISOString(),
-    items: st.items,
     links: getLinks(),
+    cards: getCards(),
   };
 }
 
@@ -2866,7 +2339,7 @@ function exportJSON() {
     const json = JSON.stringify(data, null, 2);
     const date = new Date().toISOString().slice(0,10);
     triggerDownload('dashboard_backup_' + date + '.json', json, 'application/json');
-    ioLog('Exportación JSON exitosa. ' + data.items.length + ' registros de agenda, ' + data.links.length + ' links.', 'ok');
+    ioLog('Exportación JSON exitosa. ' + data.links.length + ' links, ' + data.cards.length + ' tarjetas.', 'ok');
     toast('✓ JSON exportado');
   } catch(e) {
     ioLog('Error al exportar JSON: ' + e.message, 'err');
@@ -2878,21 +2351,10 @@ function exportTXT() {
     const data = gatherAllData();
     const lines = [];
     lines.push('══════════════════════════════════════════');
-    lines.push('  DASHBOARD OMAR — BACKUP DE DATOS');
+    lines.push('  ESTEKAK — BACKUP DE LINKS');
     lines.push('  Exportado: ' + new Date().toLocaleString('es-AR'));
     lines.push('══════════════════════════════════════════');
     lines.push('');
-
-    const items = data.items.slice().sort((a,b) => a.date.localeCompare(b.date) || (a.from||'').localeCompare(b.from||''));
-    lines.push('── AGENDA (' + items.length + ') ──────────────────────────────');
-    if (!items.length) lines.push('  (sin registros)');
-    items.forEach((it, i) => {
-      lines.push('  ' + (i+1) + '. [' + (it.done ? 'X' : ' ') + '] ' + it.date + '  ' + timeLabel(it) + '  —  ' + it.title);
-      if (it.phone) lines.push('       Teléfono: ' + it.phone);
-      if (it.mail)  lines.push('       E-mail: ' + it.mail);
-    });
-    lines.push('');
-
     lines.push('── LINKS GUARDADOS (' + data.links.length + ') ──────────────────');
     ['sitios', 'apps', 'derecha'].forEach(p => {
       const pl = data.links.filter(l => l.panel === p);
@@ -2903,6 +2365,9 @@ function exportTXT() {
         pl.filter(l => l.group === g).forEach(l => lines.push('      ' + l.icon + ' ' + l.name + ' → ' + l.url));
       });
     });
+    lines.push('');
+    lines.push('── TARJETAS (' + data.cards.length + ') ──────────────────────');
+    data.cards.forEach(k => lines.push('  ' + k.title + ' → ' + k.url));
     lines.push('');
     lines.push('══════════════════════════════════════════');
     lines.push('  FIN DEL BACKUP');
@@ -2944,44 +2409,32 @@ function doImport() {
   try { data = JSON.parse(raw); }
   catch(e) { ioLog('JSON inválido: ' + e.message, 'err'); return; }
 
-  if (typeof data !== 'object' || data === null) {
-    ioLog('El JSON no tiene la estructura esperada.', 'err'); return;
+  if (typeof data !== 'object' || data === null || !Array.isArray(data.links)) {
+    ioLog('El JSON no parece ser un backup de este dashboard (falta el campo "links").', 'err'); return;
   }
-  const hasNew    = Array.isArray(data.items);
-  const hasLegacy = ('events' in data) || ('tasks' in data);   // backups de la versión anterior
-  const hasLinks  = Array.isArray(data.links);
-  if (!hasNew && !hasLegacy && !hasLinks) {
-    ioLog('El JSON no parece ser un backup de este dashboard (faltan campos: items, links).', 'err'); return;
-  }
-
-  let items = null;
-  if (hasNew) items = data.items.map(sanitizeItem);
-  else if (hasLegacy) items = legacyToItems(data.events, Array.isArray(data.tasks) ? data.tasks : []).map(sanitizeItem);
 
   const ok = window.confirm(
-    '¿Reemplazar los datos actuales con los del backup?\n\n' +
-    (items ? '· Registros de agenda: ' + items.length + (hasLegacy && !hasNew ? ' (convertidos del formato anterior)' : '') + '\n' : '') +
-    (hasLinks ? '· Links: ' + data.links.length + '\n' : '') +
+    '¿Reemplazar los links actuales con los del backup?\n\n' +
+    '· Links: ' + data.links.length + '\n' +
     '\nEsta acción no se puede deshacer.'
   );
   if (!ok) { ioLog('Importación cancelada por el usuario.', 'info'); return; }
 
   try {
-    if (items) { st.items = items; agSave(); renderAgenda(); }
-    if (hasLinks) { setLinks(data.links); renderLinksPanel(); }
+    setLinks(data.links);
+    renderLinksPanel();
+    if (Array.isArray(data.cards)) { setCards(data.cards.filter(k => k && normUrl(k.url)).map(k => ({ id: String(k.id || uid()), url: normUrl(k.url), title: String(k.title || hostOf(k.url)).slice(0,120), desc: String(k.desc || '').slice(0,220), image: safeHttp(k.image) }))); renderCards(); }
     const exported = data._exported ? ' (backup del ' + data._exported.slice(0,10) + ')' : '';
-    ioLog('✓ Importación exitosa' + exported + '.' +
-      (items ? '\n  ' + items.length + ' registros de agenda.' : '') +
-      (hasLinks ? '\n  ' + data.links.length + ' links cargados.' : ''), 'ok');
+    ioLog('✓ Importación exitosa' + exported + '.\n  ' + data.links.length + ' links cargados.', 'ok');
     clearImportArea();
-    toast('✓ Datos importados');
+    toast('✓ Links importados');
   } catch(e) {
     ioLog('Error al aplicar los datos: ' + e.message, 'err');
   }
 }
 
 /* ════════════════════════════════════
-   AGREGAR LINK RÁPIDO (desde la sección central)
+   AGREGAR LINK RÁPIDO (desde las columnas)
 ════════════════════════════════════ */
 function openAddLink(panel) {
   openModal('modal-links');
@@ -3008,12 +2461,109 @@ function setTheme(name) {
 })();
 
 /* ════════════════════════════════════
+   TARJETAS DE SITIOS (debajo del clima)
+   Se guardan en este navegador. Título e imagen: Microlink (og:image);
+   respaldo: captura de pantalla del sitio (WordPress mShots).
+════════════════════════════════════ */
+const CARDS_KEY = 'estekak_cards_v1';
+function getCards() { try { const a = JSON.parse(localStorage.getItem(CARDS_KEY) || '[]'); return Array.isArray(a) ? a : []; } catch(e) { return []; } }
+function setCards(a) { try { localStorage.setItem(CARDS_KEY, JSON.stringify(a)); } catch(e) {} }
+function normUrl(u) {
+  u = String(u || '').trim();
+  if (!u) return '';
+  if (!/^https?:\/\//i.test(u)) u = 'https://' + u;
+  try { const x = new URL(u); return /^https?:$/.test(x.protocol) && x.hostname.includes('.') ? x.href : ''; } catch(e) { return ''; }
+}
+function hostOf(u) { try { return new URL(u).hostname.replace(/^www\./, ''); } catch(e) { return u; } }
+function safeHttp(u) { return /^https?:\/\//i.test(u || '') ? u : ''; }
+function shotUrl(u) { return 'https://s.wordpress.com/mshots/v1/' + encodeURIComponent(u) + '?w=520&h=325'; }
+
+function cardImgFail(img) {
+  const step = +img.dataset.step || 0;
+  if (step === 0) { img.dataset.step = '1'; img.src = img.dataset.shot; return; }
+  const ph = document.createElement('div');
+  ph.className = 'card-noimg'; ph.textContent = '🌐';
+  img.replaceWith(ph);
+}
+
+function renderCards() {
+  const c = document.getElementById('cards-container');
+  if (!c) return;
+  c.innerHTML = getCards().map(k => {
+    const img = safeHttp(k.image) || shotUrl(k.url);
+    return `<div class="rbox card" data-id="${escH(k.id)}">
+      <div class="rbox-h card-h"><span class="card-t" title="${escH(k.title)}">${escH(k.title)}</span>
+        <button class="card-x" onclick="delCard('${escH(k.id)}')" title="Quitar tarjeta" aria-label="Quitar tarjeta">✕</button></div>
+      <div class="rbox-b">
+        <a href="${escH(k.url)}" target="_blank" rel="noopener"><img class="card-img" src="${escH(img)}" data-shot="${escH(shotUrl(k.url))}" data-step="${safeHttp(k.image) ? 0 : 1}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="cardImgFail(this)"></a>
+        ${k.desc ? '<div class="card-d">' + escH(k.desc) + '</div>' : ''}
+        <div class="card-host"><span>${escH(hostOf(k.url))}</span><a href="${escH(k.url)}" target="_blank" rel="noopener">visitar ›</a></div>
+      </div></div>`;
+  }).join('');
+}
+
+async function fetchMeta(url) {
+  const ctl = new AbortController();
+  const to = setTimeout(() => ctl.abort(), 9000);
+  try {
+    const r = await fetch('https://api.microlink.io/?url=' + encodeURIComponent(url), { signal: ctl.signal });
+    const j = await r.json();
+    const d = (j && j.data) || {};
+    return {
+      title: d.title || '',
+      desc: d.description || '',
+      image: (d.image && d.image.url) || (d.logo && d.logo.url) || ''
+    };
+  } catch(e) { return {}; }
+  finally { clearTimeout(to); }
+}
+
+function toggleCardForm() {
+  const f = document.getElementById('card-form');
+  f.hidden = !f.hidden;
+  if (!f.hidden) document.getElementById('card-url').focus();
+}
+
+async function addCard(e) {
+  if (e) e.preventDefault();
+  const inp = document.getElementById('card-url');
+  const url = normUrl(inp.value);
+  if (!url) { toast('Pegá un link válido, ej: telesurtv.net'); inp.focus(); return false; }
+  if (getCards().some(k => k.url === url)) { toast('Esa tarjeta ya existe'); return false; }
+  const card = { id: uid(), url, title: hostOf(url), desc: '', image: '' };
+  setCards([...getCards(), card]);
+  inp.value = '';
+  document.getElementById('card-form').hidden = true;
+  renderCards();
+  toast('Tarjeta agregada ✓');
+  const meta = await fetchMeta(url);                      // completa título / imagen cuando llegan
+  const all = getCards(), k = all.find(x => x.id === card.id);
+  if (k) {
+    if (meta.title) k.title = meta.title.slice(0, 120);
+    if (meta.desc)  k.desc  = meta.desc.slice(0, 220);
+    if (meta.image) k.image = meta.image;
+    setCards(all); renderCards();
+  }
+  return false;
+}
+
+function delCard(id) {
+  const k = getCards().find(x => x.id === id);
+  if (!k || !confirm('¿Quitar la tarjeta "' + k.title + '"?')) return;
+  setCards(getCards().filter(x => x.id !== id));
+  renderCards();
+}
+
+/* ════════════════════════════════════
    ARRANQUE
 ════════════════════════════════════ */
 window.addEventListener('DOMContentLoaded', () => {
-  initAgenda();
+  renderCards();
   loadWeatherPanel();
   setInterval(loadWeatherPanel, 30 * 60 * 1000);   // refresca clima y alertas cada 30 min
+  // al pasar la medianoche, cambia el versículo del día
+  let lastDay = todayISO();
+  setInterval(() => { if (todayISO() !== lastDay) { lastDay = todayISO(); vIdx = verseDayIndex(); showVerse(); } }, 60000);
   const m = location.search.match(/[?&]alerta=([a-z]*)/);
   if (m) setTimeout(() => testAlert(m[1] || 'granizo'), 1500);   // modo prueba del banner
 });
