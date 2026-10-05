@@ -2054,10 +2054,6 @@ function escH(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;
 
 const HDR_FLAG = 'estekak_hdr_seeded';
 const HDR_DEFAULTS = [
-  {id:'h1', panel:'encabezado', group:'Encabezado', icon:'🐷', name:'Finanzas', url:'https://chanchito72.vercel.app/'},
-  {id:'h2', panel:'encabezado', group:'Encabezado', icon:'📻', name:'Radios',   url:'https://script.google.com/macros/s/AKfycbx0mw_gwVh9ioKbDtZu5h3GO9Rp9jUU37PrTdNTBWYdy2Vsmh0C4LRZC9alR4p1aIH3/exec'},
-  {id:'h3', panel:'encabezado', group:'Encabezado', icon:'✉️', name:'Correo',   url:'https://mail.google.com'},
-  {id:'h4', panel:'encabezado', group:'Encabezado', icon:'💬', name:'IA',       url:'https://claude.ai'}
 ];
 function ensureHeaderLinks(fromImport, data) {
   const links = getLinks();
