@@ -838,270 +838,6 @@ html, body {
 .theme-btn.active { background: var(--yellow); border-color: var(--yellow-bd); color: var(--text); font-weight: 700; }
 
 /* ════════════════════════════════════════
-   WINDOWS 95 THEME
-════════════════════════════════════════ */
-body[data-theme="win95"] {
-  font-family: 'MS Sans Serif', 'Segoe UI', Arial, sans-serif;
-}
-
-body[data-theme="win95"] :root,
-[data-theme="win95"] {
-  --bg:        #008080;
-  --surface:   #c0c0c0;
-  --surface2:  #d4d0c8;
-  --surface3:  #e0dcd4;
-  --border:    #808080;
-  --border2:   #404040;
-  --yellow:    #000080;
-  --yellow2:   #0000b0;
-  --yellow-lt: #d4d0c8;
-  --yellow-bd: #000080;
-  --red:       #000080;
-  --red2:      #0000a0;
-  --red-lt:    #d4d0c8;
-  --red-bd:    #808080;
-  --cyan:      #000080;
-  --cyan2:     #0000a0;
-  --cyan-lt:   #d4d0c8;
-  --cyan-bd:   #808080;
-  --green:     #008000;
-  --green-lt:  #d4d0c8;
-  --text:      #000000;
-  --text2:     #222222;
-  --dim:       #444444;
-  --dead:      #808080;
-  --font-display: 'Courier New', monospace;
-  --font-mono:    'Courier New', monospace;
-  --font-sans:    'MS Sans Serif', 'Segoe UI', Arial, sans-serif;
-}
-
-/* Win95 — Reset borders/shadows to 3D bevel look */
-[data-theme="win95"] * { border-radius: 0 !important; }
-
-[data-theme="win95"] html,
-[data-theme="win95"] body { background: #008080; }
-
-/* Win95 title bars */
-[data-theme="win95"] .header {
-  background: #c0c0c0;
-  border-bottom: none;
-  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
-}
-[data-theme="win95"] .header-left-band {
-  background: #000080;
-  border-right: none;
-  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #4040c0;
-}
-[data-theme="win95"] .header-greeting { color: #000000; font-family: 'Courier New', monospace; font-size: 14px; letter-spacing: 0; }
-[data-theme="win95"] .header-time { font-family: 'Courier New', monospace; font-size: 32px; color: #ffffff; letter-spacing: 2px; }
-[data-theme="win95"] .header-weather { color: #000080; }
-[data-theme="win95"] .header-date { color: #444444; }
-
-/* Win95 panels */
-[data-theme="win95"] .col-left,
-[data-theme="win95"] .col-right,
-[data-theme="win95"] .col-mid { background: #c0c0c0; border-right: none; }
-
-[data-theme="win95"] .block {
-  background: #c0c0c0;
-  border: none;
-  border-bottom: 2px solid #808080;
-}
-[data-theme="win95"] .block-title {
-  background: #000080;
-  color: #ffffff;
-  font-family: 'Courier New', monospace;
-  font-size: 11px;
-  padding: 3px 6px;
-  margin-bottom: 8px;
-  padding-bottom: 3px;
-  border: none;
-  letter-spacing: 0;
-}
-[data-theme="win95"] .block-title::before { display: none; }
-
-/* Win95 beveled boxes */
-[data-theme="win95"] .card,
-[data-theme="win95"] .ev-item,
-[data-theme="win95"] .note-thumb,
-[data-theme="win95"] .link-item,
-[data-theme="win95"] .task-add,
-[data-theme="win95"] .io-card,
-[data-theme="win95"] .tstat {
-  background: #c0c0c0;
-  box-shadow: inset -1px -1px #ffffff, inset 1px 1px #808080, inset -2px -2px #dfdfdf, inset 2px 2px #404040;
-  border: none !important;
-}
-
-/* Win95 inset input well */
-[data-theme="win95"] input,
-[data-theme="win95"] textarea,
-[data-theme="win95"] select,
-[data-theme="win95"] .rss-feed,
-[data-theme="win95"] .tasks-list {
-  background: #ffffff;
-  color: #000000;
-  border: none !important;
-  box-shadow: inset 1px 1px #808080, inset -1px -1px #ffffff, inset 2px 2px #404040, inset -2px -2px #dfdfdf;
-  font-family: 'Courier New', monospace;
-}
-
-/* Win95 buttons */
-[data-theme="win95"] button,
-[data-theme="win95"] .btn,
-[data-theme="win95"] .eng-btn,
-[data-theme="win95"] .ag-tab,
-[data-theme="win95"] .flt-btn,
-[data-theme="win95"] .rss-preset-btn,
-[data-theme="win95"] .verse-nav button,
-[data-theme="win95"] .gear-btn,
-[data-theme="win95"] .wx-refresh,
-[data-theme="win95"] .wx-loc-btn,
-[data-theme="win95"] .rss-go {
-  background: #c0c0c0 !important;
-  color: #000000 !important;
-  border: none !important;
-  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf !important;
-  font-family: 'Courier New', monospace !important;
-  font-size: 11px !important;
-  letter-spacing: 0 !important;
-  text-transform: none !important;
-  font-weight: normal !important;
-  padding: 3px 10px !important;
-  cursor: pointer !important;
-}
-[data-theme="win95"] button:active,
-[data-theme="win95"] .btn:active {
-  box-shadow: inset 1px 1px #0a0a0a, inset -1px -1px #ffffff, inset 2px 2px #808080, inset -2px -2px #dfdfdf !important;
-}
-[data-theme="win95"] .btn:hover,
-[data-theme="win95"] button:hover { background: #c0c0c0 !important; }
-
-/* Win95 active/selected */
-[data-theme="win95"] .eng-btn.active,
-[data-theme="win95"] .ag-tab.active,
-[data-theme="win95"] .flt-btn.active,
-[data-theme="win95"] .rss-preset-btn.active {
-  background: #000080 !important;
-  color: #ffffff !important;
-  box-shadow: inset 1px 1px #0a0a0a, inset -1px -1px #ffffff !important;
-}
-
-/* Win95 links */
-[data-theme="win95"] a,
-[data-theme="win95"] .site-link,
-[data-theme="win95"] .app-link,
-[data-theme="win95"] .site-link:hover,
-[data-theme="win95"] .app-link:hover { background: #000080 !important; color: #ffffff !important; }
-[data-theme="win95"] .site-link::before { color: #000000 !important; }
-
-/* Win95 modal windows */
-[data-theme="win95"] .modal-box {
-  background: #c0c0c0;
-  border: 2px solid #808080;
-  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, 4px 4px 0 rgba(0,0,0,0.4);
-}
-[data-theme="win95"] .modal-header {
-  background: #000080;
-  padding: 4px 6px;
-  border: none;
-}
-[data-theme="win95"] .modal-title { color: #ffffff; font-family: 'Courier New', monospace; font-size: 12px; letter-spacing: 0; }
-[data-theme="win95"] .modal-close {
-  background: #c0c0c0 !important;
-  color: #000000 !important;
-  border: none !important;
-  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf !important;
-  width: 20px; height: 18px; font-size: 10px !important;
-}
-
-/* Win95 login */
-[data-theme="win95"] .login-box {
-  background: #c0c0c0;
-  border: 2px solid #808080;
-  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, 4px 4px 0 rgba(0,0,0,0.5);
-}
-[data-theme="win95"] .login-logo { color: #000080; font-family: 'Courier New', monospace; font-size: 20px; }
-[data-theme="win95"] .login-sub  { color: #444444; }
-[data-theme="win95"] #login-screen { background: #008080; }
-
-/* Win95 weather */
-[data-theme="win95"] .wx-hero {
-  background: #c0c0c0;
-  box-shadow: inset 1px 1px #808080, inset -1px -1px #ffffff;
-}
-[data-theme="win95"] .wx-temp { color: #000080; }
-[data-theme="win95"] .wx-detail-val { color: #000080; }
-[data-theme="win95"] .wx-details { background: #808080; }
-[data-theme="win95"] .wx-detail { background: #c0c0c0; }
-[data-theme="win95"] .wx-day-bar { background: #000080; }
-
-/* Win95 calendar */
-[data-theme="win95"] .cal-day.today { background: #000080; border: 1px solid #ffffff; }
-[data-theme="win95"] .cal-day.today .cal-day-n { color: #ffffff; }
-[data-theme="win95"] .cal-head h3 { color: #000080; font-family: 'Courier New', monospace; }
-[data-theme="win95"] .cal-head button {
-  background: #c0c0c0 !important;
-  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf !important;
-  color: #000000 !important; width: 22px; height: 22px;
-}
-[data-theme="win95"] .cdot { background: #000080; }
-
-/* Win95 verse */
-[data-theme="win95"] .verse-text { background: #c0c0c0; border-left: 3px solid #000080; }
-[data-theme="win95"] .verse-ref { color: #000080; }
-[data-theme="win95"] .sites-group-label { color: #000080; border-bottom-color: #808080; }
-[data-theme="win95"] .task-chk { border-color: #808080; }
-[data-theme="win95"] .task-item.done .task-chk { background: #000080; border-color: #000080; }
-[data-theme="win95"] .tstat-n { color: #000080; }
-
-/* Win95 toast */
-[data-theme="win95"] .toast { background: #000080; box-shadow: 2px 2px 0 rgba(0,0,0,0.5); }
-
-/* Win95 rss / vn */
-[data-theme="win95"] .rss-item:hover { background: #000080; color: #ffffff; }
-[data-theme="win95"] .rss-item:hover .rss-item-title,
-[data-theme="win95"] .rss-item:hover .rss-item-desc,
-[data-theme="win95"] .rss-item:hover .rss-item-date { color: #ffffff; }
-
-/* Win95 scrollbar */
-[data-theme="win95"] ::-webkit-scrollbar { width: 16px; height: 16px; }
-[data-theme="win95"] ::-webkit-scrollbar-track { background: #c0c0c0; }
-[data-theme="win95"] ::-webkit-scrollbar-thumb {
-  background: #c0c0c0;
-  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
-  border-radius: 0;
-}
-
-/* Win95 theme switcher itself */
-[data-theme="win95"] .theme-btn {
-  background: #c0c0c0 !important;
-  color: #000000 !important;
-  border: none !important;
-  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf !important;
-  font-family: 'Courier New', monospace !important;
-  font-size: 9px !important;
-}
-[data-theme="win95"] .theme-btn.active {
-  background: #000080 !important;
-  color: #ffffff !important;
-  box-shadow: inset 1px 1px #0a0a0a !important;
-}
-[data-theme="win95"] .logout-btn {
-  background: #c0c0c0 !important;
-  color: #000000 !important;
-  border: none !important;
-  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf !important;
-  font-family: 'Courier New', monospace !important;
-  font-size: 9px !important;
-}
-[data-theme="win95"] .settings-section-title { color: #000080; font-family: 'Courier New', monospace; border-bottom-color: #808080; }
-[data-theme="win95"] .io-card-title { color: #000080; border-bottom-color: #808080; }
-[data-theme="win95"] .io-log { background: #ffffff; border-left: 3px solid #000080; }
-[data-theme="win95"] .day-side-title { color: #000080; border-bottom-color: #808080; }
-[data-theme="win95"] .task-add-title { color: #000080; border-bottom-color: #808080; }
-
-/* ════════════════════════════════════════
    v3 — LAYOUT Y COMPONENTES (directorio + cajas laterales)
 ════════════════════════════════════════ */
 .dash{grid-template-columns:minmax(0,1fr) minmax(0,1fr) 270px;grid-template-rows:auto auto auto auto 1fr auto;column-gap:22px;}
@@ -1195,25 +931,69 @@ body[data-theme="win95"] :root,
 }
 
 /* ════════════════════════════════════════
-   ESTEKAK — TEMA POR DEFECTO (estilo portal 2000)
+   MODO CLARO / OSCURO + PALETAS (el claro es el predeterminado)
 ════════════════════════════════════════ */
 body[data-theme="estekak"]{
+  color-scheme:light;
   --bg:#ffffff;--surface:#ffffff;--surface2:#f3f6fb;--surface3:#e0d3a8;
   --border:#b6c9e6;--border2:#8c9db8;
-  --yellow:#9b7bd0;--yellow2:#7e5cb8;--yellow-lt:#efe9fa;--yellow-bd:#9b7bd0;
-  --red:#cc0000;--red2:#a00000;--red-lt:#fdeeee;--red-bd:#cc0000;
+  --yellow:var(--ac);--yellow2:var(--ac2);--yellow-lt:var(--ac-lt);--yellow-bd:var(--ac);
+  --red:var(--acc);--red2:var(--acc);--red-lt:#fdeeee;--red-bd:var(--acc);
   --cyan:#0033cc;--cyan2:#0000cc;--cyan-lt:#e3edfa;--cyan-bd:#a9c0e3;
   --green:#006600;--green-lt:#e8f5e8;
   --text:#000000;--text2:#111111;--dim:#555555;--dead:#8a8a8a;
-  --font-display:Arial,Helvetica,sans-serif;
-  --font-mono:Arial,Helvetica,sans-serif;
-  --font-sans:Arial,Helvetica,sans-serif;
-  background:#fff;font-family:'Times New Roman',Times,serif;font-size:12px;color:#000;
+  --font-display:Arial,Helvetica,sans-serif;--font-mono:Arial,Helvetica,sans-serif;--font-sans:Arial,Helvetica,sans-serif;
+  --lk:#0000cc;--soft:#eef3fb;--soft2:#e3edfa;--line:#b6c9e6;--line2:#8c9db8;--band:#d5e3f7;--boxh:#e0d3a8;--inb:#7f9db9;
+  --logo-hi:rgba(255,255,255,.6);--b0:#ffffff;--b1:#fafafa;--b2:#d8d8d8;--bb:#707070;
+  /* paleta: por defecto */
+  --logo:#d6001c;--acc:#cc0000;--ac:#9b7bd0;--ac2:#7e5cb8;--ac-lt:#efe9fa;--ac-dk:#5a3a9a;
 }
+body[data-theme="estekak"][data-palette="violeta"]{--logo:#7b2cbf;--acc:#6a1fb0;--ac:#8e4fd0;--ac2:#6f35b3;--ac-lt:#f0e7fb;--ac-dk:#4b1f82;}
+body[data-theme="estekak"][data-palette="azul"]{--logo:#1a4fd1;--acc:#1a4fd1;--ac:#4a85e6;--ac2:#2e66c4;--ac-lt:#e6efff;--ac-dk:#1b3f8f;}
+body[data-theme="estekak"][data-palette="rojo"]{--logo:#ee1c25;--acc:#d9141c;--ac:#e85a5f;--ac2:#c43a40;--ac-lt:#fdecec;--ac-dk:#8f1a1f;}
+body[data-theme="estekak"][data-palette="naranja"]{--logo:#f26a00;--acc:#d85a00;--ac:#f39a45;--ac2:#d97a1f;--ac-lt:#fff0e0;--ac-dk:#8f4a00;}
+body[data-theme="estekak"][data-palette="verde"]{--logo:#1b9a3a;--acc:#157a2d;--ac:#4cb86a;--ac2:#2f9a4c;--ac-lt:#e5f6ea;--ac-dk:#14662b;}
+/* modo oscuro: la paleta no se aplica (usa su propio rojo suave) */
+body[data-theme="estekak"][data-mode="dark"]{
+  color-scheme:dark;
+  --bg:#12161d;--surface:#1a202b;--surface2:#222a38;--surface3:#2b3547;
+  --border:#33405a;--border2:#4a5a7a;
+  --red-lt:#3a1f24;--cyan:#7db4ff;--cyan2:#8ec0ff;--cyan-lt:#1f2a3f;--cyan-bd:#3d5a8a;
+  --green:#5fcf80;--green-lt:#1c2f22;
+  --text:#e8ebf1;--text2:#cfd5e0;--dim:#9aa5b8;--dead:#6b7689;
+  --lk:#8ec0ff;--soft:#1a202b;--soft2:#243049;--line:#33405a;--line2:#4a5a7a;--band:#22304a;--boxh:#2b3547;--inb:#4a5a7a;
+  --logo-hi:rgba(255,255,255,.12);--b0:#46526b;--b1:#3a4559;--b2:#2c3548;--bb:#5a6784;
+  --logo:#ff3b4f;--acc:#ff7a7a;--ac:#8a68cc;--ac2:#a187dc;--ac-lt:#2a2340;--ac-dk:#c5b2ee;
+}
+body[data-theme="estekak"][data-mode="dark"] .yh-orb{filter:brightness(.92);}
+body[data-theme="estekak"][data-mode="dark"] .card-img{filter:brightness(.92);}
+body[data-theme="estekak"] .toast{color:#fff;}
+
+/* Selector de modo y paletas (barra superior) */
+.mode-btn{white-space:nowrap;}
+.pal{display:inline-flex;align-items:center;gap:4px;margin-left:6px;padding-left:8px;border-left:1px solid var(--line);}
+.pal-lbl{font:10px Arial,Helvetica,sans-serif;color:var(--dim);margin-right:2px;}
+.pal-dot{width:14px;height:14px;padding:0;border-radius:50% !important;border:1px solid rgba(0,0,0,.45);background:var(--c);cursor:pointer;box-shadow:inset 0 -3px 4px rgba(0,0,0,.18),inset 0 2px 3px rgba(255,255,255,.55);}
+.pal-dot:hover{transform:scale(1.18);}
+.pal-dot.on{outline:2px solid var(--text);outline-offset:1px;}
+.pal.off{opacity:.38;pointer-events:none;}
+
+/* Palabra del día: pestañas Biblia / Corán / Gita */
+.pd-tabs{display:flex;gap:2px;margin:-1px -1px 6px;border-bottom:1px solid var(--line2);}
+.pd-tab{flex:1;background:var(--soft);border:1px solid var(--line);border-bottom:0;color:var(--lk);font:11px Arial,Helvetica,sans-serif;padding:3px 2px;cursor:pointer;text-decoration:underline;}
+.pd-tab.on{background:var(--surface);color:var(--text);font-weight:bold;text-decoration:none;border-color:var(--line2);position:relative;top:1px;}
+.pd-note{margin-top:5px;font:italic 10px Arial,Helvetica,sans-serif;color:var(--dim);line-height:1.3;}
+.verse-text.refl{font-style:normal;}
+.yh-ic .yh-orb{font-size:18px;}
+.yh-icons:empty{display:none;}
+/* ════════════════════════════════════════
+   ESTEKAK — TEMA POR DEFECTO (estilo portal 2000)
+════════════════════════════════════════ */
+body[data-theme="estekak"]{background:var(--bg);font-family:'Times New Roman',Times,serif;font-size:12px;color:var(--text);}
 body[data-theme="estekak"] *{border-radius:0;}
 body[data-theme="estekak"] ::-webkit-scrollbar{width:12px;height:12px;}
-body[data-theme="estekak"] ::-webkit-scrollbar-thumb{background:#b6c9e6;border-radius:0;}
-body[data-theme="estekak"] ::-webkit-scrollbar-track{background:#eef3fb;}
+body[data-theme="estekak"] ::-webkit-scrollbar-thumb{background:var(--line);border-radius:0;}
+body[data-theme="estekak"] ::-webkit-scrollbar-track{background:var(--soft);}
 
 /* Estructura (orden: logo, búsqueda, barra, línea destacada, columnas) */
 body[data-theme="estekak"] .dash{max-width:1120px;margin:0 auto;padding:0 12px;}
@@ -1221,15 +1001,15 @@ body[data-theme="estekak"] .searchbar{grid-row:2;}
 body[data-theme="estekak"] .header{grid-row:3;}
 body[data-theme="estekak"] .yh-promo{grid-row:4;}
 body[data-theme="estekak"] .yh-banner{display:flex;justify-content:center;align-items:flex-start;gap:30px;padding:10px 0 4px;flex-wrap:wrap;}
-body[data-theme="estekak"] .yh-promo{display:block;padding:10px 0 12px;font-size:13px;color:#000;}
-body[data-theme="estekak"] .yh-footer{display:block;text-align:center;font-size:11px;color:#444;padding:18px 0 22px;border-top:1px solid #b6c9e6;margin-top:10px;}
-body[data-theme="estekak"] .yh-footer a{color:#0000cc;cursor:pointer;text-decoration:underline;}
-body[data-theme="estekak"] .yh-footer .yh-copy{display:block;margin-top:6px;color:#666;}
+body[data-theme="estekak"] .yh-promo{display:block;padding:10px 0 12px;font-size:13px;color:var(--text);}
+body[data-theme="estekak"] .yh-footer{display:block;text-align:center;font-size:11px;color:var(--text2);padding:18px 0 22px;border-top:1px solid var(--line);margin-top:10px;}
+body[data-theme="estekak"] .yh-footer a{color:var(--lk);cursor:pointer;text-decoration:underline;}
+body[data-theme="estekak"] .yh-footer .yh-copy{display:block;margin-top:6px;color:var(--dim);}
 
 /* Logo + iconos */
 .yh-icons{display:flex;gap:18px;align-items:flex-start;padding-top:6px;}
-.yh-ic{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:#0000cc;text-decoration:underline;cursor:pointer;font-family:Arial,Helvetica,sans-serif;}
-.yh-ic:hover{color:#cc0000;}
+.yh-ic{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:var(--lk);text-decoration:underline;cursor:pointer;font-family:Arial,Helvetica,sans-serif;}
+.yh-ic:hover{color:var(--acc);}
 .yh-orb{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;border:1px solid rgba(0,0,0,.28);box-shadow:inset 0 -7px 9px rgba(0,0,0,.14),inset 0 4px 6px rgba(255,255,255,.75),0 1px 2px rgba(0,0,0,.2);}
 body[data-theme="estekak"] .yh-orb{border-radius:50%;}
 .o-gold{background:radial-gradient(circle at 35% 28%,#fff6c0,#f0bd00);}
@@ -1238,8 +1018,8 @@ body[data-theme="estekak"] .yh-orb{border-radius:50%;}
 .o-lav{background:radial-gradient(circle at 35% 28%,#f1e8ff,#8f6cc8);}
 .o-teal{background:radial-gradient(circle at 35% 28%,#dcf7f3,#2fa89c);}
 .o-cream{background:radial-gradient(circle at 35% 28%,#fff4da,#e3a94a);}
-.yh-logo{font-family:'Abril Fatface','Rozha One','Alfa Slab One',Georgia,'Times New Roman',serif;font-weight:900;font-size:64px;line-height:1;letter-spacing:-1px;color:#d6001c;display:flex;align-items:flex-end;padding:0 4px;user-select:none;filter:drop-shadow(2px 3px 0 rgba(90,0,10,.55)) drop-shadow(0 1px 0 rgba(255,255,255,.6));}
-.yh-logo span{display:inline-block;background:linear-gradient(#f0283a 0%,#d6001c 45%,#b3001a 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;text-shadow:none;}
+.yh-logo{font-family:'Abril Fatface','Rozha One','Alfa Slab One',Georgia,'Times New Roman',serif;font-weight:900;font-size:64px;line-height:1;letter-spacing:-1px;color:var(--logo);display:flex;align-items:flex-end;padding:0 4px;user-select:none;filter:drop-shadow(2px 3px 0 color-mix(in srgb,var(--logo) 40%,#000)) drop-shadow(0 1px 0 var(--logo-hi));}
+.yh-logo span{display:inline-block;background:linear-gradient(color-mix(in srgb,var(--logo) 80%,#fff) 0%,var(--logo) 45%,color-mix(in srgb,var(--logo) 78%,#000) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;text-shadow:none;}
 .yh-logo span:nth-child(1){transform:rotate(-2deg) translateY(1px);}
 .yh-logo span:nth-child(2){transform:rotate(1.5deg) translateY(-2px);}
 .yh-logo span:nth-child(3){transform:rotate(-1deg) translateY(2px);}
@@ -1249,95 +1029,95 @@ body[data-theme="estekak"] .yh-orb{border-radius:50%;}
 .yh-logo span:nth-child(7){transform:rotate(-2deg) translateY(1px);}
 
 /* Línea destacada + filas de enlaces (como "Shop / Connect / Personal …") */
-.yh-promo a{color:#0000cc;text-decoration:underline;cursor:pointer;}
-.yh-promo a:hover{color:#cc0000;}
+.yh-promo a{color:var(--lk);text-decoration:underline;cursor:pointer;}
+.yh-promo a:hover{color:var(--acc);}
 .yh-promo-line{font-size:13px;margin-bottom:7px;}
-.yh-promo-line .yh-bar{margin:0 6px;color:#555;}
-.yh-rows{font-size:11px;line-height:1.55;color:#000;}
+.yh-promo-line .yh-bar{margin:0 6px;color:var(--dim);}
+.yh-rows{font-size:11px;line-height:1.55;color:var(--text);}
 .yh-rows b{font-family:Arial,Helvetica,sans-serif;font-size:11px;margin-right:4px;}
 
 /* Barra superior (reloj) */
-body[data-theme="estekak"] .header{background:#eef3fb;border-top:1px solid #b6c9e6;border-bottom:1px solid #b6c9e6;box-shadow:none;padding:3px 8px;align-items:center;flex-wrap:wrap;gap:4px 14px;margin-bottom:0;}
+body[data-theme="estekak"] .header{background:var(--soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);box-shadow:none;padding:3px 8px;align-items:center;flex-wrap:wrap;gap:4px 14px;margin-bottom:0;}
 body[data-theme="estekak"] .header-left-band{background:none;border:0;padding:2px 4px;gap:8px;}
-body[data-theme="estekak"] .header-day{color:#333;font:bold 11px Arial,Helvetica,sans-serif;letter-spacing:0;text-transform:none;}
-body[data-theme="estekak"] .header-time{font:bold 16px Arial,Helvetica,sans-serif;color:#000;letter-spacing:0;}
+body[data-theme="estekak"] .header-day{color:var(--text2);font:bold 11px Arial,Helvetica,sans-serif;letter-spacing:0;text-transform:none;}
+body[data-theme="estekak"] .header-time{font:bold 16px Arial,Helvetica,sans-serif;color:var(--text);letter-spacing:0;}
 body[data-theme="estekak"] .header-center{padding:2px 4px;}
-body[data-theme="estekak"] .header-greeting{font:bold 12px Arial,Helvetica,sans-serif;color:#000;letter-spacing:0;text-transform:none;}
+body[data-theme="estekak"] .header-greeting{font:bold 12px Arial,Helvetica,sans-serif;color:var(--text);letter-spacing:0;text-transform:none;}
 body[data-theme="estekak"] .header-right{border:0;flex-direction:row;align-items:center;gap:12px;padding:2px 4px;}
-body[data-theme="estekak"] .header-date{font:11px Arial,Helvetica,sans-serif;color:#333;letter-spacing:0;}
-body[data-theme="estekak"] .header-weather{font:bold 11px Arial,Helvetica,sans-serif;color:#0000cc;}
+body[data-theme="estekak"] .header-date{font:11px Arial,Helvetica,sans-serif;color:var(--text2);letter-spacing:0;}
+body[data-theme="estekak"] .header-weather{font:bold 11px Arial,Helvetica,sans-serif;color:var(--lk);}
 body[data-theme="estekak"] .theme-switcher{border:0;padding:0 4px;gap:2px;}
-body[data-theme="estekak"] .theme-btn{background:none;border:0;color:#0000cc;text-decoration:underline;font:11px Arial,Helvetica,sans-serif;padding:2px 5px;text-transform:none;letter-spacing:0;}
-body[data-theme="estekak"] .theme-btn:hover{color:#cc0000;background:none;}
-body[data-theme="estekak"] .theme-btn.active{color:#000;font-weight:bold;text-decoration:none;background:none;}
+body[data-theme="estekak"] .theme-btn{background:none;border:0;color:var(--lk);text-decoration:underline;font:11px Arial,Helvetica,sans-serif;padding:2px 5px;text-transform:none;letter-spacing:0;}
+body[data-theme="estekak"] .theme-btn:hover{color:var(--acc);background:none;}
+body[data-theme="estekak"] .theme-btn.active{color:var(--text);font-weight:bold;text-decoration:none;background:none;}
 body[data-theme="estekak"] .header-gear{border:0;padding:0 4px;}
-body[data-theme="estekak"] .gear-btn{background:none;border:0;color:#0000cc;font-size:15px;width:26px;height:26px;}
-body[data-theme="estekak"] .gear-btn:hover{background:#d5e3f7;color:#000;}
-body[data-theme="estekak"] .logout-btn{background:none;border:0;color:#0000cc;text-decoration:underline;font:11px Arial,Helvetica,sans-serif;text-transform:none;letter-spacing:0;}
-body[data-theme="estekak"] .logout-btn:hover{background:none;color:#cc0000;}
+body[data-theme="estekak"] .gear-btn{background:none;border:0;color:var(--lk);font-size:15px;width:26px;height:26px;}
+body[data-theme="estekak"] .gear-btn:hover{background:var(--band);color:var(--text);}
+body[data-theme="estekak"] .logout-btn{background:none;border:0;color:var(--lk);text-decoration:underline;font:11px Arial,Helvetica,sans-serif;text-transform:none;letter-spacing:0;}
+body[data-theme="estekak"] .logout-btn:hover{background:none;color:var(--acc);}
 
 /* Buscador estilo portal */
 body[data-theme="estekak"] .searchbar{border:0;padding:0 0 10px;background:none;}
-body[data-theme="estekak"] .sb-inner{background:#d5e3f7;border:1px solid #a9c0e3;padding:6px 10px;max-width:780px;margin:0 auto;flex-wrap:nowrap;}
-body[data-theme="estekak"] .sb-lbl{font:bold 12px Arial,Helvetica,sans-serif;color:#000;text-transform:none;letter-spacing:0;white-space:nowrap;}
-body[data-theme="estekak"] #search-input{background:#fff;border:1px solid #7f9db9;border-radius:0;font:13px Arial,Helvetica,sans-serif;padding:4px 6px;box-shadow:none;min-width:0;}
-body[data-theme="estekak"] #search-input:focus{box-shadow:none;border-color:#0033cc;}
-body[data-theme="estekak"] .sb-sel{background:#fff;border:1px solid #7f9db9;font:12px Arial,Helvetica,sans-serif;padding:3px;}
-body[data-theme="estekak"] #search-btn{background:linear-gradient(#fafafa,#d4d4d4);border:1px solid #707070;color:#000;font:12px Arial,Helvetica,sans-serif;font-weight:normal;padding:4px 10px;letter-spacing:0;text-transform:none;}
-body[data-theme="estekak"] #search-btn:hover{background:linear-gradient(#fff,#e2e2e2);}
-body[data-theme="estekak"] .sb-opts{font:10px Arial,Helvetica,sans-serif;color:#555;white-space:nowrap;}
-body[data-theme="estekak"] .sb-opts a{color:#0000cc;text-decoration:underline;}
+body[data-theme="estekak"] .sb-inner{background:var(--band);border:1px solid var(--line2);padding:6px 10px;max-width:780px;margin:0 auto;flex-wrap:nowrap;}
+body[data-theme="estekak"] .sb-lbl{font:bold 12px Arial,Helvetica,sans-serif;color:var(--text);text-transform:none;letter-spacing:0;white-space:nowrap;}
+body[data-theme="estekak"] #search-input{background:var(--surface);border:1px solid var(--inb);border-radius:0;font:13px Arial,Helvetica,sans-serif;padding:4px 6px;box-shadow:none;min-width:0;}
+body[data-theme="estekak"] #search-input:focus{box-shadow:none;border-color:var(--lk);}
+body[data-theme="estekak"] .sb-sel{background:var(--surface);border:1px solid var(--inb);font:12px Arial,Helvetica,sans-serif;padding:3px;}
+body[data-theme="estekak"] #search-btn{background:linear-gradient(var(--b1),var(--b2));border:1px solid var(--bb);color:var(--text);font:12px Arial,Helvetica,sans-serif;font-weight:normal;padding:4px 10px;letter-spacing:0;text-transform:none;}
+body[data-theme="estekak"] #search-btn:hover{background:linear-gradient(var(--b0),var(--b1));}
+body[data-theme="estekak"] .sb-opts{font:10px Arial,Helvetica,sans-serif;color:var(--dim);white-space:nowrap;}
+body[data-theme="estekak"] .sb-opts a{color:var(--lk);text-decoration:underline;}
 
 /* Columnas */
 body[data-theme="estekak"] .col-left,
 body[data-theme="estekak"] .col-mid,
 body[data-theme="estekak"] .col-right{background:transparent;border:0;padding:0;}
-body[data-theme="estekak"] a{color:#0000cc;}
+body[data-theme="estekak"] a{color:var(--lk);}
 
 /* Directorio: título azul en negrita + enlaces chicos con serif, separados por comas */
-body[data-theme="estekak"] .col-h{border-bottom:1px solid #8c9db8;font:bold 12px Arial,Helvetica,sans-serif;color:#000;}
+body[data-theme="estekak"] .col-h{border-bottom:1px solid var(--line2);font:bold 12px Arial,Helvetica,sans-serif;color:var(--text);}
 body[data-theme="estekak"] .col-add{font:10px Arial,Helvetica,sans-serif;}
-body[data-theme="estekak"] .dir-title{font:bold 13px Arial,Helvetica,sans-serif;color:#0000cc;}
+body[data-theme="estekak"] .dir-title{font:bold 13px Arial,Helvetica,sans-serif;color:var(--lk);}
 body[data-theme="estekak"] .dir-links{font:11px 'Times New Roman',Times,serif;line-height:1.35;}
-body[data-theme="estekak"] .dir-lk{color:#0000cc;}
-body[data-theme="estekak"] .dir-lk:hover{color:#cc0000;}
+body[data-theme="estekak"] .dir-lk{color:var(--lk);}
+body[data-theme="estekak"] .dir-lk:hover{color:var(--acc);}
 body[data-theme="estekak"] .lk-ic{display:none;}
 body[data-theme="estekak"] .sl-sl{display:none;}
 
 /* Cajas de la derecha: encabezado color arena y borde azul grisáceo */
-body[data-theme="estekak"] .rbox{border:1px solid #8c9db8;}
-body[data-theme="estekak"] .rbox-h{background:#e0d3a8;color:#000;font:bold 12px Arial,Helvetica,sans-serif;border-bottom:1px solid #8c9db8;}
-body[data-theme="estekak"] .rbox-b{font:11px 'Times New Roman',Times,serif;color:#000;}
+body[data-theme="estekak"] .rbox{border:1px solid var(--line2);}
+body[data-theme="estekak"] .rbox-h{background:var(--boxh);color:var(--text);font:bold 12px Arial,Helvetica,sans-serif;border-bottom:1px solid var(--line2);}
+body[data-theme="estekak"] .rbox-b{font:11px 'Times New Roman',Times,serif;color:var(--text);}
 body[data-theme="estekak"] .rlist li{font-size:11px;}
 body[data-theme="estekak"] .rlist li b{font-family:Arial,Helvetica,sans-serif;font-size:11px;}
 body[data-theme="estekak"] .rmore{font:10px Arial,Helvetica,sans-serif;}
-body[data-theme="estekak"] .rmore a{color:#0000cc;}
-body[data-theme="estekak"] .verse-yo{font:bold 14px Arial,Helvetica,sans-serif;color:#cc0000;text-transform:none;letter-spacing:0;}
-body[data-theme="estekak"] .verse-text{background:none;border:0;padding:0;font:12px 'Times New Roman',Times,serif;color:#000;line-height:1.45;}
-body[data-theme="estekak"] .verse-ref{color:#0000cc;font:bold 10px Arial,Helvetica,sans-serif;letter-spacing:0;}
-body[data-theme="estekak"] .wx-bigtemp{font-family:Arial,Helvetica,sans-serif;color:#cc0000;}
-body[data-theme="estekak"] .wx-desc{font:bold 12px Arial,Helvetica,sans-serif;color:#000;}
+body[data-theme="estekak"] .rmore a{color:var(--lk);}
+body[data-theme="estekak"] .verse-yo{font:bold 14px Arial,Helvetica,sans-serif;color:var(--acc);text-transform:none;letter-spacing:0;}
+body[data-theme="estekak"] .verse-text{background:none;border:0;padding:0;font:12px 'Times New Roman',Times,serif;color:var(--text);line-height:1.45;}
+body[data-theme="estekak"] .verse-ref{color:var(--lk);font:bold 10px Arial,Helvetica,sans-serif;letter-spacing:0;}
+body[data-theme="estekak"] .wx-bigtemp{font-family:Arial,Helvetica,sans-serif;color:var(--acc);}
+body[data-theme="estekak"] .wx-desc{font:bold 12px Arial,Helvetica,sans-serif;color:var(--text);}
 body[data-theme="estekak"] .wx-place,
-body[data-theme="estekak"] .wx-foot{font:10px Arial,Helvetica,sans-serif;color:#555;}
-body[data-theme="estekak"] #derecha-container .sites-group-label{font:bold 11px Arial,Helvetica,sans-serif;color:#000;border:0;text-transform:none;letter-spacing:0;margin:5px 0 2px;padding:0;}
-body[data-theme="estekak"] #derecha-container .site-link{display:block;position:relative;padding:0 0 0 10px;margin:2px 0;color:#0000cc;text-decoration:underline;font:11px 'Times New Roman',Times,serif;background:none;}
-body[data-theme="estekak"] #derecha-container .site-link::before{content:'•';position:absolute;left:0;color:#000;}
-body[data-theme="estekak"] #derecha-container .site-link:hover{color:#cc0000;padding-left:10px;background:none;}
+body[data-theme="estekak"] .wx-foot{font:10px Arial,Helvetica,sans-serif;color:var(--dim);}
+body[data-theme="estekak"] #derecha-container .sites-group-label{font:bold 11px Arial,Helvetica,sans-serif;color:var(--text);border:0;text-transform:none;letter-spacing:0;margin:5px 0 2px;padding:0;}
+body[data-theme="estekak"] #derecha-container .site-link{display:block;position:relative;padding:0 0 0 10px;margin:2px 0;color:var(--lk);text-decoration:underline;font:11px 'Times New Roman',Times,serif;background:none;}
+body[data-theme="estekak"] #derecha-container .site-link::before{content:'•';position:absolute;left:0;color:var(--text);}
+body[data-theme="estekak"] #derecha-container .site-link:hover{color:var(--acc);padding-left:10px;background:none;}
 
-body[data-theme="estekak"] .card-form input{border:1px solid #7f9db9;font:12px Arial,Helvetica,sans-serif;}
-body[data-theme="estekak"] .card-img,body[data-theme="estekak"] .card-noimg{border:1px solid #8c9db8;}
-body[data-theme="estekak"] .card-d{font:11px 'Times New Roman',Times,serif;color:#000;}
+body[data-theme="estekak"] .card-form input{border:1px solid var(--inb);font:12px Arial,Helvetica,sans-serif;}
+body[data-theme="estekak"] .card-img,body[data-theme="estekak"] .card-noimg{border:1px solid var(--line2);}
+body[data-theme="estekak"] .card-d{font:11px 'Times New Roman',Times,serif;color:var(--text);}
 body[data-theme="estekak"] .card-host{font:10px Arial,Helvetica,sans-serif;}
 
 /* Botones */
-body[data-theme="estekak"] .btn{background:linear-gradient(#ffe88a,#f5c800);border:1px solid #b8900a;color:#000;font:bold 11px Arial,Helvetica,sans-serif;letter-spacing:0;text-transform:none;padding:4px 12px;}
+body[data-theme="estekak"] .btn{background:linear-gradient(#ffe88a,#f5c800);border:1px solid #b8900a;color:#111;font:bold 11px Arial,Helvetica,sans-serif;letter-spacing:0;text-transform:none;padding:4px 12px;}
 body[data-theme="estekak"] .btn:hover{background:linear-gradient(#fff0ab,#ffd21f);}
-body[data-theme="estekak"] .btn-ghost{background:linear-gradient(#fafafa,#d8d8d8);border:1px solid #707070;color:#000;font-weight:normal;}
-body[data-theme="estekak"] .btn-ghost:hover{background:linear-gradient(#fff,#e6e6e6);color:#000;}
-body[data-theme="estekak"] .btn-danger{background:#fff;border:1px solid #cc0000;color:#cc0000;}
-body[data-theme="estekak"] .btn-danger:hover{background:#cc0000;color:#fff;}
-body[data-theme="estekak"] .flt-btn{background:#fff;border:1px solid #8fa8cc;color:#0000cc;font:11px Arial,Helvetica,sans-serif;text-transform:none;letter-spacing:0;}
-body[data-theme="estekak"] .flt-btn.active{background:#9b7bd0;border-color:#7e5cb8;color:#fff;font-weight:bold;}
+body[data-theme="estekak"] .btn-ghost{background:linear-gradient(var(--b1),var(--b2));border:1px solid var(--bb);color:var(--text);font-weight:normal;}
+body[data-theme="estekak"] .btn-ghost:hover{background:linear-gradient(var(--b0),var(--b1));color:var(--text);}
+body[data-theme="estekak"] .btn-danger{background:var(--surface);border:1px solid var(--acc);color:var(--acc);}
+body[data-theme="estekak"] .btn-danger:hover{background:var(--acc);color:#fff;}
+body[data-theme="estekak"] .flt-btn{background:var(--surface);border:1px solid var(--line2);color:var(--lk);font:11px Arial,Helvetica,sans-serif;text-transform:none;letter-spacing:0;}
+body[data-theme="estekak"] .flt-btn.active{background:var(--ac);border-color:var(--ac2);color:#fff;font-weight:bold;}
 
 /* Campos de los modales */
 body[data-theme="estekak"] input,
@@ -1346,31 +1126,31 @@ body[data-theme="estekak"] textarea{font-family:Arial,Helvetica,sans-serif;}
 body[data-theme="estekak"] .form-col input,
 body[data-theme="estekak"] .form-col select,
 body[data-theme="estekak"] .login-field input,
-body[data-theme="estekak"] #io-import-area{background:#fff;border:1px solid #7f9db9;border-bottom:1px solid #7f9db9;font-size:12px;}
+body[data-theme="estekak"] #io-import-area{background:var(--surface);border:1px solid var(--inb);border-bottom:1px solid var(--inb);font-size:12px;}
 body[data-theme="estekak"] .form-col input:focus,
 body[data-theme="estekak"] .form-col select:focus,
-body[data-theme="estekak"] .login-field input:focus{border-color:#0033cc;border-bottom-color:#0033cc;}
+body[data-theme="estekak"] .login-field input:focus{border-color:var(--lk);border-bottom-color:var(--lk);}
 
 /* Modales / login / toast */
-body[data-theme="estekak"] .modal-box{background:#fff;border:1px solid #8fa8cc;border-top:4px solid #9b7bd0;box-shadow:3px 3px 10px rgba(0,0,0,.3);}
-body[data-theme="estekak"] .modal-header{background:#d5e3f7;border-bottom:1px solid #b6c9e6;padding:8px 14px;}
-body[data-theme="estekak"] .modal-title{font:bold 14px Arial,Helvetica,sans-serif;color:#000;letter-spacing:0;text-transform:none;}
-body[data-theme="estekak"] .modal-close{background:linear-gradient(#fafafa,#d8d8d8);border:1px solid #707070;color:#000;}
-body[data-theme="estekak"] .settings-section-title{font:bold 12px Arial,Helvetica,sans-serif;color:#000;letter-spacing:0;text-transform:none;border-bottom:1px solid #b6c9e6;}
-body[data-theme="estekak"] .io-card{background:#f3f6fb;border:1px solid #b6c9e6;}
-body[data-theme="estekak"] .io-card-title{font:bold 12px Arial,Helvetica,sans-serif;color:#000;letter-spacing:0;text-transform:none;border-bottom:1px solid #b6c9e6;}
-body[data-theme="estekak"] .io-log{border-left:3px solid #0033cc;background:#f3f6fb;}
-body[data-theme="estekak"] .link-item{border:1px solid #dbe5f4;}
-body[data-theme="estekak"] .link-item:hover{background:#e3edfa;border-color:#8fa8cc;}
-body[data-theme="estekak"] .link-item-group{background:#efe9fa;border:1px solid #9b7bd0;color:#5a3a9a;}
-body[data-theme="estekak"] .link-action-btn{background:linear-gradient(#fafafa,#dcdcdc);border:1px solid #888;color:#000;}
-body[data-theme="estekak"] #login-screen{background:#fff;}
-body[data-theme="estekak"] .login-box{background:#fff;border:1px solid #8fa8cc;border-top:5px solid #9b7bd0;box-shadow:3px 3px 10px rgba(0,0,0,.25);}
-body[data-theme="estekak"] .login-logo{font:400 38px 'Abril Fatface','Rozha One','Alfa Slab One',Georgia,serif;color:#d6001c;letter-spacing:-1px;text-shadow:2px 2px 0 rgba(90,0,10,.5);}
-body[data-theme="estekak"] .login-sub{color:#555;letter-spacing:.06em;}
-body[data-theme="estekak"] .login-btn{background:linear-gradient(#ffe88a,#f5c800);border:1px solid #b8900a;color:#000;font:bold 14px Arial,Helvetica,sans-serif;letter-spacing:0;}
-body[data-theme="estekak"] .toast{background:#333;box-shadow:2px 2px 6px rgba(0,0,0,.4);text-transform:none;letter-spacing:0;}
-body[data-theme="estekak"] .empty-state{font:11px Arial,Helvetica,sans-serif;color:#777;text-transform:none;letter-spacing:0;}
+body[data-theme="estekak"] .modal-box{background:var(--surface);border:1px solid var(--line2);border-top:4px solid var(--ac);box-shadow:3px 3px 10px rgba(0,0,0,.3);}
+body[data-theme="estekak"] .modal-header{background:var(--band);border-bottom:1px solid var(--line);padding:8px 14px;}
+body[data-theme="estekak"] .modal-title{font:bold 14px Arial,Helvetica,sans-serif;color:var(--text);letter-spacing:0;text-transform:none;}
+body[data-theme="estekak"] .modal-close{background:linear-gradient(var(--b1),var(--b2));border:1px solid var(--bb);color:var(--text);}
+body[data-theme="estekak"] .settings-section-title{font:bold 12px Arial,Helvetica,sans-serif;color:var(--text);letter-spacing:0;text-transform:none;border-bottom:1px solid var(--line);}
+body[data-theme="estekak"] .io-card{background:var(--soft);border:1px solid var(--line);}
+body[data-theme="estekak"] .io-card-title{font:bold 12px Arial,Helvetica,sans-serif;color:var(--text);letter-spacing:0;text-transform:none;border-bottom:1px solid var(--line);}
+body[data-theme="estekak"] .io-log{border-left:3px solid var(--lk);background:var(--soft);}
+body[data-theme="estekak"] .link-item{border:1px solid var(--line);}
+body[data-theme="estekak"] .link-item:hover{background:var(--soft2);border-color:var(--line2);}
+body[data-theme="estekak"] .link-item-group{background:var(--ac-lt);border:1px solid var(--ac);color:var(--ac-dk);}
+body[data-theme="estekak"] .link-action-btn{background:linear-gradient(var(--b1),var(--b2));border:1px solid var(--bb);color:var(--text);}
+body[data-theme="estekak"] #login-screen{background:var(--surface);}
+body[data-theme="estekak"] .login-box{background:var(--surface);border:1px solid var(--line2);border-top:5px solid var(--ac);box-shadow:3px 3px 10px rgba(0,0,0,.25);}
+body[data-theme="estekak"] .login-logo{font:400 38px 'Abril Fatface','Rozha One','Alfa Slab One',Georgia,serif;color:var(--logo);letter-spacing:-1px;text-shadow:2px 2px 0 color-mix(in srgb,var(--logo) 40%,#000);}
+body[data-theme="estekak"] .login-sub{color:var(--dim);letter-spacing:.06em;}
+body[data-theme="estekak"] .login-btn{background:linear-gradient(#ffe88a,#f5c800);border:1px solid #b8900a;color:#111;font:bold 14px Arial,Helvetica,sans-serif;letter-spacing:0;}
+body[data-theme="estekak"] .toast{background:var(--text2);box-shadow:2px 2px 6px rgba(0,0,0,.4);text-transform:none;letter-spacing:0;}
+body[data-theme="estekak"] .empty-state{font:11px Arial,Helvetica,sans-serif;color:var(--dim);text-transform:none;letter-spacing:0;}
 
 /* ── RESPONSIVE ── */
 @media (max-width:980px){
@@ -1388,9 +1168,10 @@ body[data-theme="estekak"] .empty-state{font:11px Arial,Helvetica,sans-serif;col
 @media (max-width:560px){
   .yh-icons{gap:10px;}
 }
+.yh-ic span:last-child{max-width:84px;text-align:center;overflow-wrap:anywhere;line-height:1.15;}
 </style>
 </head>
-<body data-theme="estekak">
+<body data-theme="estekak" data-mode="light" data-palette="default">
 
 <!-- ══════════════ LOGIN SCREEN ══════════════ -->
 <div id="login-screen">
@@ -1450,7 +1231,7 @@ body[data-theme="estekak"] .empty-state{font:11px Arial,Helvetica,sans-serif;col
         <div class="form-row"><div class="form-col"><label>URL</label><input type="url" id="lnk-url" placeholder="https://..." /></div></div>
         <div class="form-row">
           <div class="form-col"><label>Grupo</label><input type="text" id="lnk-group" placeholder="Ej: Teología y fe" list="lnk-groups-list" /><datalist id="lnk-groups-list"></datalist></div>
-          <div class="form-col"><label>Panel</label><select id="lnk-panel"><option value="sitios">Mis sitios (col. izq.)</option><option value="apps">Mis apps (col. centro)</option><option value="derecha">Más enlaces (col. der.)</option></select></div>
+          <div class="form-col"><label>Panel</label><select id="lnk-panel"><option value="sitios">Mis sitios (col. izq.)</option><option value="apps">Mis apps (col. centro)</option><option value="encabezado">Encabezado (iconos de arriba)</option><option value="derecha">Más enlaces (col. der.)</option></select></div>
         </div>
         <div style="display:flex;gap:6px;margin-top:6px;">
           <button class="btn" onclick="saveLinkForm()">Guardar link</button>
@@ -1463,6 +1244,7 @@ body[data-theme="estekak"] .empty-state{font:11px Arial,Helvetica,sans-serif;col
         <div class="links-toolbar">
           <span style="font-family:var(--font-mono);font-size:9px;color:var(--dim);letter-spacing:0.1em;text-transform:uppercase;">Filtrar:</span>
           <button class="flt-btn active" onclick="filterLinksPanel('todos',this)">todos</button>
+          <button class="flt-btn" onclick="filterLinksPanel('encabezado',this)">encabezado</button>
           <button class="flt-btn" onclick="filterLinksPanel('sitios',this)">mis sitios</button>
           <button class="flt-btn" onclick="filterLinksPanel('apps',this)">mis apps</button>
           <button class="flt-btn" onclick="filterLinksPanel('derecha',this)">col. der.</button>
@@ -1549,15 +1331,11 @@ body[data-theme="estekak"] .empty-state{font:11px Arial,Helvetica,sans-serif;col
 
   <!-- ══════════════ BANNER ESTEKAK (solo tema Estekak) ══════════════ -->
   <div class="yh-banner">
-    <div class="yh-icons">
+    <div class="yh-icons" id="yh-left">
       <a class="yh-ic" onclick="openModal('modal-links')"><span class="yh-orb o-gold">⭐</span><span>Personalizar</span></a>
-      <a class="yh-ic" href="https://chanchito72.vercel.app/" target="_blank"><span class="yh-orb o-green">🐷</span><span>Finanzas</span></a>
-      <a class="yh-ic" href="https://script.google.com/macros/s/AKfycbx0mw_gwVh9ioKbDtZu5h3GO9Rp9jUU37PrTdNTBWYdy2Vsmh0C4LRZC9alR4p1aIH3/exec" target="_blank"><span class="yh-orb o-lav">📻</span><span>Radios</span></a>
     </div>
     <div class="yh-logo" aria-label="ESTEKAK"><span>E</span><span>S</span><span>T</span><span>E</span><span>K</span><span>A</span><span>K</span></div>
-    <div class="yh-icons">
-      <a class="yh-ic" href="https://mail.google.com" target="_blank"><span class="yh-orb o-cream">✉️</span><span>Correo</span></a>
-      <a class="yh-ic" href="https://claude.ai" target="_blank"><span class="yh-orb o-blue">💬</span><span>Claude</span></a>
+    <div class="yh-icons" id="yh-right">
       <a class="yh-ic" onclick="openModal('modal-settings')"><span class="yh-orb o-teal">❓</span><span>Ayuda</span></a>
     </div>
   </div>
@@ -1576,9 +1354,16 @@ body[data-theme="estekak"] .empty-state{font:11px Arial,Helvetica,sans-serif;col
       <div class="header-weather" id="hdr-weather">—</div>
     </div>
     <div class="theme-switcher">
-      <button class="theme-btn active" id="theme-estekak" onclick="setTheme('estekak')">🌐 Estekak</button>
-      <button class="theme-btn" id="theme-tricolor" onclick="setTheme('tricolor')">🎨 Tricolor</button>
-      <button class="theme-btn" id="theme-win95" onclick="setTheme('win95')">🖥 Win 95</button>
+      <button class="theme-btn mode-btn" id="mode-toggle" onclick="toggleMode()" title="Cambiar entre modo claro y oscuro">🌙 Oscuro</button>
+      <span class="pal" id="pal-wrap" title="Paleta de colores (modo claro)">
+        <span class="pal-lbl">Paleta:</span>
+        <button class="pal-dot" data-p="default" style="--c:linear-gradient(135deg,#d6001c 50%,#9b7bd0 50%)" title="Por defecto" aria-label="Paleta por defecto" onclick="setPalette('default')"></button>
+        <button class="pal-dot" data-p="violeta" style="--c:#7b2cbf" title="Violeta" aria-label="Paleta violeta" onclick="setPalette('violeta')"></button>
+        <button class="pal-dot" data-p="azul" style="--c:#1a4fd1" title="Azul" aria-label="Paleta azul" onclick="setPalette('azul')"></button>
+        <button class="pal-dot" data-p="rojo" style="--c:#ee1c25" title="Rojo" aria-label="Paleta roja" onclick="setPalette('rojo')"></button>
+        <button class="pal-dot" data-p="naranja" style="--c:#f26a00" title="Naranja" aria-label="Paleta naranja" onclick="setPalette('naranja')"></button>
+        <button class="pal-dot" data-p="verde" style="--c:#1b9a3a" title="Verde" aria-label="Paleta verde" onclick="setPalette('verde')"></button>
+      </span>
     </div>
     <div class="header-gear">
       <button class="gear-btn" onclick="openModal('modal-io')" title="Importar / Exportar datos">⇅</button>
@@ -1639,10 +1424,16 @@ body[data-theme="estekak"] .empty-state{font:11px Arial,Helvetica,sans-serif;col
     <div class="rbox" id="sec-palabra">
       <div class="rbox-h">Palabra del día</div>
       <div class="rbox-b">
+        <div class="pd-tabs" role="tablist">
+          <button class="pd-tab on" id="pd-tab-biblia" role="tab" onclick="setPdTab('biblia')" title="Cristianismo — Biblia">Biblia</button>
+          <button class="pd-tab" id="pd-tab-coran" role="tab" onclick="setPdTab('coran')" title="Islam — Corán">Corán</button>
+          <button class="pd-tab" id="pd-tab-gita" role="tab" onclick="setPdTab('gita')" title="Hinduismo — Bhagavad Gita">Gita</button>
+        </div>
         <div class="verse-yo" id="verse-yo">—</div>
         <div class="verse-text" id="verse-text">Cargando...</div>
         <div class="verse-ref" id="verse-ref"></div>
-        <div class="rmore"><a href="#" onclick="randomVerse();return false;">otro versículo...</a></div>
+        <div class="pd-note" id="pd-note" hidden></div>
+        <div class="rmore"><a href="#" id="pd-more" onclick="randomVerse();return false;">otro versículo...</a></div>
       </div>
     </div>
 
@@ -1700,6 +1491,9 @@ body[data-theme="estekak"] .empty-state{font:11px Arial,Helvetica,sans-serif;col
 </div><!-- /dash -->
 
 <script>
+const QURAN_SURAS={"1": "Al-Fatihah", "2": "Al-Baqarah", "3": "Ali 'Imran", "4": "An-Nisa", "5": "Al-Ma'idah", "6": "Al-An'am", "7": "Al-A'raf", "8": "Al-Anfal", "9": "At-Tawbah", "10": "Yunus", "11": "Hud", "12": "Yusuf", "13": "Ar-Ra'd", "14": "Ibrahim", "15": "Al-Hijr", "16": "An-Nahl", "17": "Al-Isra", "18": "Al-Kahf", "19": "Maryam", "20": "Taha", "21": "Al-Anbya", "22": "Al-Hajj", "23": "Al-Mu'minun", "24": "An-Nur", "25": "Al-Furqan", "26": "Ash-Shu'ara", "27": "An-Naml", "28": "Al-Qasas", "29": "Al-'Ankabut", "30": "Ar-Rum", "31": "Luqman", "32": "As-Sajdah", "33": "Al-Ahzab", "34": "Saba", "35": "Fatir", "36": "Ya-Sin", "38": "Sad", "39": "Az-Zumar", "40": "Ghafir", "41": "Fussilat", "42": "Ash-Shuraa", "46": "Al-Ahqaf", "47": "Muhammad", "48": "Al-Fath", "49": "Al-Hujurat", "50": "Qaf", "51": "Adh-Dhariyat", "53": "An-Najm", "55": "Ar-Rahman", "57": "Al-Hadid", "58": "Al-Mujadila", "59": "Al-Hashr", "60": "Al-Mumtahanah", "61": "As-Saf", "62": "Al-Jumu'ah", "63": "Al-Munafiqun", "64": "At-Taghabun", "65": "At-Talaq", "66": "At-Tahrim", "67": "Al-Mulk", "68": "Al-Qalam", "70": "Al-Ma'arij", "71": "Nuh", "73": "Al-Muzzammil", "74": "Al-Muddaththir", "75": "Al-Qiyamah", "76": "Al-Insan", "79": "An-Nazi'at", "80": "'Abasa", "82": "Al-Infitar", "83": "Al-Mutaffifin", "87": "Al-A'la", "88": "Al-Ghashiyah", "89": "Al-Fajr", "90": "Al-Balad", "91": "Ash-Shams", "92": "Al-Layl", "93": "Ad-Duhaa", "94": "Ash-Sharh", "95": "At-Tin", "96": "Al-'Alaq", "98": "Al-Bayyinah", "99": "Az-Zalzalah", "102": "At-Takathur", "103": "Al-'Asr", "104": "Al-Humazah", "107": "Al-Ma'un", "109": "Al-Kafirun", "110": "An-Nasr", "112": "Al-Ikhlas"};
+const QURAN_DATA=[[39,"17-18","Escuchar lo mejor","Albricias a los siervos que escuchan la palabra y siguen lo mejor de ella. Discernir lo mejor entre muchas voces es una forma de sabiduría."],[62,"10","Rezar y trabajar","Cuando termine la oración, dispersaos por la tierra y buscad el favor de Dios. Rezar y trabajar no se oponen: el trabajo honrado también es una forma de culto."],[11,"88","El éxito viene de Dios","Mi éxito solo depende de Dios; en Él confío y a Él vuelvo. Trabajar con esfuerzo sin atribuirse todo el mérito es el secreto de la humildad."],[4,"8","Compartir al repartir","Cuando en el reparto de una herencia asistan parientes, huérfanos y necesitados, dadles algo de ello y habladles con bondad. Hasta en los momentos difíciles, hay gestos de nobleza."],[13,"28","Corazones en calma","Los corazones se tranquilizan con el recuerdo de Dios. En un mundo de ruido y prisa, recordar lo esencial es una forma de descanso."],[5,"35","Esforzarse por acercarse","Temed a Dios, buscad un medio para acercaros a Él y esforzaos en Su camino. Acercarse a lo bueno es una tarea diaria, sin atajos."],[76,"9","Dar sin esperar gracias","«Os damos de comer solo por amor a Dios; no queremos de vosotros recompensa ni agradecimiento.» Esa es la forma más pura de generosidad."],[57,"27","Compasión y misericordia","El Corán dice que Dios infundió en los corazones de quienes siguieron a Jesús, hijo de María, la compasión y la misericordia: valores que cristianos y musulmanes pueden reconocer como propios."],[2,"177","En qué consiste el bien","El bien no está en las formas, sino en creer, dar de lo que se ama, ser fiel a los pactos y perseverar en la adversidad. Eso es piedad, dice el Corán."],[29,"6","Esforzarse para uno mismo","Quien se esfuerza, lo hace para sí mismo. La disciplina espiritual no se la haces a Dios: es un regalo que te haces tú."],[2,"42","No mezclar verdad y falsedad","No mezcles la verdad con la mentira ni la ocultes a sabiendas. Una verdad a medias puede ser tan engañosa como una mentira completa."],[19,"32","Dulce con su madre","Jesús, según el Corán, dice: «Me ha hecho bondadoso con mi madre y no me hizo arrogante ni desdichado». Una virtud compartida: el respeto a la madre."],[87,"14","Triunfo del que se purifica","Ha triunfado quien se purifica, recuerda el nombre de su Señor y reza. Purificarse es un trabajo diario, como lavarse las manos."],[3,"133","Apresuraos al perdón","Apresuraos hacia el perdón de vuestro Señor y hacia un jardín tan amplio como cielos y tierra. No pospongas la reconciliación: hoy es mejor que mañana."],[36,"58","Paz como saludo","«¡Paz!», palabra de un Señor misericordioso. La paz no es solo un deseo: es el saludo que define el carácter de lo divino."],[4,"1","Respetar los lazos de sangre","Temed a Dios, en cuyo nombre os pedís unos a otros, y respetad los lazos de parentesco. Una disputa familiar se resuelve mejor con memoria que con orgullo."],[2,"44","Aplicarse el consejo","¿Ordenáis el bien a los demás y os olvidáis de vosotros mismos? Antes de aconsejar, conviene mirarse al espejo y empezar por uno."],[18,"10","Refugio y guía","Los jóvenes que se refugiaron en la cueva pidieron misericordia y una guía para su situación. Cuando no ves el camino, pide orientación antes que escapatorias."],[23,"8","Depósitos y promesas","Prosperan los que cumplen con lo que se les confió y con sus promesas. La palabra dada es una pequeña deuda de honor."],[5,"100","No es igual lo bueno y lo malo","No es igual lo malo y lo bueno, aunque te asombre la abundancia de lo malo. Lo bueno, aunque sea poco y silencioso, vale más."],[8,"2","El temblor del corazón","Los creyentes son aquellos cuyos corazones se estremecen cuando se menciona a Dios y cuya fe crece al oír Sus palabras. La fe viva se nota."],[2,"109","Pasad por alto","«Perdonad y pasad por alto.» No todo agravio exige respuesta; a veces lo más sabio es dejar pasar y seguir adelante con el corazón liviano."],[16,"97","Una vida buena","Al que obre rectamente, sea hombre o mujer, y sea creyente, le daremos una vida buena. La buena vida no es la de más cosas, sino la de más sentido."],[23,"96","Repeler el mal con lo mejor","«Repele el mal con lo que sea mejor.» El mal no se vence con otro mal: se detiene con una respuesta que lo desarma."],[7,"31","Comer sin excesos","Comed y bebed, pero no derrochéis: Dios no ama a los derrochadores. El equilibrio es una forma de salud y de respeto por lo que se te da."],[92,"5-7","Dar, cuidar y creer","Quien da, es consciente de Dios y cree en lo bueno, tendrá la facilidad facilitada. Las buenas actitudes allanan el camino en la vida."],[29,"46","Debatir con respeto","No discutáis con la Gente del Libro sino de la mejor manera, diciendo: «Creemos en lo que se nos reveló y en lo que se os reveló; nuestro Dios y el vuestro es uno»."],[11,"112","Sé recto","«Sé recto como se te ha ordenado.» La rectitud no se alcanza de una vez: se renueva cada mañana al elegir de nuevo lo correcto."],[89,"17-18","Honrar al huérfano","¿Por qué no honráis al huérfano ni os animáis a alimentar al pobre? La falta no está solo en el mal que se hace, sino en el bien que se omite."],[19,"31","Bendito dondequiera","«Me ha hecho bendito dondequiera que esté y me ha ordenado la oración y la caridad mientras viva.» Una vida buena se mide por la oración y el servicio."],[20,"132","Educar con el ejemplo","Ordena la oración a tu familia y persevera tú en ella. Educar es mostrar con el ejemplo; los hijos aprenden más de lo que ven que de lo que se les dice."],[3,"185","Todo ser probará la muerte","Todo ser probará la muerte, y se os pagará el día de la resurrección. La vida de este mundo es un disfrute pasajero. Vive de tal modo que no te sobren los arrepentimientos."],[80,"1-2","Todos merecen atención","El Profeta frunció el ceño y se apartó cuando se le acercó un hombre ciego, y fue corregido. Nadie debe recibir menos atención por ser humilde."],[53,"32","No te atribuyas pureza","No os atribuyáis pureza: Dios conoce mejor quién es consciente de Él. Juzgarse mejor que otros es el atajo más corto hacia la soberbia."],[55,"13","¿Cuál negarás?","En una sura entera se repite una pregunta: ¿cuál de las gracias de vuestro Señor negaréis? Es una invitación a mirar lo que ya tienes."],[2,"127","Construir con humildad","Abraham e Ismael levantaban los cimientos de la Casa pidiendo: «Señor, acepta de nosotros». Se hace lo mejor posible y se pide que sea aceptado."],[39,"7","Dios aprecia al agradecido","«Si sois agradecidos, Él lo aprecia en vosotros.» No hay acto pequeño cuando se hace con gratitud: Dios lo valora."],[3,"104","Una comunidad que invita al bien","Que haya entre vosotros una comunidad que invite al bien, ordene lo justo y prohíba lo reprobable. Una sociedad sana se cuida a sí misma."],[59,"9","Preferir al otro","Prefieren a los demás antes que a sí mismos, aunque estén necesitados. Quien se libra de su propia avaricia, ese prospera. La generosidad más grande es dar con carencia."],[2,"267","Dar de lo mejor","«Gastad de lo bueno que habéis ganado», no de lo que vosotros mismos no aceptaríais. Dar lo que a ti te sobra y no te sirve no es dar: es descartar."],[4,"10","Una advertencia severa","Quienes se comen injustamente los bienes de los huérfanos solo tragan fuego en sus vientres. Aprovecharse del débil es una de las faltas más graves."],[49,"12","Sin sospecha ni murmuración","Evitad la mayoría de las sospechas, no espiéis ni habléis mal unos de otros: ¿le gustaría a alguno comer la carne de su hermano muerto? Calla lo que daña."],[16,"125","Sabiduría y buena exhortación","«Invita al camino de tu Señor con sabiduría y buena exhortación, y discute con ellos de la mejor manera.» Persuadir es un arte que exige respeto."],[31,"14","Gratitud hacia la madre","Se recuerda con ternura el esfuerzo de la madre, que llevó a su hijo con fatiga sobre fatiga. Agradecer a Dios y a los padres va de la mano."],[2,"186","Estoy cerca","Dios responde: «Estoy cerca; respondo a quien me invoca». No hacen falta intermediarios ni palabras perfectas: basta una súplica sincera."],[32,"16","Noches de súplica","Sus costados se apartan de los lechos para invocar a su Señor con temor y esperanza, y gastan de lo que se les dio. Una noche de silencio puede cambiar una vida."],[7,"29","Mi Señor ordena la equidad","«Mi Señor ha ordenado la justicia.» Antes que cualquier rito, la fe pide que seas justo con tu familia, tu vecino y quien trabaja contigo."],[18,"28","Con los que buscan a Dios","Mantente paciente junto a quienes invocan a su Señor mañana y tarde buscando Su rostro, y no apartes tus ojos de ellos por el brillo de la vida mundana."],[35,"28","El saber que humilla","Solo temen a Dios, de entre Sus siervos, los que tienen conocimiento. Cuanto más se sabe, más se percibe la inmensidad de lo que se ignora."],[11,"6","El sustento está asegurado","No hay criatura en la tierra cuyo sustento no corra a cargo de Dios. Trabajar sin angustia es posible cuando se confía en que no estamos solos."],[73,"8","Consagrarse","«Recuerda el nombre de tu Señor y conságrate a Él por completo.» No se trata de renunciar al mundo, sino de dedicar el corazón entero a lo esencial."],[67,"2","Vida y muerte como prueba","La vida y la muerte fueron creadas para ver quién obra mejor. No importa tanto cuánto hiciste, sino cuán bien lo hiciste."],[9,"128","Un mensajero compasivo","Le duele lo que os perjudica, se preocupa por vosotros y es compasivo y misericordioso con los creyentes. La verdadera guía nace de la compasión."],[13,"21","Unir lo que debe estar unido","Prosperan los que mantienen unido lo que Dios mandó mantener unido. Los lazos familiares y de amistad se cuidan, no se dan por hechos."],[59,"18","Mirar el mañana","Que cada alma mire lo que ha preparado para el día de mañana. Tomarse unos minutos al final del día para revisar lo vivido es un hábito de sabios."],[16,"69","Una lección de las abejas","De las abejas sale una bebida de colores diversos, en la que hay curación para la gente. El trabajo ordenado y colectivo de un pequeño insecto es una escuela."],[7,"23","Reconocer el error","Adán y Eva no culparon a nadie: «Nos hemos perjudicado a nosotros mismos». Asumir la responsabilidad es el comienzo de toda enmienda."],[2,"110","Lo que adelantas","Todo bien que adelantéis para vosotros lo encontraréis junto a Dios. Cada gesto de bondad es un ahorro para el futuro."],[112,"1-4","Lo esencial","«Di: Él es Dios, uno.» Una de las frases más breves y más profundas: unifica el corazón en torno a lo que de verdad importa."],[21,"30","Todo viene del agua","Del agua hicimos todo ser vivo. El respeto por el agua es respeto por la vida misma: ahorrarla y cuidarla es una forma concreta de agradecimiento."],[31,"17","Soportar con firmeza","El consejo de un padre sabio: haz el bien, invita a lo bueno y soporta con paciencia lo que te toque. Eso, dice, requiere determinación."],[94,"7","Cuando termines, continúa","«Cuando hayas terminado, esfuérzate; y hacia tu Señor, aspira.» No hay momento de reposo absoluto: siempre hay una nueva tarea y un nuevo horizonte."],[16,"96","Lo que permanece","Lo que tienes se acaba; lo que está junto a Dios permanece. Invertir en obras buenas es el único ahorro que no se devalúa."],[51,"56","Para qué existimos","«No he creado a los genios y a los humanos sino para que me adoren». Una vida con propósito es una vida con dirección, sin sensación de vacío."],[10,"62","Sin miedo ni tristeza","Los amigos de Dios no tienen nada que temer ni se entristecerán. Una vida orientada a lo esencial pierde muchos de sus fantasmas."],[49,"9","Reconciliar con equidad","Cuando dos grupos se enfrentan, hay que procurar la paz entre ellos con justicia y equidad. La paz sin justicia dura poco."],[7,"199","Perdón y bien","«Practica el perdón, ordena lo bueno y apártate de los ignorantes.» No hace falta ganar cada discusión: a veces la sabiduría está en seguir caminando."],[6,"160","Diez veces","«Quien presente una buena acción tendrá diez veces su valor.» Una pequeña semilla de bondad rinde mucho más de lo que se imagina."],[5,"105","Cuidaos a vosotros mismos","Cuidad de vosotros mismos: el extraviado no os perjudica si vosotros estáis bien guiados. No pierdas energía en corregir a todos; empieza por ti."],[70,"5","Paciencia con dignidad","Ante la burla o el desprecio, el Corán recomienda una paciencia hermosa: no devolver ofensa por ofensa y conservar la dignidad intacta."],[25,"74","Consuelo para los ojos","Una súplica por la familia: «Señor, danos en nuestras esposas y descendientes consuelo para los ojos y haznos guía de los piadosos». El hogar es el primer lugar de fe."],[9,"71","Aliados en el bien","Los creyentes y las creyentes son aliados unos de otros: ordenan lo bueno, prohíben lo reprobable, hacen la oración y dan la limosna. Un tejido de apoyo mutuo."],[42,"43","Perdonar con entereza","Quien soporta con paciencia y perdona demuestra gran entereza. Perdonar no es perder: es elegir quién queda al mando de tu propio corazón."],[7,"26","La vestimenta de la piedad","El mejor vestido es el de la piedad. La ropa cubre el cuerpo; la conciencia de Dios cubre y embellece el corazón."],[93,"3","No estás abandonado","En los días en que te sientas olvidado, recuerda: tu Señor no te ha abandonado ni te ha aborrecido. El silencio no es ausencia."],[57,"23","Ni abatido ni soberbio","No te hundas por lo que se te escapó ni te ensoberbezcas por lo que recibiste. Quien mira la vida con equilibrio no se rompe ni se infla."],[24,"22","Perdonar para ser perdonados","«Que perdonen y pasen por alto. ¿No queréis que Dios os perdone?» Una pregunta que invita a la humildad: lo que damos a otros es lo que esperamos recibir."],[7,"56","No corromper la tierra","No corrompáis la tierra después de que fue puesta en orden. El cuidado de la naturaleza es un deber espiritual, no una moda."],[79,"40","Frenar el capricho","Quien temió comparecer ante su Señor y refrenó su alma de la pasión, tendrá el Paraíso por morada. Decir «no» a un impulso es un acto de libertad."],[76,"3","El camino mostrado","«Le hemos mostrado el camino, ya sea agradecido o ingrato.» Se nos da la luz y también la libertad: elegir cómo caminar es nuestro."],[27,"19","Una súplica de gratitud","Salomón pidió: «Señor, inspírame para agradecer el favor que me diste a mí y a mis padres, y para obrar con rectitud como a Ti Te agrada»."],[59,"19","No olvidarse de uno mismo","No seáis como quienes olvidaron a Dios y Dios les hizo olvidarse de sí mismos. Quien pierde de vista lo sagrado termina perdiéndose a sí mismo."],[18,"46","Lo que permanece","Los bienes y los hijos son adorno de la vida mundana, pero las buenas obras duraderas son mejores ante tu Señor en recompensa y en esperanza."],[21,"87","Desde lo más oscuro","Desde la oscuridad más profunda, Jonás reconoció su error y glorificó a Dios. Ninguna situación es tan oscura como para impedir un regreso sincero."],[2,"62","Un mismo destino de bien","Los creyentes, los judíos, los cristianos y los sabeos que creen en Dios y en el último día y obran bien tendrán su recompensa y no temerán. La bondad une."],[4,"19","Convivir con bondad","«Convivid con ellas de buen modo; si os disgustan, puede que os disguste algo en lo que Dios ha puesto mucho bien.» Un matrimonio se sostiene con paciencia y buen trato."],[8,"61","Inclinarse a la paz","Si el otro se inclina a la paz, inclínate tú también y confía en Dios. La paz exige un primer gesto y un corazón que no tema parecer débil."],[3,"200","Perseverad","Una exhortación final a los creyentes: sed pacientes, perseverad, mantened la guardia y cuidad vuestra conciencia. La prosperidad es fruto de constancia."],[1,"6","El camino recto","La súplica central del creyente: «Guíanos por el camino recto». Nadie lo alcanza de una vez; se pide cada día, y se vuelve a empezar."],[34,"13","Trabajar agradecido","«Trabajad con gratitud, familia de David.» El trabajo hecho con gratitud no pesa igual: se vuelve ofrenda y no solo obligación."],[61,"2","Decir y hacer","«¿Por qué decís lo que no hacéis?» La coherencia entre palabras y actos es la mejor predicación y la más difícil de sostener."],[39,"36","¿No le basta Dios?","Una pregunta que ordena el corazón: ¿acaso no basta Dios a Su siervo? Quien se sabe sostenido deja de vivir buscando aprobaciones por todas partes."],[67,"3","Sin imperfección","«Mira de nuevo: ¿ves alguna grieta?» El orden del universo es una invitación a la serenidad y a la confianza en que hay un sentido detrás de todo."],[75,"2","El alma que se reprocha","El Corán jura por el alma que se reprocha a sí misma. Esa vocecita de la conciencia que incomoda no es un enemigo: es un guardián."],[25,"58","Confía en el Viviente","«Confía en el Viviente que no muere.» Apoyarse en lo pasajero decepciona; apoyarse en lo permanente da estabilidad al alma."],[22,"78","Sin dificultad innecesaria","Esforzaos por Dios como se debe; Él os eligió y no os impuso dificultad en la religión. La fe sana no es una carga imposible: es una guía practicable."],[33,"35","Hombres y mujeres que se esfuerzan","El Corán enumera, para hombres y mujeres por igual, virtudes como la sinceridad, la paciencia, la humildad, la caridad y el recuerdo de Dios. Un mismo camino para todos."],[17,"24","Bajar el ala por ellos","«Baja para ellos el ala de la humildad por compasión y di: Señor, ten misericordia de ellos como me cuidaron de pequeño.» Se les devuelve con ternura lo que dieron."],[15,"56","La esperanza no se pierde","Perder la esperanza en la misericordia es perder el rumbo. Mientras haya un mañana, hay posibilidad de enmienda, de reencuentro y de comienzo."],[22,"30","Apartarse de la falsedad","Evita la palabra falsa. La mentira, el falso testimonio y el rumor dañan a otros y también deterioran la confianza en uno mismo."],[10,"5","Sol, luna y tiempo","Dios hizo del sol una luz y de la luna un resplandor, y determinó sus fases para que supierais contar los años. El orden del cielo invita a la gratitud."],[41,"30","Firmeza y consuelo","A quienes dicen «nuestro Señor es Dios» y se mantienen rectos, los ángeles descienden: «No temáis, no os entristezcáis». La constancia atrae el consuelo."],[33,"41","Recordar mucho","Se invita a recordar a Dios con mucho recuerdo. Recordarlo en el trabajo, en el descanso, en la alegría y en el dolor mantiene el corazón despierto."],[3,"159","Decidir y confiar","Después de consultar y reflexionar, decide y confía. Haber hecho lo mejor que estaba a tu alcance te permite soltar el resultado sin culpa."],[28,"24","Necesitado de bien","Moisés, cansado y sin recursos, dijo: «Señor, necesito el bien que me envíes». Reconocer la necesidad con humildad es el primer paso para recibir ayuda."],[7,"55","Orar con humildad","Invocad a vuestro Señor con humildad y en privado. La oración que nace de la intimidad y no de la exhibición tiene otro peso."],[88,"21","Solo un recordador","«Recuerda: tú eres solo quien recuerda.» No se te pide convencer a nadie, sino aconsejar con verdad y dejar el resto en manos de Dios."],[49,"6","Verificar antes de creer","Si un malintencionado te trae una noticia, verifícala, no sea que perjudiques a alguien por ignorancia y luego te arrepientas. Prudencia ante el rumor."],[3,"135","Recordar y pedir perdón","Los virtuosos, cuando cometen una falta o se perjudican a sí mismos, recuerdan a Dios y piden perdón sin insistir en lo malo. Caer es humano; levantarse, noble."],[17,"36","No sigas lo que no sabes","No te dejes llevar por lo que no conoces: el oído, la vista y el corazón serán interrogados. Verificar antes de creer o repetir es un deber moral."],[5,"48","Competir en el bien","A cada comunidad se le dio una ley y un camino; si Dios hubiera querido, os habría hecho una sola comunidad. Competid en el bien: la diversidad es una invitación."],[24,"27","Pedir permiso","No entréis en casas que no sean las vuestras sin pedir permiso y saludar a sus habitantes. El respeto a la intimidad ajena es una forma de cortesía básica."],[3,"103","Aferrarse juntos","Aferraos todos a la cuerda de Dios y no os dividáis. Recordad cuando erais enemigos y Él unió vuestros corazones. La unidad es una gracia que hay que cuidar."],[50,"16","Más cerca que la vena","Estamos más cerca de Dios que la vena del cuello. Si Él conoce hasta lo que susurra el alma, nada de lo que sientes es incomprensible para Él."],[24,"35","Luz sobre luz","«Dios es la luz de los cielos y de la tierra.» Una imagen para la fe: una lámpara dentro de un nicho, luz sobre luz. Lo que ilumina, ilumina más cuando es compartido."],[64,"11","Un corazón guiado","Ninguna desgracia sucede sin que Dios lo permita, y a quien cree en Él, Él le guía el corazón. En la adversidad, el corazón puede seguir orientado."],[2,"269","Sabiduría","Dios concede la sabiduría a quien quiere, y quien la recibe ha recibido mucho bien. La sabiduría es saber qué hacer con lo que se sabe."],[10,"26","Lo mejor y algo más","«Quienes hicieron el bien tendrán lo mejor y algo más.» La recompensa de una buena acción siempre es mayor que el esfuerzo que costó."],[88,"17-20","Mirar a los camellos","«¿No miran los camellos, cómo han sido creados? ¿Y el cielo, cómo fue elevado?» A veces la fe empieza con una mirada atenta a lo cotidiano."],[14,"24","La buena palabra","La buena palabra es como un buen árbol: raíz firme y ramas altas, que da fruto en todo tiempo. Lo que dices hoy puede dar frutos durante años."],[55,"9","La balanza","«Pesad con equidad y no defraudéis en la balanza.» La honradez en lo pequeño sostiene el orden de todo lo grande."],[3,"147","Perdón y firmeza","Reconocer los propios excesos y pedir firmeza es la actitud de los sabios. Admitir faltas no te rebaja: te prepara para seguir adelante."],[16,"127","La paciencia también es un don","Se te pide paciencia, pero se te recuerda que solo es posible con ayuda de Dios. Pide fuerzas: la perseverancia no es solo mérito propio."],[28,"83","Quien no busca grandeza","La morada final es para quienes no buscan la altivez en la tierra ni la corrupción. La verdadera grandeza no se exhibe: se practica."],[42,"40","Perdonar y reconciliar","La respuesta a un daño puede ser un daño igual; pero quien perdona y hace las paces, su recompensa está en Dios. El perdón es opcional; la reconciliación, un acto de grandeza."],[2,"220","Mejorar su situación","Acerca de los huérfanos: lo mejor es mejorar su situación. Un acto concreto de cuidado vale más que cien palabras de compasión."],[3,"113","No todos son iguales","Entre la Gente del Libro hay una comunidad recta que recita los versículos de Dios durante la noche y se prosterna. Generalizar es injusto; mirar a cada persona, es sabio."],[74,"38","Rehén de lo hecho","Todo ser es rehén de lo que ha obrado. Cada decisión te compromete: elige con cuidado aquello por lo que querrás ser conocido."],[29,"45","La oración que corrige","La oración, dice el Corán, aparta de la inmoralidad y del mal. Cuando se hace con atención, ordena la jornada y devuelve la brújula interior."],[1,"5","Pedir ayuda con dignidad","Solo ante Dios inclinamos la cabeza y solo de Él pedimos ayuda. Esta frase libera de toda servidumbre: no hay que humillarse ante ningún otro."],[66,"11","Una casa junto a Dios","La esposa del faraón pidió: «Señor, constrúyeme una casa junto a Ti en el Paraíso y sálvame de la injusticia». Una fe que sobrevive en medio de la opresión."],[17,"34","Cumplir lo pactado","Cumple con lo pactado: se pedirá cuenta de todo compromiso. Cada promesa que haces te pone una pequeña responsabilidad que otros pueden ver."],[12,"18","Paciencia hermosa","Hay una paciencia que no se endurece ni se queja: la que sufre sin perder la dulzura. Es la que Jacob eligió ante la pérdida de su hijo."],[41,"33","Hablar bien y obrar bien","¿Quién habla mejor que quien invita a Dios, obra con rectitud y dice «yo soy de los sometidos»? La invitación más convincente es el ejemplo."],[6,"54","Misericordia como decreto","Dios ha prescrito para Sí la misericordia: quien obre mal por ignorancia y luego se arrepienta y enmiende, hallará perdón. La puerta del regreso está abierta."],[65,"3","Confiar y obrar","Confiar no es cruzarse de brazos: es hacer lo que te corresponde y entregar el resultado con serenidad. Quien se apoya en Dios tiene suficiente."],[2,"257","De la oscuridad a la luz","Dios es el protector de los creyentes: los saca de las tinieblas a la luz. Cada vez que eliges la verdad, hay una ventana que se abre."],[102,"1","La carrera por tener más","La rivalidad por acumular os distrae, hasta que visitáis las tumbas. Cuando llegue el final, nadie se lleva lo que acumuló: solo se queda lo que dio."],[4,"2","Los bienes del huérfano","Devolved a los huérfanos sus bienes y no cambiéis lo bueno por lo malo. La honradez se mide cuando quien nos confía algo no puede defenderse."],[2,"271","Discreción al dar","Dar abiertamente es bueno, pero darlo en secreto a los necesitados es mejor. La generosidad más hermosa no busca aplausos."],[34,"46","Levantarse y reflexionar","«Os exhorto a una sola cosa: que os levantéis por Dios, de dos en dos o por separado, y luego reflexionéis.» Pensar con otros o en soledad es un acto de honestidad."],[2,"262","Dar sin reproches","Quienes gastan en el camino de Dios y no acompañan lo dado con reproches ni molestias tendrán su recompensa y no temerán ni se entristecerán."],[6,"164","Cada uno con su carga","Nadie cargará con la carga de otro. Cada persona es responsable de sus actos: eso es una exigencia, pero también una forma de libertad."],[7,"156","Una misericordia que todo lo abarca","«Mi misericordia abarca todas las cosas.» No hay vida, error ni historia que quede fuera de ella. Esa certeza es el fundamento de toda esperanza."],[83,"1","Contra el fraude","Se advierte severamente contra quienes exigen la medida completa cuando reciben y la reducen cuando dan. La doble vara es una forma de injusticia."],[28,"54","Doble recompensa","Los que son pacientes, repelen el mal con el bien y gastan de lo que se les ha dado recibirán su recompensa dos veces. La constancia en el bien se paga."],[47,"22","No cortar los lazos","Se advierte contra la corrupción y la ruptura de los vínculos familiares. Nada compensa el aislamiento de quien se enemista con los suyos."],[18,"23-24","El mañana y la humildad","Nunca digas «lo haré mañana» sin añadir «si Dios quiere». Planificar es un deber; creerse dueño del futuro es una ilusión."],[58,"11","Hacer sitio","Cuando se os diga «haced sitio en las reuniones», hacedlo: Dios os hará sitio. Hacerse a un lado para que otro entre es un gesto sencillo de generosidad."],[71,"28","Una súplica por todos","Noé pidió perdón para sí mismo, para sus padres, para quien entrara en su casa con fe y para los creyentes. Una oración generosa no deja a nadie fuera."],[17,"53","Lo mejor al hablar","Di a mis siervos que digan lo mejor: el demonio siembra discordia entre ellos. Una palabra bien elegida puede evitar una pelea."],[48,"4","Serenidad en el corazón","Dios hizo descender la serenidad en los corazones de los creyentes para que su fe aumentara. La calma verdadera no se fabrica: se recibe y se cultiva."],[64,"16","Libre de avaricia","Temed a Dios cuanto podáis, escuchad, obedeced y gastad en beneficio vuestro. Los que se libran de su propia avaricia, esos son los que prosperan."],[23,"61","Los primeros en el bien","Esos se apresuran en las buenas obras y son los primeros en alcanzarlas. No esperes el momento perfecto para hacer el bien: empieza ahora."],[2,"153","Paciencia y oración","Cuando la carga pesa, hay dos apoyos que no fallan: la paciencia que sostiene y la oración que serena. Quien los une no atraviesa la dificultad en soledad."],[4,"28","Un Dios que quiere aliviar","Dios quiere aliviaros, pues el ser humano fue creado débil. Reconocer la propia fragilidad no es una vergüenza: es una forma de honestidad."],[33,"70","Palabras rectas","«Temed a Dios y decid palabras rectas.» Una palabra recta no hiere ni engaña; dice lo que es, con claridad y respeto."],[4,"32","No codiciar","No codiciéis lo que Dios ha dado a unos más que a otros. Cada uno recibirá lo que se esfuerza por ganar. La envidia empobrece a quien la siente."],[14,"35","Una tierra segura","Abraham pidió: «Señor, haz seguro este país». Su primera súplica por un lugar fue la paz: sin seguridad, no hay vida que se pueda construir."],[20,"130","Paciencia ante las palabras","No todo lo que se dice merece respuesta. Ten paciencia con lo que hablan de ti y sigue cuidando tu relación con lo esencial."],[2,"250","Firmeza en el combate","Ante una prueba mayor que ellos, los fieles pidieron: «Señor, derrama sobre nosotros paciencia y afirma nuestros pasos». Pedir firmeza es pedir lo esencial."],[20,"14","Orar para recordar","La oración no es un trámite sino un encuentro: «Haz la oración para recordarme». Detenerse unos minutos devuelve la perspectiva."],[29,"69","Quien se esfuerza","A quienes se esfuerzan por el bien, Dios los guía hacia Sus caminos. La guía no llega a los que esperan quietos, sino a quienes avanzan."],[5,"2","Cooperar en el bien","«Ayudaos mutuamente en la virtud y la piedad, y no os ayudéis en el pecado y la agresión.» Cooperar no es sumarse a cualquiera: es sumarse a lo bueno."],[19,"96","Un amor que se otorga","A quienes creen y obran bien, el Misericordioso les dará amor. El cariño de la gente, cuando es genuino, viene como consecuencia del buen carácter."],[10,"99","No se obliga a creer","«¿Vas tú a obligar a los hombres a que sean creyentes?» La fe no se impone. Cada persona es responsable ante su conciencia."],[6,"141","Dar lo debido en la cosecha","Comed de sus frutos cuando den fruto, dad lo debido el día de la cosecha y no derrochéis. La tierra provee para compartir, no para acumular."],[39,"9","Los que saben y los que no","¿Acaso son iguales los que saben y los que no saben? El conocimiento no es adorno: es una responsabilidad hacia uno mismo y hacia los demás."],[94,"5","Con la dificultad, la facilidad","Después de la noche más larga llega el alba. La dificultad nunca viene sola: lleva dentro, desde el comienzo, la semilla del alivio."],[3,"195","Ningún trabajo se pierde","«No dejaré que se pierda el trabajo de ninguno de vosotros, sea hombre o mujer.» Nadie, por anónimo que sea su esfuerzo, trabaja en vano."],[26,"89","Un corazón sano","El día en que ni los bienes ni los hijos sirvan de nada, salvo a quien venga a Dios con un corazón sano. La limpieza del corazón es el patrimonio que se lleva."],[2,"45","Humildad y recogimiento","La paciencia y la oración pesan solo a quien no es humilde. Para los de corazón recogido, son un descanso y una fuerza."],[17,"37","Sin soberbia","No camines por la tierra con altivez: no puedes rasgar la tierra ni alcanzar la altura de las montañas. La arrogancia choca con la realidad."],[2,"264","Sin reproches ni ostentación","No anuléis vuestras limosnas con reproches y molestias. Ayudar y luego recordárselo a la persona es quitarle el valor a lo que diste."],[10,"57","Un remedio para el pecho","El Corán se presenta como exhortación, curación para lo que hay en los pechos, guía y misericordia. A veces lo que el corazón necesita es una palabra verdadera."],[42,"37","Contener la ira","Los virtuosos evitan los pecados graves y las indecencias, y cuando se enfadan, perdonan. Controlar la ira es una victoria sobre uno mismo."],[22,"40","Casas donde se recuerda a Dios","Si Dios no contuviera a unos pueblos con otros, serían demolidas ermitas, iglesias, sinagogas y mezquitas donde se menciona mucho el nombre de Dios. Todas merecen respeto."],[30,"41","La corrupción visible","La corrupción ha aparecido en la tierra y en el mar por lo que han hecho las manos de la gente. Cada hábito responsable es un pequeño acto de reparación."],[16,"11","La tierra que alimenta","Con una misma agua crecen cultivos, olivos, palmeras, vides y toda clase de frutos. Cada comida es un pequeño milagro que merece ser agradecido."],[3,"8","Un corazón que no se tuerza","Una de las súplicas más hermosas: «Señor, no desvíes nuestros corazones después de habernos guiado». Lo logrado hay que cuidarlo cada día."],[107,"1-3","Lo que revela la fe","«¿Has visto a quien desmiente la religión? Es el que rechaza al huérfano y no anima a dar de comer al pobre.» La fe se prueba en el trato con el vulnerable."],[10,"25","Hogar de paz","Dios invita a la morada de la paz y guía a quien quiere por un camino recto. Toda vida orientada a la concordia se parece a su destino."],[20,"114","Señor, aumenta mi conocimiento","Una sola súplica para cada día: «Señor, aumenta mi conocimiento». Mientras uno sigue aprendiendo, conserva la humildad y la frescura del corazón."],[38,"29","Reflexionar los versículos","Un Libro bendito para que reflexionen sobre sus versículos y los dotados de entendimiento recuerden. Leer despacio y pensar es más valioso que leer mucho."],[9,"105","Obrad","«Obrad: Dios verá vuestras obras, y también Su Mensajero y los creyentes.» La fe se prueba más en lo que haces que en lo que dices."],[102,"8","Se os preguntará por las gracias","Ese día se os preguntará por las gracias recibidas. Pasar por la vida sin darse cuenta de lo que se tiene es desaprovechar un regalo."],[103,"1-3","El tiempo","Por el tiempo: el ser humano está en pérdida, salvo quienes creen, obran bien y se recomiendan la verdad y la paciencia. El tiempo no se recupera: se invierte."],[17,"70","La dignidad humana","«Hemos honrado a los hijos de Adán.» Toda persona, sin importar su origen, posee una dignidad dada por Dios: respetarla es un deber elemental."],[21,"83","Aflicción y súplica","Job no exigió ni se quejó con amargura: dijo simplemente que la desgracia lo había tocado y que Dios es el más misericordioso. Así se pide ayuda."],[20,"82","Perdón y camino","«Soy Perdonador con quien se arrepiente, cree, obra bien y luego sigue la guía.» El perdón no es un punto final, sino el comienzo de un camino."],[2,"222","Dios ama a los que regresan","«Dios ama a los que se arrepienten y a los que se purifican.» No hay vergüenza en volver, sino en negarse a hacerlo."],[63,"9","Que nada os distraiga","Que vuestros bienes y vuestros hijos no os distraigan del recuerdo de Dios. Lo mejor que tienes puede convertirse en lo que te aparta de lo esencial."],[31,"22","El asidero firme","Quien somete su rostro a Dios haciendo el bien se ha agarrado al asidero más firme. En el vendaval, tener de qué sostenerse es la mayor riqueza."],[2,"280","Dar plazo al deudor","Si el deudor está en dificultad, concédele un plazo; y perdonar la deuda como caridad es aún mejor. La generosidad a tiempo vale más que el dinero recuperado."],[11,"85","Medida cabal","«Dad la medida y el peso con equidad y no defraudéis a la gente en sus bienes.» La honradez comercial es una forma de adoración."],[2,"148","Competir en lo bueno","Cada uno tiene una orientación a la que se vuelve; competid, pues, en las buenas acciones. La única carrera que vale la pena es la de hacer el bien."],[14,"41","Perdón para los padres","«Señor, perdónanos a mí, a mis padres y a los creyentes el día de la cuenta.» Rezar por los padres, vivos o difuntos, es una deuda de amor."],[89,"27","El alma serena","«Oh alma serena, vuelve a tu Señor, complacida y complaciente». La meta de la vida espiritual no es la perfección, sino la paz interior."],[66,"6","Cuidar a la familia","«Protegeos a vosotros mismos y a vuestras familias.» La primera responsabilidad moral empieza en casa, con el ejemplo y el cuidado de los más cercanos."],[24,"37","El comercio que no distrae","Hombres a quienes ni el comercio ni la venta distraen del recuerdo de Dios. Se puede trabajar, vender y comprar sin perder el centro."],[91,"9-10","Quien se purifica","Triunfa quien purifica su alma, y fracasa quien la corrompe. El mayor trabajo no está afuera, sino en el cuidado paciente del propio interior."],[2,"274","De día y de noche","Quienes gastan sus bienes de noche y de día, en secreto y en público, tendrán su recompensa. La caridad no tiene horario ni lugar."],[21,"107","Misericordia para los mundos","«No te hemos enviado sino como misericordia para los mundos.» Un mensaje que nace de la compasión se reconoce porque protege, no porque amenaza."],[42,"15","Nuestro Dios y vuestro Dios","«Creo en cualquier libro que Dios haya hecho descender y se me ha ordenado ser justo entre vosotros; Dios es nuestro Señor y vuestro Señor. A nosotros nuestras obras y a vosotros las vuestras.»"],[3,"190","Señales para quien piensa","En la creación de los cielos y la tierra y en la alternancia del día y la noche hay señales para los que tienen entendimiento. Mirar con atención es una forma de oración."],[57,"25","Libro y balanza","Los mensajes fueron enviados con pruebas claras, el Libro y la balanza, para que la gente actúe con justicia. La fe y la justicia caminan juntas."],[59,"7","Que la riqueza circule","La riqueza no debe circular solo entre los ricos de entre vosotros. Una sociedad justa cuida de que los bienes lleguen también a quienes menos tienen."],[8,"53","Cuidar lo recibido","Dios no cambia una gracia que otorgó a un pueblo hasta que ese pueblo cambia lo que hay en sí mismo. Las bendiciones también requieren cuidado."],[11,"115","Constancia","Sé constante: el bien hecho con perseverancia nunca se pierde. La recompensa de quienes obran bien no se desperdicia aunque nadie la vea."],[3,"114","Creer y obrar el bien","Creen en Dios y en el último día, ordenan lo bueno, prohíben lo reprobable y se apresuran a las buenas obras: esos están entre los justos. La virtud no tiene bandera."],[12,"53","Sin declararse inocente","«No pretendo declarar inocente a mi alma: el alma incita al mal, salvo lo que mi Señor ha preservado.» Reconocer las propias debilidades protege de la soberbia."],[2,"282","Por escrito y con claridad","Cuando acordéis una deuda a plazo, ponedla por escrito. La claridad en los acuerdos protege la amistad y evita muchos disgustos."],[2,"286","La medida de tu carga","Ninguna carga supera la capacidad de quien debe llevarla. Cuando sientas que no puedes más, recuerda que eres más fuerte de lo que crees y que no caminas solo."],[3,"92","Dar lo que amas","No alcanzaréis la piedad hasta que gastéis de lo que amáis. Dar de lo que nos sobra es fácil; dar de lo que valoramos es lo que transforma."],[17,"29","Ni mano cerrada ni abierta","No mantengas tu mano atada al cuello ni la extiendas del todo, para no quedar reprochado y empobrecido. La generosidad también necesita prudencia."],[16,"43","Preguntar a quien sabe","Si no sabéis, preguntad a la gente del recuerdo. No saber no es una falta; no preguntar, sí. Buscar buenos maestros es parte del camino."],[87,"16-17","Lo más duradero","Preferís la vida mundana, pero la otra es mejor y más duradera. A veces conviene mirar más lejos que el próximo placer o la próxima preocupación."],[2,"83","Hablad bien","Habla a la gente con bondad. Trata con bien a los padres, a los parientes, a los huérfanos y a los necesitados. La amabilidad es una forma cotidiana de fe."],[20,"46","No temas","A quienes sentían miedo se les dijo: «No temáis, Yo estoy con vosotros, oigo y veo». Sentirse acompañado cambia el tamaño de cualquier miedo."],[25,"72","Pasar con dignidad","Los siervos del Misericordioso no dan falso testimonio, y cuando pasan junto a lo vano, pasan con dignidad. No todo ruido merece tu atención."],[30,"22","Lenguas y colores","Entre Sus signos está la creación de los cielos y la tierra y la diversidad de vuestras lenguas y colores. La variedad humana es una señal, no un problema."],[23,"115","¿En vano?","«¿Pensabais que os habíamos creado en vano?» Una pregunta que sacude: tu vida tiene un sentido y un destino que merece ser buscado."],[65,"7","Tras la estrechez","La escasez de hoy no es la última palabra. Tras la estrechez, Dios dispone el alivio; mientras tanto, da cada uno lo que tiene sin quejarse."],[7,"205","Recordar en silencio","Recuerda a tu Señor en tu interior, con humildad y reverencia, sin alzar la voz. El silencio también es una forma de hablarle a Dios."],[16,"65","Revivir la tierra","Dios hace descender agua del cielo y con ella da vida a la tierra seca. Lo que parecía muerto puede reverdecer; también las personas, también los ánimos."],[4,"29","Comercio honesto","No os apropiéis de los bienes de otros por medios injustos: que haya comercio por mutuo acuerdo. El provecho honrado no necesita esconderse."],[2,"143","Una comunidad del justo medio","«Os hemos hecho una comunidad moderada.» Los extremos son fáciles; sostener el equilibrio entre razón y fe, entre esfuerzo y descanso, es lo difícil."],[5,"8","Justicia incluso con el que te cae mal","Que el rencor hacia alguien no te lleve a ser injusto. Ser justo, dice el Corán, está más cerca de la piedad que de la simple cortesía."],[2,"261","La semilla generosa","Quien da por Dios es como un grano que produce siete espigas, cada una con cien granos. La generosidad no empobrece: multiplica."],[93,"9-10","Al huérfano y al mendigo","«No oprimas al huérfano ni rechaces al mendigo.» Una sociedad se juzga por cómo trata a quienes no pueden defenderse."],[68,"4","Un carácter grande","«Ciertamente tienes un carácter grandioso.» El mayor elogio del Corán a su Mensajero no habla de poder, sino de carácter. Un buen carácter es la mayor riqueza."],[19,"4","Nunca me desilusioné","Zacarías dijo: «Jamás me desilusioné al invocarte, Señor». Pedir con perseverancia, aun en la vejez y con los huesos cansados, nunca es en vano."],[96,"1-5","Leer y aprender","La primera palabra que se reveló fue «¡Lee!». Aprender, preguntar y escribir son actos de fe: el conocimiento es la puerta por la que entra la luz."],[16,"78","Oído, vista y corazón","Naciste sin saber nada, y se te dieron el oído, la vista y el corazón. Todo lo que aprendiste y todo lo que ves es un regalo que merece gratitud."],[16,"91","Fidelidad al pacto","Cumplid con el pacto de Dios cuando pactéis y no violéis los juramentos tras haberlos confirmado. La integridad se demuestra en las cosas que nadie controla."],[34,"39","Lo gastado se repone","«Lo que gastéis, Él lo repone.» Dar con generosidad no empobrece: es un acto de confianza en que quien da, recibe."],[4,"58","Juzgar con justicia","Se ordena devolver lo confiado a quien corresponde y juzgar con justicia cuando se juzga. La justicia empieza en pequeños actos de honradez."],[2,"237","Generosidad entre vosotros","Perdonar está más cerca de la piedad. «No olvidéis la generosidad entre vosotros.» Incluso en las rupturas, la nobleza no se negocia."],[2,"136","Sin hacer distinción","«Creemos en Dios y en lo que se nos reveló y en lo que se reveló a Abraham, Ismael, Isaac, Jacob, Moisés y Jesús; no hacemos distinción entre ninguno.» Un puente entre las tradiciones."],[17,"80","Entrar y salir con verdad","Una súplica para cada comienzo y cada despedida: «Señor, hazme entrar con verdad y salir con verdad». Que tus pasos, al llegar y al irte, sean honestos."],[17,"27","Cuidado con el derroche","Los derrochadores son hermanos de los demonios. Gastar sin sentido, sin pensar en quien necesita, es una forma de ingratitud hacia lo recibido."],[46,"13","Rectitud y calma","Quienes dicen «nuestro Señor es Dios» y se mantienen rectos no tendrán miedo ni se entristecerán. La firmeza en lo esencial trae una calma sostenida."],[59,"10","Sin rencor en el corazón","«Señor, perdónanos a nosotros y a nuestros hermanos que nos precedieron en la fe, y no pongas rencor en nuestros corazones.» Una oración para limpiar el alma."],[5,"32","Una vida es toda la humanidad","Quien salva una vida es como si hubiera salvado a toda la humanidad; quien mata injustamente a una persona, como si hubiera matado a todos. Cada vida es un mundo."],[75,"36","Una vida con rumbo","«¿Piensa el ser humano que será dejado sin rumbo?» No, hay un propósito. Preguntarte para qué vives es el comienzo de vivir bien."],[57,"18","Un buen préstamo","Quienes dan limosna y prestan a Dios un buen préstamo lo verán multiplicado. Todo lo que das sin esperar nada es una inversión que no se pierde."],[2,"152","Recordar y ser recordado","«Recordadme y Yo os recordaré; agradecedme y no seáis ingratos». Una relación de ida y vuelta: el que recuerda, es recordado."],[49,"11","Sin burlas ni apodos","Que un grupo no se burle de otro: puede que sean mejores. No os insultéis ni os pongáis motes ofensivos. Cuidar la dignidad ajena es cuidar la propia."],[17,"82","Curación y misericordia","Hay palabras que sanan y enseñanzas que consuelan. El Corán dice que lo que contiene es curación y misericordia para los creyentes."],[93,"5","Quedarás satisfecho","Lo que hoy parece poco será colmado. La promesa de que al final quedarás satisfecho invita a sembrar con paciencia y a esperar con el alma tranquila."],[2,"172","Comer con gratitud","Comer lo bueno y agradecer es una forma sencilla de adoración. Cada comida, compartida y recibida con gratitud, se convierte en una pequeña oración."],[28,"16","Reconocer y pedir perdón","Moisés dijo: «Señor, me he perjudicado a mí mismo; perdóname». Una oración sin excusas ni explicaciones: reconocer y pedir."],[28,"77","Equilibrio entre dos mundos","Busca la vida futura con lo que Dios te dio, sin olvidar tu parte de este mundo; haz el bien y no busques corromper la tierra. Equilibrio, no extremos."],[60,"8","Bondad con todos","Dios no prohíbe tratar con bondad y justicia a quienes no te combatieron por tu fe ni te expulsaron de tu hogar. La convivencia empieza en el buen trato."],[17,"35","Balanza exacta","Cuando midas, da la medida completa; cuando pesas, usa balanza exacta. Es lo mejor y tiene mejor resultado. La honestidad rinde a largo plazo."],[2,"256","Sin coacción","«No hay coacción en la religión.» La fe, para ser fe, tiene que ser libre: lo impuesto no convence, lo elegido transforma."],[31,"16","Un grano de mostaza","Aunque fuera del peso de un grano de mostaza, escondido en una roca, Dios lo traerá. Nada de lo que haces pasa inadvertido: ni lo bueno ni lo pequeño."],[53,"39","El fruto del esfuerzo","El ser humano solo obtiene lo que se esfuerza. Ni la suerte ni la queja sustituyen al trabajo constante y honesto."],[20,"25","Ensancha mi pecho","La súplica de Moisés ante una misión difícil: «Señor, ensancha mi pecho y facilítame la tarea». Pedir serenidad y facilidad es también sabiduría."],[6,"59","Lo oculto está en buenas manos","Dios posee las llaves de lo oculto y no cae una hoja sin que lo sepa. No hace falta saberlo todo: alcanza con confiar en quien sí lo sabe."],[29,"64","La vida verdadera","La vida de este mundo no es más que diversión y juego; la morada de la otra es la verdadera vida. Invierte en lo que dura."],[17,"33","La vida es sagrada","«No matéis a la persona que Dios ha hecho inviolable, salvo con derecho.» El respeto a la vida es el primer pilar de toda convivencia."],[28,"60","Lo que Dios tiene","Lo que se os ha dado es disfrute de la vida mundana y su adorno; lo que Dios tiene es mejor y más duradero. ¿No razonáis?"],[13,"22","Perseverar buscando el rostro de Dios","Los que son pacientes buscando el rostro de su Señor, hacen la oración, dan en secreto y en público y repelen el mal con el bien tendrán buen destino."],[15,"85","Un hermoso perdón","«Perdona con un hermoso perdón.» Un perdón hermoso no recuerda ni echa en cara; deja que la herida cierre sin cicatriz de resentimiento."],[33,"21","Un modelo","«Tenéis en el Mensajero de Dios un hermoso modelo.» Aprender se facilita con ejemplos vivos: elegir a quién admirar es elegir en quién convertirse."],[9,"119","Estar con los veraces","«Temed a Dios y estad con los veraces.» Elegir a quienes te rodean es elegir quién quieres ser: la sinceridad se contagia."],[4,"36","Todos los que te rodean","Sé bueno con los padres, los parientes, los huérfanos, los necesitados, el vecino cercano y el lejano, el compañero y el viajero. Es un mapa completo de tus deberes."],[12,"86","Mi queja es a Dios","«Solo expreso mi pena y mi aflicción a Dios.» Quejarse ante Dios, no ante los hombres, es una forma de preservar la dignidad en el dolor."],[20,"44","Hablar con suavidad","A Moisés y Aarón se les dijo, aun ante un faraón: «Habladle con suavidad, quizá reflexione o tema». La dulzura abre oídos que la dureza cierra."],[57,"4","Contigo dondequiera que estés","Dios está con vosotros dondequiera que estéis. Esa presencia convierte cualquier lugar en un lugar sagrado y cualquier momento en una oportunidad."],[25,"70","Malas obras que se vuelven buenas","Quien se arrepiente, cree y obra bien verá sus malas acciones cambiadas en buenas. La historia personal puede reescribirse desde la sinceridad."],[2,"216","Lo que no entendemos","Puede que te disguste algo que es bueno para ti, y que ames algo que te perjudica. Dios sabe; tú no sabes. Esa humildad evita muchos amargos."],[2,"201","Lo bueno de las dos vidas","Una súplica equilibrada: pedir lo bueno de este mundo y lo bueno del otro. La fe no desprecia la vida cotidiana; la quiere buena y justa."],[19,"14","Bondadoso con sus padres","De Juan se dice que fue bondadoso con sus padres y no fue arrogante ni rebelde. La humildad filial es una forma de sabiduría."],[6,"52","No despreciar a los humildes","No alejes a quienes invocan a su Señor mañana y tarde, buscando Su rostro. Ninguna persona sincera merece sentirse un estorbo."],[2,"263","Una palabra amable","Una palabra amable y un perdón valen más que una limosna seguida de agravio. A veces lo que el otro necesita es respeto antes que dinero."],[31,"19","Mesura al caminar y al hablar","Sé moderado en tu andar y baja la voz: la voz más desagradable es la del asno. La serenidad al hablar y al moverse transmite más que el estruendo."],[2,"283","Devolver lo confiado","Quien recibe algo en depósito debe devolverlo íntegro y temer a Dios. La confianza es el patrimonio más frágil y más valioso."],[57,"7","Administradores, no dueños","Gastad de aquello de lo que Dios os ha hecho administradores. Pensar que lo que tienes es un encargo y no una propiedad cambia la manera de usarlo."],[3,"64","Una palabra común","«Gente del Libro, venid a una palabra común entre nosotros y vosotros: que no adoremos sino a Dios.» El diálogo empieza buscando lo que ya compartimos."],[31,"18","Sin desprecio","No tuerzas el rostro con desdén a la gente ni camines con insolencia. A veces, el mayor gesto de respeto es mirar a los ojos y escuchar."],[40,"60","Pídeme","Pedir es un acto de humildad y de confianza. El Corán invita a invocar: la súplica honesta es una forma de conversar con quien lo sostiene todo."],[3,"134","Generoso y sereno","Los virtuosos gastan en la prosperidad y en la adversidad, reprimen su ira y perdonan a la gente. Dios ama a los que hacen el bien."],[16,"90","Justicia, bondad y generosidad","Un versículo resume una ética completa: Dios ordena la justicia, hacer el bien y dar a los parientes, y prohíbe la inmoralidad, lo reprobable y la opresión."],[40,"44","Encomendarse","«Encomiendo mi asunto a Dios; Dios ve a Sus siervos.» Después de dar lo mejor, soltar es un acto de confianza, no de resignación."],[110,"3","Alabar y pedir perdón","«Glorifica con alabanza a tu Señor y pídele perdón.» Después de cada logro, recordar la gratitud y la humildad evita la soberbia."],[76,"8","Alimentar por amor","Dan de comer, por amor a Él, al necesitado, al huérfano y al cautivo. Una mesa compartida con quien tiene hambre es la forma más sencilla de oración."],[15,"97-98","Cuando el pecho se angustia","«Sabemos que tu pecho se angustia por lo que dicen. Glorifica a tu Señor y sé de los que se prosternan.» Orar es una forma de aliviar el pecho."],[2,"273","La dignidad del pobre","El Corán habla de necesitados que no piden con insistencia: quien no los conoce los cree ricos por su dignidad. A veces la mayor necesidad calla."],[9,"51","Aceptar con serenidad","Nada nos ocurrirá salvo lo que ya está escrito para nosotros. Esta certeza no paraliza: libera de la angustia por lo que no podemos controlar."],[39,"53","Misericordia sin límites","No importa cuánto te hayas equivocado: la puerta del perdón sigue abierta. Volver nunca es tarde para quien lo hace con sinceridad."],[7,"10","Un lugar y un sustento","Se os estableció en la tierra y se os dieron medios para vivir; y pocos agradecen. Detenerse a valorar la vida cotidiana es una práctica espiritual."],[107,"4-6","Rezar sin ostentación","Se condena a quienes rezan descuidando el sentido de su oración y haciéndolo para ser vistos. La fe vivida no necesita público."],[104,"1","Contra el difamador","Se advierte contra todo difamador y calumniador. La crítica constructiva edifica; la calumnia solo destruye a quien la dice y a quien la oye."],[46,"15","Una súplica de madurez","A los cuarenta años, el creyente pide: «Señor, inspírame para agradecer el favor que me diste a mí y a mis padres, y para obrar bien». Gratitud y mejora van juntas."],[30,"21","Afecto y misericordia","Entre las señales de Dios está haber puesto, entre los esposos, afecto y misericordia para que encuentren sosiego el uno en el otro. El amor es un signo."],[17,"23","Bondad con los padres","Después de adorar a Dios, el Corán pone la bondad con los padres. Si llegan a la vejez, ni una palabra de fastidio: háblales con respeto y ternura."],[57,"20","Juego y adorno","La vida de este mundo es juego, diversión, ornato y rivalidad en riquezas e hijos. Saberlo no te quita las ganas de vivir: te las ordena."],[2,"155","La prueba","La vida pone a prueba con miedos, carencias y pérdidas. Las buenas noticias son para quienes perseveran: la prueba no es un castigo, sino una ocasión de crecer."],[6,"152","Hablar con equidad","Cuando hables, sé justo, aunque se trate de un pariente. La lealtad que protege una mentira no es lealtad: es complicidad."],[103,"3","Verdad y paciencia","Los que se salvan del fracaso se aconsejan mutuamente la verdad y la paciencia. No basta con tenerlas: hay que cultivarlas juntos."],[17,"44","Todo glorifica","Los siete cielos, la tierra y lo que hay en ellos glorifican a Dios; no hay nada que no lo haga con su alabanza. La creación entera es una gran oración."],[17,"85","Poco es lo que se nos dio","Se nos ha dado muy poco conocimiento. Reconocerlo sin amargura es el primer paso para escuchar, dudar con respeto y seguir buscando."],[82,"6","¿Qué te engañó?","«Oh ser humano, ¿qué te engañó respecto de tu Señor generoso?» Una pregunta que ordena el examen de conciencia: ¿qué me hizo olvidar lo esencial?"],[5,"42","Dios ama a los equitativos","Cuando se juzga, se juzga con equidad: Dios ama a los que son justos. La equidad es una forma de amor por la verdad."],[38,"44","Un siervo excelente","De Job se dice: «Lo hallamos paciente. ¡Qué excelente siervo!». Su grandeza no estuvo en no sufrir, sino en no abandonar su confianza."],[4,"110","Pedir perdón","Quien obra mal o se perjudica y luego pide perdón a Dios lo hallará Perdonador y Misericordioso. Asumir el error es el primer paso hacia el alivio."],[41,"35","Un don escaso","Responder al mal con bien no es debilidad: es un don que solo alcanzan quienes cultivan la paciencia. Y es el que transforma enemistades."],[90,"17","Paciencia y compasión","Una comunidad sana es aquella cuyos miembros se recomiendan mutuamente la paciencia y la compasión. Ambas se contagian cuando se practican."],[11,"114","Lo bueno borra lo malo","«Las buenas acciones disipan las malas.» No hace falta cargar para siempre con las faltas pasadas: se compensan con una vida mejor."],[55,"60","El bien paga con bien","«¿Acaso la recompensa del bien es otra que el bien?» Hacer el bien ya es parte de su recompensa: te transforma y te acerca a lo mejor de ti."],[3,"139","No decaigas","El desánimo es la primera derrota. Mantén la frente alta y el corazón firme: la fe es una fuerza que no depende de las circunstancias."],[21,"35","Bien y mal como prueba","Todo ser probará la muerte, y os ponemos a prueba con el mal y con el bien. Hay pruebas en la escasez, pero también en la abundancia."],[8,"46","Unidad y paciencia","Las disputas internas desgastan más que cualquier adversidad externa. Un grupo que se pelea pierde su fuerza; la paciencia y la unión la conservan."],[49,"13","Pueblos para conocerse","Os creamos de un varón y una hembra, y os hicimos naciones y tribus para que os conozcáis. El más noble es el más consciente de Dios. La diversidad no es amenaza."],[25,"63","Caminar con humildad","Los siervos del Misericordioso caminan por la tierra con humildad, y cuando los ignorantes les hablan, responden: «Paz». La serenidad es una respuesta inteligente."],[90,"12-16","La cuesta empinada","¿Qué es la cuesta empinada? Liberar a alguien, dar de comer en un día de hambre a un huérfano o a un pobre. La virtud es un ascenso hecho con obras."],[2,"187","Vestimenta el uno del otro","Los esposos son vestimenta el uno del otro: abrigo, intimidad y protección. Una pareja es un refugio mutuo, no un campo de batalla."],[20,"131","No mires con ansia","No dirijas tu vista con ansias hacia lo que hemos dado a otros como adorno de la vida mundana. Lo que tu Señor te da es mejor y más duradero."],[66,"8","Arrepentimiento sincero","«Arrepentíos a Dios con un arrepentimiento sincero.» Volver de verdad es más que decir «lo siento»: es cambiar la dirección de los pasos."],[3,"191","Pensar de pie y sentado","Los sabios recuerdan a Dios de pie, sentados y acostados, y reflexionan sobre la creación. Pensar y orar no se oponen: se alimentan."],[23,"118","El mejor de los misericordiosos","«Señor, perdona y ten misericordia; Tú eres el mejor de los misericordiosos.» Una súplica de fin de jornada para soltar lo que pesa."],[3,"110","La mejor comunidad","Sois la mejor comunidad surgida para la humanidad porque ordenáis lo bueno, prohibís lo reprobable y creéis en Dios. Ser útil a los demás es la medida de la excelencia."],[51,"20","Señales en uno mismo","En la tierra hay señales para los que tienen certeza, y también en vosotros mismos. «¿Es que no veis?» Mirar hacia dentro es una forma de conocer a Dios."],[4,"135","Justicia aun contra uno mismo","«Sed firmes en la justicia, aunque sea en contra de vosotros mismos, vuestros padres o parientes.» La verdadera justicia no hace excepciones por cercanía."],[12,"87","No desesperes","Sigue buscando y no pierdas la esperanza: solo se desespera del alivio de Dios quien ha dejado de mirar hacia Él. Lo perdido puede volver."],[2,"188","Lo ajeno es ajeno","No os apropiéis de los bienes de otros con engaño ni los uséis para sobornar. La riqueza mal habida contamina todo lo que se hace con ella."],[18,"109","Un mar de tinta","Si el mar fuera tinta para escribir las palabras de mi Señor, se agotaría antes de que se agotaran Sus palabras. La realidad es más grande que cualquier libro."],[8,"63","Corazones unidos","Dios unió sus corazones; aunque gastaras todo lo que hay en la tierra, no habrías podido unirlos. La concordia es un don que no se compra."],[31,"13","Consejo de un padre","Luqmán aconseja a su hijo: «No asocies nada a Dios, pues eso es una gran injusticia». El mejor legado de un padre es una brújula."],[31,"15","Bondad aun en el desacuerdo","Aun cuando los padres piensen distinto en lo más profundo, el Corán pide acompañarlos en esta vida con bondad. El desacuerdo no justifica el desprecio."],[49,"10","Hermanos","Los creyentes son hermanos: reconciliad a vuestros hermanos y temed a Dios. Una relación rota merece un puente antes que una sentencia."],[27,"40","Éxito sin soberbia","Salomón, al ver cumplido lo imposible, dijo: «Esto es un favor de mi Señor para probarme si soy agradecido o ingrato». El éxito también es una prueba."],[5,"1","Cumplir los compromisos","«Oh creyentes, cumplid vuestros compromisos.» Un contrato, una promesa, un acuerdo de palabra: todos te piden lo mismo, que seas fiable."],[39,"10","Sin medida","A quienes perseveran se les dará su recompensa sin cuenta. Cuando el esfuerzo parece invisible, recuerda que hay una generosidad que no lleva libros contables."],[16,"18","Bendiciones incontables","Si intentaras contar los favores de Dios, no podrías enumerarlos. Empezar el día recordando solo tres de ellos cambia la mirada sobre todo lo demás."],[4,"149","Bien en público o en secreto","Ya sea que hagáis el bien públicamente o en secreto, o que perdonéis un mal, Dios es Perdonador y Poderoso. Perdonar es un bien que casi nadie ve."],[15,"88","No envidiar","No dirijas la mirada con envidia a lo que se ha dado a otros; no te apenes por ellos y sé amable con los creyentes. Contentarse es una forma de riqueza."],[4,"114","Conciliábulos que valen","No hay bien en la mayoría de los conciliábulos, salvo en quien ordena la caridad, el bien o la reconciliación. La conversación vale cuando construye."],[6,"108","No insultar lo que otros veneran","No insultéis lo que otros adoran, no sea que ellos insulten a Dios por hostilidad y sin conocimiento. Respetar las creencias ajenas protege también las propias."],[2,"215","A quién dar","Preguntan qué gastar: lo que gastéis sea para los padres, los parientes, los huérfanos, los necesitados y los viajeros. La generosidad empieza por los más cercanos."],[64,"14","Perdonar en familia","Si perdonáis, pasáis por alto y disculpáis, Dios es Perdonador y Misericordioso. Dentro de una familia, perdonar es mantener la casa en pie."],[51,"19","Un derecho ajeno","En sus bienes había un derecho para el mendigo y el desposeído. Compartir no es un favor, es devolver una parte que ya pertenecía a otros."],[14,"7","Gratitud que multiplica","«Si sois agradecidos, os daré más.» La gratitud no solo reconoce lo recibido: abre el corazón para recibir más y para valorarlo mejor."],[65,"2","Una salida inesperada","Quien actúa con rectitud encuentra caminos donde parecía no haber ninguno. La integridad abre puertas que la astucia nunca aprende a abrir."],[3,"17","Antes del amanecer","Entre los virtuosos están los pacientes, los veraces, los devotos, los generosos y los que piden perdón antes del alba. La noche en calma es buena aliada del examen interior."],[25,"67","El justo medio","Los siervos del Misericordioso, cuando gastan, no son derrochadores ni tacaños, sino que se mantienen en un punto medio. La mesura es una virtud práctica."],[57,"16","Que los corazones se ablanden","«¿No ha llegado el momento de que los corazones de los creyentes se humillen ante el recuerdo de Dios?» No esperes a endurecerte para volver."],[12,"92","Hoy no hay reproche","José, ante los hermanos que lo traicionaron, dijo: «Hoy no hay reproche contra vosotros; que Dios os perdone». Un perdón sin factura es un acto de grandeza."],[95,"6","Una recompensa sin fin","Quienes creen y obran bien tendrán una recompensa interminable. Hacer el bien, aunque cueste, no es un gasto: es la mejor de las inversiones."],[109,"6","A cada uno su camino","«Para vosotros vuestra religión; para mí la mía.» Una frase sencilla que pide respeto: se puede convivir sin discutir lo más íntimo."],[35,"10","La obra buena la eleva","A Dios asciende la buena palabra y la obra buena la eleva. Las palabras sin obras se quedan cortas; las obras sin buenas palabras se oscurecen."],[95,"4","La mejor estructura","«Creamos al ser humano en la mejor estructura.» Antes de cualquier error, hay una dignidad original que nadie te puede quitar."],[4,"86","Devolver mejor el saludo","Cuando os saluden, responded con un saludo mejor o al menos igual. Ganar en cortesía nunca es una derrota."],[2,"255","El que cuida sin dormir","Dios no duerme ni se adormece; sostiene todo lo que existe. Dormir tranquilo, sabiendo que hay Alguien que vela, es un descanso profundo."],[13,"11","Cambiar desde dentro","Dios no cambia la situación de un pueblo hasta que él cambia lo que hay en su interior. Toda transformación seria empieza en el corazón."],[3,"173","Nos basta Dios","Ante el miedo o la amenaza, la respuesta de los firmes es sencilla: «Nos basta Dios, el mejor protector». La confianza convierte el temor en calma."],[13,"3","Montañas y ríos","Dios extendió la tierra, puso en ella montañas firmes y ríos, y de cada fruto creó pares. Todo el paisaje habla de equilibrio y cuidado."],[18,"30","El trabajo bien hecho","A quienes creen y obran bien, no dejamos perder la recompensa de quien hace bien su obra. Hacer las cosas bien, incluso lo pequeño, es una forma de adoración."],[6,"162","Una vida entregada","Mi oración, mi sacrificio, mi vida y mi muerte son para Dios, Señor de los mundos. Cuando todo lo que haces tiene sentido, nada es pequeño."],[31,"12","Gratitud como sabiduría","Cuando se habla de la sabiduría de Luqmán, lo primero que se menciona es la gratitud. Agradecer, dice el Corán, es un beneficio para uno mismo."],[41,"34","El mal con el bien","«Repele el mal con lo que sea mejor, y aquel con quien tenías enemistad se volverá un amigo cercano.» La paciencia puede convertir un adversario en aliado."],[98,"5","Sinceridad ante todo","Solo se les ordenó adorar a Dios con sinceridad, de forma recta, hacer la oración y dar la limosna. Lo esencial es sencillo: autenticidad y servicio."],[99,"7","Un átomo de bien","Quien haga un bien del peso de un átomo lo verá, y quien haga un mal del peso de un átomo lo verá. Ningún gesto, por pequeño, se pierde."],[26,"215","Bajar el ala","«Baja tu ala a los creyentes que te siguen.» El liderazgo auténtico se ejerce con cercanía, no con altivez."]];
+const GITA_DATA=[["2.47","Actuar sin apegarse al resultado","Haz lo que te corresponde con entrega, pero no hagas del resultado tu dueño. Trabajar bien importa más que el aplauso; así se vive con menos ansiedad y más libertad."],["2.14","Todo pasa","El frío y el calor, el placer y el dolor llegan y se van. Aprender a soportarlos con serenidad es empezar a ser dueño de uno mismo."],["2.20","Lo que no muere","El Ser verdadero no nace ni muere: es eterno. Recordarlo quita peso al miedo a la pérdida y da perspectiva en los momentos difíciles."],["2.48","Equilibrio en el éxito y el fracaso","Actúa firme en lo que haces, deja a un lado el apego y mantén la misma calma ante el triunfo que ante el fracaso. A esa ecuanimidad la Gita la llama yoga."],["2.62-63","De dónde nace la confusión","Pensar una y otra vez en lo que deseamos engendra apego; del apego nace el deseo; del deseo, la ira; y de la ira, la confusión. Cuidar los pensamientos es cuidar el rumbo de la vida."],["3.19","Cumplir el deber sin aferrarse","Haz siempre lo que debes hacer, sin aferrarte a ello. Quien actúa así alcanza lo más alto: el valor de una acción está en la rectitud con que se hace."],["3.21","El ejemplo que se imita","Lo que hace una persona respetada, otros lo toman como norma. Vivir con coherencia es la manera más silenciosa y eficaz de enseñar."],["3.35","El propio camino","Es mejor cumplir con imperfección el propio deber que imitar a la perfección el de otro. Cada uno tiene un camino y una vocación; la autenticidad también es un valor."],["4.7-8","Cuando la justicia se debilita","Cuando decae el orden justo y crece la injusticia, lo divino se manifiesta para proteger a los buenos y restablecer el bien. Es una promesa de esperanza: el mal no tiene la última palabra."],["4.38","El conocimiento que purifica","Nada purifica tanto como el conocimiento verdadero. Estudiar, reflexionar y buscar la verdad limpia la mente de prejuicios."],["5.18","Mirar a todos con igualdad","El sabio mira con la misma ecuanimidad a un maestro culto, a una vaca, a un elefante y hasta a un perro. Ningún ser es menos digno de respeto."],["5.10","Como la hoja de loto","Quien actúa entregando sus obras a lo divino y sin apego no se mancha por el mal, como la hoja de loto que el agua no moja. Se puede vivir en medio del mundo sin dejarse ensuciar por él."],["6.5","Levantarse a uno mismo","Que cada uno se eleve por su propio esfuerzo y no se hunda. La mente puede ser nuestra mejor amiga o nuestra peor enemiga, según la cuidemos."],["6.17","Medida en todo","El yoga acaba con el sufrimiento de quien es moderado al comer y descansar, al trabajar y al dormir. El equilibrio cotidiano es una forma de sabiduría."],["6.32","Sentir el dolor y la alegría ajenos","Es el mejor yogui quien ve en todos los seres lo mismo que siente en sí: su alegría y su dolor. La compasión nace de reconocerse en el otro."],["6.35","Constancia y desapego","La mente es inquieta y difícil de domar, pero se logra con práctica constante y desapego. La paciencia diaria hace más que los grandes impulsos."],["9.22","Un cuidado que acompaña","A quienes lo recuerdan con devoción sin distraerse, lo divino les proporciona lo que les falta y protege lo que tienen. Confiar no es abandonarse: es caminar acompañado."],["9.26","La ofrenda sencilla","Una hoja, una flor, un fruto o un poco de agua, ofrecidos con amor, son aceptados. Lo que cuenta es la sinceridad del corazón, no la riqueza del regalo."],["12.13-14","Sin odio y con amistad","Quien no odia a ningún ser, es amigo y compasivo, libre de egoísmo y sereno en el placer y el dolor, es querido de lo divino. La bondad y la paciencia son el corazón de la devoción."],["12.15","No perturbar ni dejarse perturbar","Quien no inquieta al mundo ni se deja inquietar por él, libre de excesos de alegría, miedo y enojo, es muy querido. Vivir en paz y dejar vivir en paz es un gran logro."],["12.18-19","Igual ante el elogio y la crítica","Quien es el mismo ante amigos y enemigos, ante honra y deshonra, frío y calor, y se contenta con lo que llega, tiene una paz estable. Depender menos de la opinión ajena libera."],["14.24","Firme en sí mismo","Quien permanece en sí mismo, igual en el placer y el dolor, y mira lo mismo un terrón de tierra, una piedra o el oro, ha trascendido los vaivenes de la vida. Es el valor de lo esencial sobre lo material."],["16.1-3","Las riquezas del espíritu","Valentía, pureza de corazón, generosidad, veracidad, no violencia, ausencia de ira, renuncia, serenidad, compasión, humildad, perdón y firmeza: así enumera la Gita las cualidades de quien vive según lo divino."],["16.21","Tres puertas que destruyen","El deseo desmedido, la ira y la codicia son las tres puertas que llevan a la ruina del alma. Conviene cerrarlas con vigilancia."],["17.15","Palabras que ayudan","Las palabras que no hieren, que son verdaderas, agradables y beneficiosas son la disciplina de la palabra. Decir la verdad con amabilidad es un arte."],["17.20","Dar sin esperar nada","La ofrenda que se entrega por deber, en el lugar y el momento adecuados y a quien lo merece, sin esperar nada a cambio, es una ofrenda buena. La generosidad más pura no cobra."],["18.46","El trabajo como ofrenda","Cada persona alcanza la plenitud ofreciendo su propio trabajo a Aquel de quien procede todo. Hacer bien lo cotidiano puede convertirse en una forma de culto."],["18.58","Confiar para atravesar las dificultades","Con la mente puesta en lo divino superarás todos los obstáculos. La confianza abre camino donde la razón sola se detiene."],["18.66","Refugio y ausencia de miedo","Deja todo apoyo menor y acógete a lo divino; no temas, que te liberará de todo mal. La entrega confiada es el final del camino y un descanso para el alma."],["2.70","La paz del océano","Como el océano recibe los ríos sin desbordarse, así alcanza la paz quien acoge los deseos que fluyen hacia él sin ser agitado. La paz no es ausencia de deseos pasajeros, sino serenidad firme."],["11.55","Obrar para lo divino, sin enemistad","Quien actúa por lo más alto, lo tiene por meta, lo ama, está libre de apego y no guarda enemistad con ningún ser, llega a lo divino. Amar y no odiar es el resumen de este camino."]];
 /* ════════════════════════════════════
    RELOJ / SALUDO
 ════════════════════════════════════ */
@@ -1760,22 +1554,65 @@ const ID_BASE = [
 const ID_ORDER = [30,7,19,2,25,12,29,4,17,22,8,31,14,1,26,10,21,5,28,15,3,24,18,9,27,13,6,23,16,20,11];
 const VERSES = ID_ORDER.map(n => ID_BASE[n-1]);
 
+/* Palabra del día: Biblia (31, identidad en Cristo) · Corán (366, una por día del año) · Bhagavad Gita (31, una por día del mes) */
 function verseDayIndex() {
   const n = new Date();
   return Math.floor(Date.UTC(n.getFullYear(), n.getMonth(), n.getDate()) / 86400000) % VERSES.length;
 }
-let vIdx = verseDayIndex();
+function quranDayIndex() {
+  const n = new Date();
+  const doy = Math.round((Date.UTC(n.getFullYear(), n.getMonth(), n.getDate()) - Date.UTC(n.getFullYear(), 0, 0)) / 86400000); // 1..366
+  return (doy - 1) % QURAN_DATA.length;
+}
+function gitaDayIndex() { return (new Date().getDate() - 1) % GITA_DATA.length; }
+let vIdx = verseDayIndex(), qIdx = quranDayIndex(), gIdx = gitaDayIndex();
+let pdTab = 'biblia';
+try { const t = localStorage.getItem('estekak_pd_tab'); if (['biblia','coran','gita'].includes(t)) pdTab = t; } catch(e) {}
+
+function quranRef(q) {
+  return 'Corán · Sura ' + (QURAN_SURAS[q[0]] || q[0]) + ' (' + q[0] + ':' + q[1] + ')';
+}
 function showVerse() {
-  const v = VERSES[vIdx];
-  document.getElementById('verse-yo').textContent   = v.yo;
-  document.getElementById('verse-text').textContent = '“' + v.text + '”';
-  document.getElementById('verse-ref').textContent  = '— ' + v.ref;
-  const pv = document.getElementById('yh-promo-verse'); if (pv) pv.textContent = v.yo;
+  const yo = document.getElementById('verse-yo'), tx = document.getElementById('verse-text'),
+        rf = document.getElementById('verse-ref'), nt = document.getElementById('pd-note'),
+        more = document.getElementById('pd-more');
+  let title, text, ref, note = '', moreTxt;
+  if (pdTab === 'coran') {
+    const q = QURAN_DATA[qIdx];
+    title = q[2]; text = q[3]; ref = '— ' + quranRef(q);
+    note = 'Reflexión en palabras propias, inspirada en esta aleya del Corán (traducción al español).';
+    moreTxt = 'otra reflexión...';
+    tx.textContent = text; tx.classList.add('refl');
+  } else if (pdTab === 'gita') {
+    const g = GITA_DATA[gIdx];
+    title = g[1]; text = g[2]; ref = '— Bhagavad Gita ' + g[0];
+    note = 'Reflexión en palabras propias, inspirada en este verso de la Bhagavad Gita.';
+    moreTxt = 'otra reflexión...';
+    tx.textContent = text; tx.classList.add('refl');
+  } else {
+    const v = VERSES[vIdx];
+    title = v.yo; ref = '— ' + v.ref; moreTxt = 'otro versículo...';
+    tx.textContent = '“' + v.text + '”'; tx.classList.remove('refl');
+  }
+  yo.textContent = title; rf.textContent = ref;
+  nt.textContent = note; nt.hidden = !note;
+  if (more) more.textContent = moreTxt;
+  ['biblia','coran','gita'].forEach(k => {
+    const b = document.getElementById('pd-tab-' + k);
+    if (b) { b.classList.toggle('on', k === pdTab); b.setAttribute('aria-selected', k === pdTab ? 'true' : 'false'); }
+  });
+  const pv = document.getElementById('yh-promo-verse'); if (pv) pv.textContent = title;
+}
+function setPdTab(k) {
+  pdTab = k;
+  try { localStorage.setItem('estekak_pd_tab', k); } catch(e) {}
+  showVerse();
 }
 function randomVerse() {
-  let i;
-  do { i = Math.floor(Math.random() * VERSES.length); } while (i === vIdx && VERSES.length > 1);
-  vIdx = i;
+  const pick = (cur, n) => { if (n < 2) return cur; let i; do { i = Math.floor(Math.random() * n); } while (i === cur); return i; };
+  if (pdTab === 'coran') qIdx = pick(qIdx, QURAN_DATA.length);
+  else if (pdTab === 'gita') gIdx = pick(gIdx, GITA_DATA.length);
+  else vIdx = pick(vIdx, VERSES.length);
   showVerse();
 }
 showVerse();
@@ -1932,22 +1769,26 @@ function openForecast(ev) {
       + '<td class="n">' + pp + '%</td>'
       + '<td class="n">' + Math.round(gu) + ' km/h</td></tr>';
   }).join('');
+  const cs = getComputedStyle(document.body), cv = n => cs.getPropertyValue(n).trim();
+  const dk = document.body.getAttribute('data-mode') === 'dark';
+  const FC = { bg: cv('--bg'), text: cv('--text'), logo: cv('--logo'), lk: cv('--lk'), acc: cv('--acc'), line: cv('--line'), line2: cv('--line2'),
+    boxh: cv('--boxh'), band: cv('--band'), dim: cv('--dim'), mx: dk ? '#ff8a80' : '#cc0000', mn: dk ? '#8ec0ff' : '#0033cc', warn: dk ? '#3a3320' : '#fff6dc', alt: dk ? '#ff9a9a' : '#a00000' };
   const hm = at.getHours() + ':' + String(at.getMinutes()).padStart(2, '0');
   const html = '<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
     + '<title>Clima · próximos días — ' + escH(city) + '</title>'
     + '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap">'
     + '<style>'
-    + 'body{margin:0;background:#fff;color:#000;font:12px Arial,Helvetica,sans-serif}'
+    + 'body{margin:0;background:' + FC.bg + ';color:' + FC.text + ';font:12px Arial,Helvetica,sans-serif}'
     + '.w{max-width:760px;margin:0 auto;padding:12px}'
-    + '.logo{font:400 40px "Abril Fatface",Georgia,serif;color:#d6001c;letter-spacing:-1px;text-shadow:2px 2px 0 rgba(90,0,10,.5);text-align:center;margin:4px 0 10px}'
-    + 'a{color:#0000cc;cursor:pointer;text-decoration:underline}a:hover{color:#cc0000}'
-    + '.box{border:1px solid #8c9db8}.h{background:#e0d3a8;font-weight:700;text-align:center;padding:3px;border-bottom:1px solid #8c9db8;font-size:13px}'
-    + '.now{padding:8px 10px;font:12px "Times New Roman",serif;border-bottom:1px solid #dbe5f4}.now b{font-family:Arial,sans-serif}'
-    + 'table{border-collapse:collapse;width:100%}th{background:#d5e3f7;font-size:11px;text-align:left;padding:4px 6px;border-bottom:1px solid #b6c9e6}'
-    + 'td{padding:6px;border-bottom:1px dotted #b6c9e6;vertical-align:middle}.d{width:110px}.f{font:11px "Times New Roman",serif;color:#555}'
-    + '.i{font-size:26px;width:38px;text-align:center}.t{white-space:nowrap}.mx{color:#cc0000;font-weight:700}.mn{color:#0033cc;font-weight:700}.n{white-space:nowrap;font:11px "Times New Roman",serif}'
-    + 'tr.warn{background:#fff6dc}.al{color:#a00000;font-weight:700;font-size:11px}'
-    + '.ft{font:10px Arial,sans-serif;color:#555;text-align:center;margin-top:10px}'
+    + '.logo{font:400 40px "Abril Fatface",Georgia,serif;color:' + FC.logo + ';letter-spacing:-1px;text-shadow:2px 2px 0 rgba(0,0,0,.35);text-align:center;margin:4px 0 10px}'
+    + 'a{color:' + FC.lk + ';cursor:pointer;text-decoration:underline}a:hover{color:' + FC.acc + '}'
+    + '.box{border:1px solid ' + FC.line2 + '}.h{background:' + FC.boxh + ';font-weight:700;text-align:center;padding:3px;border-bottom:1px solid ' + FC.line2 + ';font-size:13px}'
+    + '.now{padding:8px 10px;font:12px "Times New Roman",serif;border-bottom:1px solid ' + FC.line + '}.now b{font-family:Arial,sans-serif}'
+    + 'table{border-collapse:collapse;width:100%}th{background:' + FC.band + ';font-size:11px;text-align:left;padding:4px 6px;border-bottom:1px solid ' + FC.line + '}'
+    + 'td{padding:6px;border-bottom:1px dotted ' + FC.line + ';vertical-align:middle}.d{width:110px}.f{font:11px "Times New Roman",serif;color:' + FC.dim + '}'
+    + '.i{font-size:26px;width:38px;text-align:center}.t{white-space:nowrap}.mx{color:' + FC.mx + ';font-weight:700}.mn{color:' + FC.mn + ';font-weight:700}.n{white-space:nowrap;font:11px "Times New Roman",serif}'
+    + 'tr.warn{background:' + FC.warn + '}.al{color:' + FC.alt + ';font-weight:700;font-size:11px}'
+    + '.ft{font:10px Arial,sans-serif;color:' + FC.dim + ';text-align:center;margin-top:10px}'
     + '</style></head><body><div class="w">'
     + '<div class="logo">ESTEKAK</div>'
     + '<div class="box"><div class="h">Clima · próximos días — ' + escH(city) + '</div>'
@@ -2208,8 +2049,35 @@ function getLinks() {
 function setLinks(arr) { localStorage.setItem(LINKS_KEY, JSON.stringify(arr)); }
 if(!localStorage.getItem(LINKS_KEY)) setLinks(DEFAULT_LINKS);
 
+
 function escH(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
+const HDR_FLAG = 'estekak_hdr_seeded';
+const HDR_DEFAULTS = [
+  {id:'h1', panel:'encabezado', group:'Encabezado', icon:'🐷', name:'Finanzas', url:'https://chanchito72.vercel.app/'},
+  {id:'h2', panel:'encabezado', group:'Encabezado', icon:'📻', name:'Radios',   url:'https://script.google.com/macros/s/AKfycbx0mw_gwVh9ioKbDtZu5h3GO9Rp9jUU37PrTdNTBWYdy2Vsmh0C4LRZC9alR4p1aIH3/exec'},
+  {id:'h3', panel:'encabezado', group:'Encabezado', icon:'✉️', name:'Correo',   url:'https://mail.google.com'},
+  {id:'h4', panel:'encabezado', group:'Encabezado', icon:'💬', name:'IA',       url:'https://claude.ai'}
+];
+function ensureHeaderLinks(fromImport, data) {
+  const links = getLinks();
+  let seed;
+  if (links.some(l=>l.panel==='encabezado')) seed = false;
+  else if (fromImport) seed = !(data && data._hdr);
+  else seed = !localStorage.getItem(HDR_FLAG);
+  if (seed) setLinks(links.concat(JSON.parse(JSON.stringify(HDR_DEFAULTS))));
+  try { localStorage.setItem(HDR_FLAG, '1'); } catch(e) {}
+}
+ensureHeaderLinks();
+const HDR_ORBS = ['o-green','o-lav','o-cream','o-blue','o-teal','o-gold'];
+function renderHeaderLinks() {
+  const hl = getLinks().filter(l=>l.panel==='encabezado');
+  const half = Math.ceil(hl.length/2);
+  const a = (l,i) => `<a class="yh-ic" href="${escH(l.url)}" target="_blank" rel="noopener" title="${escH(l.name)}"><span class="yh-orb ${HDR_ORBS[i%HDR_ORBS.length]}">${escH(l.icon)}</span><span>${escH(l.name)}</span></a>`;
+  const L = document.getElementById('yh-left'), R = document.getElementById('yh-right');
+  if (L) L.innerHTML = `<a class="yh-ic" onclick="openModal('modal-links')"><span class="yh-orb o-gold">⭐</span><span>Personalizar</span></a>` + hl.slice(0,half).map((l,i)=>a(l,i)).join('');
+  if (R) R.innerHTML = hl.slice(half).map((l,i)=>a(l,half+i)).join('') + `<a class="yh-ic" onclick="openModal('modal-settings')"><span class="yh-orb o-teal">❓</span><span>Ayuda</span></a>`;
+}
 function dirHTML(list) {
   const groups = [...new Set(list.map(l=>l.group))];
   return groups.map(g=>`<div class="dir-cat"><div class="dir-title">${escH(g)}</div><div class="dir-links">${
@@ -2218,6 +2086,7 @@ function dirHTML(list) {
 }
 function renderLinksPanel() {
   const links = getLinks();
+  renderHeaderLinks();
   // SITIOS (col. izq.) y APPS (col. centro): directorio
   const el = document.getElementById('sitios-container');
   if(el) el.innerHTML = dirHTML(links.filter(l=>l.panel==='sitios'));
@@ -2249,7 +2118,7 @@ function renderLinksManager() {
   const links = getLinks();
   const f = _linksFilter==='todos' ? links : links.filter(l=>l.panel===_linksFilter);
   const dl = document.getElementById('lnk-groups-list');
-  dl.innerHTML = [...new Set(links.map(l=>l.group))].map(g=>`<option value="${escH(g)}">`).join('');
+  dl.innerHTML = [...new Set(links.filter(l=>l.panel!=='encabezado').map(l=>l.group))].map(g=>`<option value="${escH(g)}">`).join('');
   const el = document.getElementById('links-manager-list');
   if(!f.length){el.innerHTML='<div class="empty-state">sin links</div>';return;}
   el.innerHTML = f.map(l=>`
@@ -2271,8 +2140,8 @@ function saveLinkForm() {
   const name=document.getElementById('lnk-name').value.trim();
   const icon=document.getElementById('lnk-icon').value.trim()||'🔗';
   const url=document.getElementById('lnk-url').value.trim();
-  const group=document.getElementById('lnk-group').value.trim()||'Sin grupo';
   const panel=document.getElementById('lnk-panel').value;
+  const group=document.getElementById('lnk-group').value.trim()||(panel==='encabezado'?'Encabezado':'Sin grupo');
   if(!name||!url){toast('Completá nombre y URL');return;}
   const links=getLinks();
   if(editId){const i=links.findIndex(l=>l.id===editId);if(i>-1)links[i]={...links[i],name,icon,url,group,panel};document.getElementById('lnk-edit-id').value='';document.getElementById('links-form-title').textContent='Agregar nuevo link';document.getElementById('lnk-cancel-btn').style.display='none';}
@@ -2315,7 +2184,8 @@ function ioLog(msg, type) {
 
 function gatherAllData() {
   return {
-    _version: 3,
+    _version: 4,
+    _hdr: true,
     _exported: new Date().toISOString(),
     links: getLinks(),
     cards: getCards(),
@@ -2422,6 +2292,7 @@ function doImport() {
 
   try {
     setLinks(data.links);
+    ensureHeaderLinks(true, data);
     renderLinksPanel();
     if (Array.isArray(data.cards)) { setCards(data.cards.filter(k => k && normUrl(k.url)).map(k => ({ id: String(k.id || uid()), url: normUrl(k.url), title: String(k.title || hostOf(k.url)).slice(0,120), desc: String(k.desc || '').slice(0,220), image: safeHttp(k.image) }))); renderCards(); }
     const exported = data._exported ? ' (backup del ' + data._exported.slice(0,10) + ')' : '';
@@ -2444,21 +2315,34 @@ function openAddLink(panel) {
 }
 
 /* ════════════════════════════════════
-   TEMAS — por defecto: Estekak
+   MODO CLARO / OSCURO + PALETAS (modo claro por defecto)
 ════════════════════════════════════ */
-function setTheme(name) {
-  document.body.setAttribute('data-theme', name);
-  document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
-  const btn = document.getElementById('theme-' + name);
-  if (btn) btn.classList.add('active');
-  try { localStorage.setItem('dash_theme_v2', name); } catch(e) {}
+const PALETTES = ['default','violeta','azul','rojo','naranja','verde'];
+function applyModePalette() {
+  let mode = 'light', pal = 'default';
+  try { mode = localStorage.getItem('estekak_mode') === 'dark' ? 'dark' : 'light'; pal = localStorage.getItem('estekak_palette') || 'default'; } catch(e) {}
+  if (!PALETTES.includes(pal)) pal = 'default';
+  const b = document.body;
+  b.setAttribute('data-theme', 'estekak');
+  b.setAttribute('data-mode', mode);
+  b.setAttribute('data-palette', pal);
+  const mb = document.getElementById('mode-toggle');
+  if (mb) mb.textContent = mode === 'dark' ? '☀️ Claro' : '🌙 Oscuro';
+  document.querySelectorAll('.pal-dot').forEach(d => d.classList.toggle('on', d.dataset.p === pal));
+  const pw = document.getElementById('pal-wrap');
+  if (pw) { pw.classList.toggle('off', mode === 'dark'); pw.title = mode === 'dark' ? 'Las paletas se aplican en modo claro' : 'Paleta de colores (modo claro)'; }
 }
-(function() {
-  let t = 'estekak';
-  try { t = localStorage.getItem('dash_theme_v2') || 'estekak'; } catch(e) {}
-  if (!['estekak','tricolor','win95'].includes(t)) t = 'estekak';
-  setTheme(t);
-})();
+function toggleMode() {
+  let cur = 'light'; try { cur = localStorage.getItem('estekak_mode') === 'dark' ? 'dark' : 'light'; } catch(e) {}
+  try { localStorage.setItem('estekak_mode', cur === 'dark' ? 'light' : 'dark'); } catch(e) {}
+  applyModePalette();
+}
+function setPalette(p) {
+  if (!PALETTES.includes(p)) p = 'default';
+  try { localStorage.setItem('estekak_palette', p); localStorage.setItem('estekak_mode', 'light'); } catch(e) {}
+  applyModePalette();
+}
+applyModePalette();
 
 /* ════════════════════════════════════
    TARJETAS DE SITIOS (debajo del clima)
@@ -2563,7 +2447,7 @@ window.addEventListener('DOMContentLoaded', () => {
   setInterval(loadWeatherPanel, 30 * 60 * 1000);   // refresca clima y alertas cada 30 min
   // al pasar la medianoche, cambia el versículo del día
   let lastDay = todayISO();
-  setInterval(() => { if (todayISO() !== lastDay) { lastDay = todayISO(); vIdx = verseDayIndex(); showVerse(); } }, 60000);
+  setInterval(() => { if (todayISO() !== lastDay) { lastDay = todayISO(); vIdx = verseDayIndex(); qIdx = quranDayIndex(); gIdx = gitaDayIndex(); showVerse(); } }, 60000);
   const m = location.search.match(/[?&]alerta=([a-z]*)/);
   if (m) setTimeout(() => testAlert(m[1] || 'granizo'), 1500);   // modo prueba del banner
 });
